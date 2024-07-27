@@ -1,13 +1,17 @@
 import cookie from 'cookie';
 import { getCookie, setCookie } from 'cookies-next';
 
-import { httpsAgent } from '@/constants/httpsAgent.constants';
-
 import { instanceGetPageData, instanceLoginApi } from '@/utils/instance';
 
 export const loginApiService = async (req, res) => {
+	// const token = await instanceLoginApi
+	// 	.post('', {}, { httpsAgent })
+	// 	.then(response => response.data.api_token)
+	// 	.catch(error => {
+	// 		// loginApiService();
+	// 	});
 	const token = await instanceLoginApi
-		.post('', {}, { httpsAgent })
+		.post('')
 		.then(response => response.data.api_token)
 		.catch(error => {
 			// loginApiService();
@@ -29,7 +33,7 @@ export const getAll = async (req, res, locale, url) => {
 	}
 	const response = await instanceGetPageData
 		.get('', {
-			httpsAgent,
+			// httpsAgent,
 			params: {
 				api_token: getCookie('api_token', { req, res }),
 				link: `/${locale}${url}`
