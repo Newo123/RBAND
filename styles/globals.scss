@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'functions';
+@import 'mixins';
+@import 'vars';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+html {
+	font-size: $fzMain;
+	font-family: var(--font-montserrat);
+
+	@screen 3xl {
+		font-size: $fzFor4K;
+	}
+}
+strong,
+b {
+	@apply font-bold;
+}
+input,
+textarea {
+	outline: none !important;
+}
+#logo {
+	@apply text-[1.5rem] font-black leading-130 tracking-[0.07em] text-white;
+
+	font-family: var(--font-intro);
+	@screen xs {
+		@apply text-[1.938rem];
+	}
+}
+.loader {
+	width: 0.25rem;
+	height: 1.5rem;
+	display: block;
+	margin: auto;
+	top: 1rem;
+	right: 3rem;
+	position: absolute;
+	border-radius: 0.125rem;
+	box-sizing: border-box;
+	animation: animloader 1s linear infinite;
+}
+
+@keyframes animloader {
+	0% {
+		box-shadow:
+			10px 0 rgba(255, 255, 255, 0.25),
+			20px 0 white,
+			30px 0 white;
+	}
+	30% {
+		box-shadow:
+			10px 0 white,
+			20px 0 rgba(255, 255, 255, 0.25),
+			30px 0 white;
+	}
+
+	70% {
+		box-shadow:
+			10px 0 white,
+			20px 0 white,
+			30px 0 rgba(255, 255, 255, 0.25);
+	}
+	100% {
+		box-shadow:
+			10px 0 rgba(255, 255, 255, 0.25),
+			20px 0 white,
+			30px 0 white;
+	}
+}
+
+.site-title-6 {
+	@apply text-[1.25rem] font-black leading-120 uppercase;
+	font-family: var(--font-intro);
+
+	@screen xs {
+		@apply text-[1.5rem];
+	}
+	@screen sm {
+		@apply text-[1.875rem];
+	}
+	@screen lg {
+		@apply text-[2rem];
+	}
+	@screen xl {
+		@apply text-[2.125rem];
+	}
+}
+.site-title-3 {
+	@apply text-[1.625rem] font-black leading-110;
+	font-family: var(--font-intro);
+
+	@screen xs {
+		@apply text-[1.875rem];
+	}
+
+	@screen sm {
+		@apply text-[2.125rem];
+	}
+	@screen lg {
+		@apply text-[2.25rem];
+	}
+	@screen xl {
+		@apply text-[2.5rem];
+	}
+}
+.site-title-2 {
+	@apply text-[3.75rem] font-black leading-110 uppercase;
+	font-family: var(--font-intro);
+
+	@apply text-[1.625rem];
+
+	@screen xs {
+		@apply text-[2.25rem];
+	}
+	@screen sm {
+		@apply text-[2.75rem];
+	}
+	@screen xl {
+		@apply text-[3.75rem];
+	}
+}
+.site-title-1 {
+	@apply text-[1.875rem] leading-110 font-black uppercase;
+	font-family: var(--font-intro);
+
+	@screen xs {
+		@apply text-[2.75rem];
+	}
+	@screen sm {
+		@apply text-[3.125rem];
+	}
+	@screen lg {
+		@apply text-[3.75rem];
+	}
+	@screen xl {
+		@apply text-[5rem];
+	}
+}
+body {
+	@apply text-black overflow-x-hidden flex flex-col min-h-screen;
+}
+.swiper-slide-active {
+	opacity: 1 !important;
+	user-select: all !important;
+	pointer-events: all !important;
+}
+
+.under-line-gray,
+.under-line-white {
+	@apply cursor-pointer relative w-fit;
+
+	&::before {
+		@apply content-[''] absolute bottom-[-0.125rem] left-0 w-full max-w-0 bg-white h-[0.063rem] transition-all duration-500;
+	}
+
+	@media (hover: hover) {
+		@apply hover:before:max-w-full;
+	}
+}
+.under-line-gray {
+	&::before {
+		@apply bg-[#989898];
+	}
+}
+
+.under-line-white-bg {
+	@apply transition-all duration-500 inline pb-[0.125rem] mb-[-0.125rem];
+	background: linear-gradient(#fff, #fff) no-repeat left bottom;
+	background-size: 0 0.063rem;
+	&:hover {
+		background: linear-gradient(#fff, #fff) no-repeat left bottom;
+		background-size: 100% 0.063rem;
+	}
+}
+.dark {
+	@apply text-white my-[3.875rem] py-[3.875rem];
+	margin: auto 0 !important ;
+
+	& label {
+		color: #fff !important;
+	}
+
+	input {
+		border-bottom: 0.125rem solid #fff !important;
+	}
+	button {
+		background-color: #fff !important;
+
+		color: #000 !important;
+	}
+	textarea {
+		background-color: #d9d9d929 !important;
+	}
+	span {
+		@apply before:bg-white;
+	}
+
+	svg {
+		color: #fff !important;
+	}
+}
+
+#banner {
+	@apply bg-black fixed top-0 w-full h-full left-0 z-[9999];
+	transition: cubic-bezier();
+}

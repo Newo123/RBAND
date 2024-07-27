@@ -1,0 +1,12 @@
+stages:
+  - build
+  - delivery
+
+build-job:
+  stage: build
+  script:
+    - npm install -g pnpm
+    - pnpm install
+
+delivery-job:
+  stage: delivery

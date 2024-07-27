@@ -1,0 +1,49 @@
+{
+	"descriptor": {
+		"prices": {
+			"start": "Старт от",
+			"price": "₽",
+			"days": "раб. дней"
+		}
+	},
+	"home": {
+		"reputation": {
+			"aboutButtonText": "о компании",
+			"reviewsButtonText": "отзывы на ресурсах",
+			"partners": {
+				"mobileBottomTitleStart": "Более",
+				"mobileBottomTitleEnd": "крутых клиентов",
+				"mobileBottomDescription": "Доверительные отношения, проверенные временем.",
+				"mobileBottomButton": "смотреть все отзывы",
+				"textCard": "Смотреть проект"
+			}
+		},
+		"useful": {
+			"linkText": "Смотреть все статьи"
+		}
+	},
+	"services": {
+		"services": {
+			"prices": {
+				"start": "от",
+				"price": "₽",
+				"days": "раб. дней"
+			},
+			"buttonText": "заказать проект",
+			"linkText": "Подробнее"
+		},
+		"reputations": {
+			"ratingTitle": "Топ Рейтинг",
+			"ratingText": "среди web-студий по России",
+			"lookText": "Смотреть"
+		}
+	},
+	"about": {
+		"principles": {
+			"textWrap": ["/about/wrapRU.svg", "/about/wrapRU2.svg"]
+		},
+		"reputation": {
+			"aboutButtonText": "Скачать презентацию"
+		}
+	}
+}

@@ -1,0 +1,40 @@
+.bullet {
+	@apply relative h-full max-h-[8.75rem] w-[8.75rem] transition-all overflow-hidden duration-500 rounded-full bg-[#000000] text-white flex items-center justify-center;
+
+	@screen sm {
+		@apply w-[11.25rem];
+		// max-h-[11.25rem]
+	}
+	@screen lg {
+		@apply w-[15rem] max-h-[15rem];
+	}
+
+	@apply w-full h-[240px];
+	&_active {
+		width: calc(100% - 1.5rem);
+		border-radius: 1.875rem;
+		@apply max-h-[19.813rem];
+		@screen sm {
+			@apply max-h-[20rem];
+		}
+		@screen lg {
+			@apply max-h-[15rem];
+		}
+	}
+	&__title {
+		@apply text-[1.125rem] text-white select-none pointer-events-none font-black leading-130 text-center tracking-[0.04em] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500;
+
+		font-family: var(--font-intro);
+
+		@screen sm {
+			@apply text-[1.375rem];
+		}
+		@screen lg {
+			@apply text-[1.75rem];
+		}
+
+		&_hidden {
+			@apply opacity-0 overflow-hidden invisible;
+		}
+	}
+}

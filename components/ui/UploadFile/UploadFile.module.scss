@@ -1,0 +1,55 @@
+.upload {
+	@apply mt-[1.875rem] flex flex-col gap-[1.875rem];
+
+	&__label {
+		@apply cursor-pointer flex gap-[0.5rem] w-fit;
+
+		svg {
+			@apply min-w-[1.875rem] min-h-[1.875rem];
+		}
+	}
+	&__text {
+		@apply text-[.875rem] font-semibold leading-120 flex items-center gap-x-[.625rem] gap-y-[.25rem] flex-wrap;
+
+		@screen 2xl {
+			@apply text-[1rem];
+		}
+
+		span {
+			@apply text-[.75rem] text-[#989898];
+
+			@screen sm {
+				@apply text-[.875rem];
+			}
+		}
+	}
+
+	&__content {
+		@apply flex flex-col gap-[1rem];
+
+		@screen xl {
+			@apply gap-[.75rem];
+		}
+	}
+
+	&__contentItem {
+		@apply flex items-center gap-[.625rem];
+		span {
+			@apply text-[.875rem] font-medium leading-120  transition-colors duration-200;
+		}
+
+		&_loading {
+			span {
+				@apply text-[.875rem] font-medium leading-120 text-[#989898];
+			}
+		}
+	}
+
+	&__icon {
+		@apply w-[1.5rem] h-[1.5rem] shrink-0 text-black cursor-pointer;
+
+		svg {
+			@apply w-full h-full;
+		}
+	}
+}

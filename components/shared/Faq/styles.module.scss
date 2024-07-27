@@ -1,0 +1,116 @@
+.faq {
+	@apply bg-[#E5E5E5];
+
+	@apply py-[2.5rem];
+
+	@screen xs {
+		@apply py-[3.125rem];
+	}
+	@screen sm {
+		@apply py-[3.75rem];
+	}
+	@screen lg {
+		@apply py-[4.375rem];
+	}
+	@screen xl {
+		@apply py-[5.25rem];
+	}
+
+	&__container {
+		@apply flex flex-col gap-[1.625rem];
+
+		@screen sm {
+			@apply gap-[2.5rem];
+		}
+		@screen xl {
+			@apply gap-[3.125rem];
+		}
+	}
+
+	&__list {
+		@apply flex flex-col gap-[1.625rem] w-full;
+
+		@screen sm {
+			@apply gap-[1.875rem];
+		}
+	}
+}
+
+.faqItem {
+	@apply flex flex-col bg-white;
+
+	&__head {
+		@apply flex items-center justify-between gap-[0.5rem] p-[1rem] min-h-[4.375rem] transition-colors duration-500 cursor-pointer;
+
+		@screen xs {
+			@apply py-[1.25rem] px-[1.5rem] min-h-[5.313rem] gap-[1.5rem];
+		}
+		@screen sm {
+			@apply px-[1.875rem] gap-[1.75rem];
+		}
+
+		@screen xl {
+			@apply min-h-[6.25rem] gap-[7.375rem];
+		}
+		@screen 2xl {
+			@apply gap-[10.375rem];
+		}
+	}
+
+	&__title {
+		@apply font-semibold leading-140 text-[1.25rem];
+	}
+
+	&__body {
+		@apply px-[1.875rem] overflow-hidden invisible max-h-0 min-h-0 h-[70dvh] transition-all duration-500;
+		&::-webkit-scrollbar {
+			@apply w-[0.5rem] bg-[#F0F0F0];
+		}
+		&::-webkit-scrollbar-thumb {
+			@apply bg-[#D9D9D9];
+		}
+
+		@apply px-[1rem];
+
+		@screen xs {
+			@apply px-[1.5rem];
+		}
+		@screen sm {
+			@apply px-[1.875rem];
+		}
+	}
+
+	&__close {
+		@apply text-[1.813rem] text-[#989898] transition-all duration-500;
+	}
+
+	&_active &__body {
+		// @apply overflow-y-auto visible max-h-[];
+		@apply pt-[0.875rem] pb-[1.5rem] overflow-y-auto visible min-h-[15.625rem] max-h-[25rem];
+
+		// @apply min-h-[31.25rem] max-h-[50rem];
+
+		@screen xs {
+			@apply py-[1.5rem] min-h-[21.875rem] max-h-[31.25rem];
+		}
+		@screen sm {
+			@apply py-[1.875rem] min-h-[28.125rem] max-h-[37.5rem];
+		}
+		@screen lg {
+			@apply min-h-[25rem] max-h-[40.625rem];
+		}
+		@screen xl {
+			@apply min-h-[31.25rem] max-h-[46.875rem];
+		}
+		@screen 2xl {
+			@apply min-h-[34.375rem] max-h-[50rem];
+		}
+	}
+	&_active &__head {
+		@apply bg-[#F5F5F5];
+	}
+
+	&_active &__close {
+		@apply rotate-45 text-[#B8B8B8];
+	}
+}

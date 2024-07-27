@@ -1,0 +1,132 @@
+.motivations {
+	@apply pb-[3.125rem];
+	@screen sm {
+		@apply pb-[3.75rem];
+	}
+	@screen lg {
+		@apply pb-[4.375rem];
+	}
+	@screen xl {
+		@apply pb-[5.25rem];
+	}
+	@screen 2xl {
+		@apply pb-[8.75rem];
+	}
+
+	&__textWrap {
+		@apply mb-[1.875rem] mt-[-1.25rem];
+		@screen xs {
+			@apply mt-[-1.563rem];
+		}
+		@screen sm {
+			@apply mb-[2.125rem] mt-[-2.188rem];
+		}
+		@screen md {
+			@apply mt-[-2.75rem];
+		}
+		@screen lg {
+			@apply mb-[3.125rem] mt-[-3.125rem];
+		}
+		@screen xl {
+			@apply mt-[-3.75rem];
+		}
+		@screen 2xl {
+			@apply mt-[-4rem];
+		}
+	}
+	&_about {
+		@apply mt-[3.125rem];
+
+		@screen sm {
+			@apply mt-[4.375rem];
+		}
+
+		@screen lg {
+			@apply mt-[5.25rem];
+		}
+		@screen xl {
+			@apply mt-[7.125rem];
+		}
+		@screen 2xl {
+			@apply mt-[7.5rem];
+		}
+	}
+	&_about &__textWrap {
+		margin-top: 0 !important;
+	}
+	&__container {
+		@apply flex flex-col gap-[1.5rem];
+
+		@screen sm {
+			@apply gap-[2.5rem];
+		}
+	}
+
+	&__item {
+		@apply w-full flex flex-col gap-[.75rem] pt-[1.5rem] border-t border-t-[#989898] first:border-none first:pt-0;
+
+		@screen sm {
+			@apply gap-[.875rem];
+		}
+
+		@screen lg {
+			@apply flex-row gap-[1.5rem] items-center pt-[2.5rem];
+		}
+		@screen xl {
+			@apply gap-[4.375rem];
+		}
+		@screen 2xl {
+			@apply gap-[5.125rem];
+		}
+	}
+
+	&__itemContent {
+		@apply flex items-center gap-[1rem];
+
+		@screen xs {
+			@apply gap-[1.625rem];
+		}
+		@screen lg {
+			@apply gap-[2.5rem];
+		}
+	}
+	&__itemContentImage {
+		@apply shrink-0 w-[3.375rem];
+		@screen xs {
+			@apply w-[4.25rem];
+		}
+		@screen lg {
+			@apply w-[6.688rem];
+		}
+
+		img {
+			@apply w-full h-full;
+		}
+	}
+
+	&__itemContentTitle {
+		@apply text-[1.125rem] font-black leading-140 tracking-[0.01em];
+		font-family: var(--font-intro);
+
+		@screen xs {
+			@apply text-[1.375rem];
+		}
+		@screen xl {
+			@apply text-[1.5rem];
+		}
+	}
+	&__itemText {
+		@apply flex flex-col gap-[.75rem] text-[.875rem] font-medium leading-140 tracking-[0.01em] shrink-0;
+
+		@screen lg {
+			@apply basis-[48%];
+		}
+		@screen xl {
+			@apply text-[1.125rem];
+		}
+
+		@screen 2xl {
+			@apply basis-[53%];
+		}
+	}
+}

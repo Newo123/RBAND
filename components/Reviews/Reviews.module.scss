@@ -1,0 +1,126 @@
+.reviews {
+	@apply py-[2.5rem];
+
+	@screen xs {
+		@apply py-[3.125rem];
+	}
+	@screen sm {
+		@apply py-[3.75rem];
+	}
+	@screen lg {
+		@apply py-[4.375rem];
+	}
+	@screen xl {
+		@apply py-[5.25rem];
+	}
+
+	&__container {
+		@apply flex flex-col gap-[1.25rem];
+		@screen sm {
+			@apply gap-[1.875rem];
+		}
+
+		@screen 2xl {
+			@apply gap-[2rem];
+		}
+	}
+
+	&__item {
+		@apply border border-[#989898] rounded-[.375rem] px-[1.25rem] py-[1.875rem] flex flex-col gap-[1.875rem] w-full;
+
+		@screen xs {
+			@apply p-[1.875rem];
+		}
+		@screen sm {
+			@apply px-[1.875rem] py-[3.75rem] gap-[3rem];
+		}
+
+		@screen lg {
+			@apply flex-row-reverse items-center min-h-[25.75rem];
+		}
+		@screen xl {
+			@apply min-h-[25rem];
+		}
+
+		@screen 2xl {
+			@apply gap-[3.125rem] min-h-[28.625rem];
+		}
+	}
+
+	&__itemImage {
+		@screen lg {
+			@apply w-[25.625rem] shrink-0 relative;
+			// h-[17.313rem]
+		}
+		@screen xl {
+			@apply w-[25rem];
+			// h-[16.875rem]
+		}
+		@screen 2xl {
+			@apply w-[31.25rem];
+			// h-[21.125rem]
+		}
+
+		img {
+			@apply object-contain object-center;
+			position: static !important;
+			// width: auto !important;
+			// height: auto !important;
+
+			@screen lg {
+				@apply w-full h-full;
+			}
+		}
+	}
+
+	&__itemContent {
+		@apply flex flex-col gap-[.75rem];
+	}
+
+	&__itemTitle {
+		@apply text-[1rem] font-semibold leading-150;
+
+		@screen xs {
+			@apply text-[1.125rem];
+		}
+	}
+
+	&__itemText,
+	&__itemAuthor {
+		@apply text-[.875rem] font-medium leading-150;
+
+		@screen xs {
+			@apply text-[1rem];
+		}
+	}
+	&__itemAuthor {
+		@apply italic mt-[.125rem];
+	}
+
+	&__itemLinks {
+		@apply flex flex-wrap gap-[.5rem] mt-[.5rem] text-[.875rem] font-semibold leading-150;
+
+		@screen xs {
+			@apply text-[1rem];
+		}
+
+		@screen sm {
+			@apply mt-[1.5rem];
+		}
+	}
+
+	&__itemLinksBox {
+		@apply flex flex-wrap gap-[.625rem];
+
+		a {
+			@apply text-[#AE2524] relative w-fit;
+
+			&::before {
+				@apply content-[''] absolute bottom-0 left-0 w-full h-[0.063rem] bg-[#AE2524] max-w-0 transition-all duration-500;
+			}
+			@media (hover: hover) {
+				@apply hover:before:max-w-full;
+			}
+		}
+	}
+}

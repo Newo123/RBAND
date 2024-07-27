@@ -1,0 +1,124 @@
+.heroInner {
+	@apply bg-black text-white h-fit sticky top-0;
+
+	@screen lg {
+		@apply h-[150vh] static;
+	}
+
+	&__wrapper {
+		@apply h-fit bg-black overflow-hidden;
+
+		@screen lg {
+			@apply sticky top-0 z-[2];
+		}
+	}
+
+	&__img {
+		@apply w-full relative h-auto;
+
+		@screen lg {
+			@apply fixed h-screen bottom-0 left-0 overflow-hidden;
+			// 450px
+		}
+		img {
+			@apply object-cover object-center w-full h-full;
+			// object-position: 100% 100%;
+			// position: static !important;
+
+			@screen lg {
+				@apply absolute h-screen bottom-0 left-0;
+			}
+		}
+	}
+
+	&__container {
+		@apply flex flex-col items-end gap-[1.875rem]  sticky top-0;
+
+		@screen lg {
+			@apply gap-[6.25rem] flex-row justify-between relative z-[2] bg-black overflow-hidden;
+		}
+
+		@screen 2xl {
+			@apply gap-[6.25rem];
+		}
+	}
+	&__content {
+		@apply flex flex-col gap-[1rem] pb-[1.875rem] pt-[5.813rem] w-full;
+
+		@screen xs {
+			@apply pt-[6.125rem];
+		}
+		@screen sm {
+			@apply pt-[7.625rem] gap-[1.25rem];
+		}
+		@screen lg {
+			@apply max-w-[59.813rem] pt-[8rem] pb-[3.125rem];
+		}
+
+		@screen xl {
+			@apply max-w-[58rem] pt-[7.625rem];
+		}
+		@screen 2xl {
+			@apply max-w-[66.063rem];
+		}
+	}
+	&__contentTitle {
+		@apply text-[1.375rem] font-semibold leading-140;
+
+		@screen xs {
+			@apply text-[1.5rem];
+		}
+		@screen sm {
+			@apply text-[1.875rem];
+		}
+		@screen lg {
+			@apply text-[2.125rem];
+		}
+		@screen xl {
+			@apply text-[2.25rem];
+		}
+	}
+	&__contentText {
+		@apply text-[.875rem] font-medium leading-150;
+
+		@screen xs {
+			@apply text-[1rem];
+		}
+		@screen sm {
+			@apply text-[1.125rem];
+		}
+	}
+	&__contentBackButton {
+		@apply hidden;
+
+		@screen lg {
+			@apply flex items-center justify-center w-[2.375rem] h-[2.375rem] rounded-full overflow-hidden border-[.125rem] border-[#AE2524] mb-[0.5rem];
+		}
+
+		svg {
+			@apply w-full h-full;
+		}
+	}
+	&__box {
+		@apply hidden rounded-[.25rem] border border-[#414141];
+		@screen xs {
+			@apply flex shrink-0 w-full px-[1.125rem] py-[1rem] flex-col gap-[.625rem];
+		}
+
+		@screen lg {
+			@apply max-w-[18.188rem];
+		}
+		@screen 2xl {
+			@apply max-w-[21.25rem];
+		}
+	}
+	&__boxLine {
+		@apply flex gap-[.875rem];
+	}
+	&__boxLineTitle {
+		@apply w-[4.688rem] shrink-0 text-[.5rem] font-semibold leading-150 tracking-[0.1em] uppercase text-[#989898];
+	}
+	&__boxLineText {
+		@apply text-[.75rem] font-medium leading-150;
+	}
+}

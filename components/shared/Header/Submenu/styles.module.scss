@@ -1,0 +1,153 @@
+// .submenu {
+// 	@apply absolute top-full left-0 w-full h-screen  transition-opacity duration-150 bg-[#000] bg-opacity-85 select-none pointer-events-none opacity-0 delay-500;
+
+// 	&_active {
+// 		@apply select-all pointer-events-auto opacity-100 delay-0;
+// 	}
+// 	&_active &__container {
+// 		@apply delay-100 max-h-full;
+// 		// translate-y-[4.75rem]
+// 	}
+
+// 	&__close {
+// 		@apply absolute right-[1rem] top-[1rem] cursor-pointer text-[#989898] z-[2] w-[2.5rem] h-[2.5rem];
+// 		// top: calc(4.75rem + 1rem);
+
+// 		svg {
+// 			@apply w-full h-full;
+// 		}
+// 	}
+// 	&__container {
+// 		@apply bg-[#F5F5F5] h-fit max-h-0 overflow-hidden;
+// 		transition: all 500ms cubic-bezier(0.76, 0, 0.24, 1);
+// 		// transform: translateY(calc(-100% + 4.75rem));
+// 		// pt-[4.75rem]
+// 		//
+// 	}
+// 	&__wrapper {
+// 		@apply flex gap-[2.25rem] py-[4rem];
+// 	}
+
+// 	&__nav {
+// 		@apply flex flex-col justify-between w-[28%] shrink-0 gap-[3.125rem];
+// 	}
+
+// 	&__navList {
+// 		@apply flex flex-col gap-[1rem];
+// 	}
+
+// 	&__navText {
+// 		@apply text-[.875rem] font-medium leading-140 text-black;
+// 	}
+// 	&__navListItem {
+// 		@apply flex;
+// 	}
+// 	&__navListItemLink {
+// 		@apply py-[0.5rem] px-[0.75rem] rounded-[1.813rem] border-[0.063rem] border-black text-[0.875rem] font-semibold leading-100 text-black transition-colors duration-300;
+
+// 		@media (hover: hover) {
+// 			&:hover {
+// 				@apply bg-[#000] text-white;
+// 			}
+// 		}
+// 	}
+// 	//
+// 	&__previews {
+// 		@apply flex flex-col gap-[1rem];
+// 	}
+// 	&__previewsTitle {
+// 		@apply text-[1rem] font-semibold leading-140 text-[#989898];
+// 	}
+// 	&__previewsGrid {
+// 		@apply grid grid-cols-2 gap-[1.875rem];
+// 	}
+// 	&__previewsItem {
+// 		@apply flex flex-col gap-[1rem];
+// 	}
+
+// 	@media (hover: hover) {
+// 		&__previewsItem:hover &__previewsItemPictures {
+// 			@apply scale-[1.03];
+// 		}
+// 	}
+// 	&__previewsItemPictures {
+// 		@apply w-full h-full overflow-hidden relative rounded-[0.625rem] transition-all duration-300;
+// 		box-shadow: 0px 0.25rem 0.938rem 0px rgba(0, 0, 0, 0.2);
+// 		aspect-ratio: 16 /9;
+// 		video,
+// 		img {
+// 			@apply w-full h-full object-cover object-center absolute top-0 left-0;
+// 		}
+// 	}
+// 	&__previewsItemTitle {
+// 		@apply text-[1rem] font-semibold leading-140 text-black;
+// 	}
+// }
+
+.submenu {
+	@apply absolute top-full overflow-hidden left-0 w-full;
+
+	&__shadow {
+		@apply w-full bg-[#000000] bg-opacity-50;
+	}
+	&__wrapper {
+		@apply bg-[#F5F5F5];
+	}
+
+	&__container {
+		@apply py-[4rem];
+	}
+	&__item {
+		@apply flex gap-[2.25rem];
+		// absolute top-0 left-0 overflow-hidden invisible opacity-0 select-none pointer-events-none
+		&_active {
+			@apply static overflow-visible visible opacity-100 select-all pointer-events-auto;
+		}
+	}
+	&__itemMenu {
+		@apply flex flex-col gap-[3.125rem] w-[28%] shrink-0;
+	}
+	&__itemMenuList {
+		@apply flex flex-col gap-[1rem];
+	}
+	&__itemMenuListItem {
+		@apply flex;
+	}
+	&__itemMenuListItemLink {
+		@apply p-[0.75rem] text-[0.875rem] font-semibold leading-100 text-black border-[0.063rem] border-black rounded-[1.813rem] transition-colors duration-300;
+
+		@media (hover: hover) {
+			&:hover {
+				@apply text-white bg-black;
+			}
+		}
+	}
+	&__itemMenuText {
+		@apply text-[0.875rem] font-medium leading-140 text-black;
+	}
+	&__itemPreview {
+		@apply flex flex-col gap-[1rem];
+	}
+	&__itemPreviewGrid {
+		@apply grid grid-cols-2 gap-[1.875rem];
+	}
+	&__itemPreviewGridItem {
+		@apply flex flex-col gap-[1rem];
+	}
+	&__itemPreviewGridItemPicture {
+		@apply w-full h-full overflow-hidden relative rounded-[0.625rem] transition-all duration-300;
+		box-shadow: 0px 0.25rem 0.938rem 0px rgba(0, 0, 0, 0.2);
+		aspect-ratio: 16 /9;
+		video,
+		img {
+			@apply w-full h-full object-cover object-center absolute top-0 left-0;
+		}
+	}
+
+	&__itemPreviewGridItemTitle {
+		@apply text-[1rem] font-semibold leading-140 text-black;
+	}
+	&__itemPreviewLabel {
+		@apply text-[1rem] font-semibold leading-140 text-[#989898];
+	}
+}

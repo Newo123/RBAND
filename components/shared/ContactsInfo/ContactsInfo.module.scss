@@ -1,0 +1,75 @@
+.ContactsInfo {
+	@apply w-full;
+	@screen lg {
+		@apply max-w-[15rem];
+	}
+	@screen xl {
+		@apply max-w-[19.125rem];
+	}
+	&__time {
+		@apply flex items-center gap-[0.25rem] text-[0.875rem] font-semibold leading-120 mt-[1.875rem];
+
+		svg {
+			@apply w-[1rem] h-[1rem];
+		}
+	}
+	&__contentInfo {
+		@apply flex flex-col gap-[2rem] mt-[0.75rem];
+
+		@screen xs {
+			@apply flex-row gap-[3.75rem];
+		}
+
+		@screen sm {
+			@apply mt-[0.875rem];
+		}
+
+		@screen lg {
+			@apply flex-col gap-[2.25rem] mt-[1rem];
+		}
+		@screen xl {
+			@apply gap-[3.125rem];
+		}
+
+		a {
+			@apply relative w-fit;
+
+			&::before {
+				@apply content-[''] w-full h-[0.063rem] bg-black absolute bottom-0 left-0 transition-all duration-500 max-w-0;
+			}
+
+			@media (hover: hover) {
+				@apply hover:before:max-w-full;
+			}
+		}
+	}
+	&__contentInfoBox {
+		@apply flex flex-col gap-[1.25rem] text-[1.125rem] font-semibold leading-120 min-w-[11rem];
+
+		@screen sm {
+			@apply gap-[1.625rem] text-[1.25rem];
+		}
+		@screen lg {
+			@apply gap-[1.25rem];
+		}
+		@screen xl {
+			@apply text-[1.5rem];
+		}
+	}
+	&__contentInfoAddress {
+		@apply mt-[0.75rem] leading-140;
+
+		@screen xs {
+			@apply mt-[0.625rem];
+		}
+		@screen sm {
+			@apply mt-[0.25rem];
+		}
+		@screen lg {
+			@apply mt-[1rem];
+		}
+		@screen xl {
+			@apply mt-[1.875rem];
+		}
+	}
+}

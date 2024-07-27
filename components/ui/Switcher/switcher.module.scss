@@ -1,0 +1,30 @@
+.switcher {
+	@apply flex items-center gap-[1.25rem] text-[.875rem] font-semibold leading-120 cursor-pointer;
+
+	@screen lg {
+		@apply gap-[1rem];
+	}
+	@screen xl {
+		@apply gap-[0.625rem];
+	}
+	@screen 2xl {
+		@apply text-[1rem];
+	}
+
+	&__container {
+		@apply w-[2.375rem] h-[1.25rem] rounded-full bg-[#989898] relative shrink-0;
+	}
+	&__state {
+		@apply absolute top-0 left-0 w-full h-full p-[0.125rem] flex items-center;
+	}
+	&__stateRing {
+		@apply w-[1rem] h-[1rem] bg-white rounded-full transition-transform duration-300;
+	}
+
+	&:has(input:checked) &__stateRing {
+		@apply translate-x-[1.125rem];
+	}
+	&:has(input:checked) &__container {
+		@apply bg-[#44AD4F];
+	}
+}

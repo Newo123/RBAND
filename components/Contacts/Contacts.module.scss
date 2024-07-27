@@ -1,0 +1,46 @@
+.contacts {
+	@apply mt-[7.063rem] mb-[2.5rem];
+
+	@screen xs {
+		@apply mt-[8.125rem];
+	}
+	@screen sm {
+		@apply mt-[8.625rem] mb-[3.875rem];
+	}
+	@screen lg {
+		@apply mb-[5rem] mt-[10.125rem];
+	}
+	@screen xl {
+		@apply mt-[11rem] mb-[6.25rem];
+	}
+	&_dark {
+		@apply text-white;
+	}
+	&__container {
+		@apply flex flex-col gap-[3.125rem];
+
+		@screen xs {
+			@apply gap-[3.75rem];
+		}
+
+		@screen lg {
+			@apply flex-row gap-[5rem] justify-between;
+		}
+		@screen xl {
+			@apply gap-[4.625rem];
+		}
+		@screen 2xl {
+			@apply gap-[8.375rem];
+		}
+	}
+
+	&__content {
+		@apply w-full;
+		@screen lg {
+			@apply max-w-[15rem];
+		}
+		@screen xl {
+			@apply max-w-[19.125rem];
+		}
+	}
+}

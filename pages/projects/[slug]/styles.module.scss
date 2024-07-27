@@ -1,0 +1,15 @@
+.projectsPageWrapper {
+	@apply pb-[2.5rem];
+	@screen xs {
+		@apply pb-[3.125rem];
+	}
+	@screen sm {
+		@apply pb-[3.75rem];
+	}
+	@screen lg {
+		@apply pt-[1.375rem] pb-[4.375rem];
+	}
+	@screen xl {
+		@apply pt-[2rem] pb-[5.25rem];
+	}
+}

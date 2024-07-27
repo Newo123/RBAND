@@ -1,0 +1,58 @@
+.blog {
+	@apply py-[1.875rem];
+
+	@screen xs {
+		@apply py-[3.125rem];
+	}
+	@screen sm {
+		@apply py-[3.75rem];
+	}
+	@screen lg {
+		@apply py-[4.375rem];
+	}
+	@screen xl {
+		@apply py-[5.25rem];
+	}
+
+	&__grid {
+		@apply grid grid-cols-1 gap-[1.875rem];
+
+		@screen sm {
+			@apply gap-[2.5rem];
+		}
+
+		@screen lg {
+			@apply grid-cols-2 gap-x-[1.5rem] gap-y-[2.5rem];
+		}
+		@screen 2xl {
+			@apply gap-x-[1.625rem];
+		}
+	}
+
+	&__item {
+		@apply flex flex-col gap-[1.25rem];
+	}
+	&__itemPictures {
+		@apply rounded-[.625rem] overflow-hidden relative transition-all duration-200 ease-linear;
+		aspect-ratio: 16 / 9;
+		box-shadow: 0px 0.25rem 0.938rem 0px rgba(0, 0, 0, 0.2);
+
+		img {
+			@apply w-full h-full object-cover object-center;
+		}
+
+		@media (hover: hover) {
+			@apply hover:scale-[1.03];
+		}
+	}
+	&__itemTitle {
+		@apply text-[1rem] font-semibold leading-150;
+		@screen xs {
+			@apply text-[1.125rem];
+		}
+
+		@screen sm {
+			@apply text-[1.25rem];
+		}
+	}
+}

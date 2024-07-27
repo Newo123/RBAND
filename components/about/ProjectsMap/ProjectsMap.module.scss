@@ -1,0 +1,298 @@
+.projectsMap {
+	@apply mt-[3.125rem];
+
+	@screen sm {
+		@apply mt-[3.75rem];
+	}
+	@screen lg {
+		@apply mt-[4.375rem];
+	}
+	@screen xl {
+		@apply mt-[7.5rem];
+	}
+
+	&__container {
+		@apply flex flex-col items-center gap-[.625rem];
+
+		@screen xl {
+			@apply gap-[1.25rem];
+		}
+	}
+
+	&__text,
+	&__title {
+		@apply text-center;
+		@screen 2xl {
+			@apply max-w-[65.875rem];
+		}
+	}
+
+	&__text {
+		@apply text-[1.125rem] leading-150 font-medium;
+		@screen xs {
+			@apply text-[1.25rem];
+		}
+		@screen xl {
+			@apply text-[1.375rem];
+		}
+	}
+	&__map {
+		@apply mt-[1.125rem] h-[12.25rem] relative flex justify-center w-full;
+
+		@screen xs {
+			@apply mt-[1.875rem] h-[19.25rem];
+		}
+		@screen sm {
+			@apply h-[25rem];
+		}
+		@screen lg {
+			@apply mt-[3.125rem] h-auto;
+		}
+		@screen xl {
+			@apply mt-[2.5rem];
+		}
+	}
+	&__frame {
+		@apply absolute w-[37.5rem] h-full top-0 left-1/2 -translate-x-1/2;
+
+		@screen sm {
+			@apply w-[48.75rem];
+		}
+
+		@screen lg {
+			@apply w-[71.625rem];
+		}
+
+		@screen xl {
+			@apply w-[74.375rem];
+		}
+
+		img {
+			@apply w-full h-full object-contain object-center;
+			@screen lg {
+				@apply py-[2.375rem];
+			}
+		}
+	}
+	&__dotsContainer {
+		@apply absolute top-0 left-1/2 -translate-x-1/2 h-full w-[37.5rem];
+		@screen sm {
+			@apply w-[48.75rem];
+		}
+		@screen lg {
+			@apply w-[71.625rem];
+		}
+		@screen xl {
+			@apply w-[74.375rem];
+		}
+	}
+	&__planet {
+		@apply hidden;
+
+		@screen lg {
+			@apply block w-[40.5rem] h-[40.5rem] rounded-full bg-[#F5F5F5];
+		}
+		@screen xl {
+			@apply block w-[42.125rem];
+		}
+	}
+
+	&__dots {
+		// @apply absolute w-full h-full top-0 left-0 my-[2.375rem];
+		@apply relative w-full h-full;
+
+		@screen lg {
+			@apply my-[2.375rem];
+		}
+	}
+	&__dot {
+		@apply w-[2rem] h-[2rem] absolute top-0 left-0 rounded-full overflow-hidden bg-[#AE2524] box-content border-[.063rem] border-white flex items-center justify-center text-[.875rem] text-white font-bold leading-110;
+
+		@screen xs {
+			@apply text-[1.25rem] border-[.125rem];
+		}
+		@screen sm {
+			@apply border-[.25rem];
+		}
+
+		&_1 {
+			@apply w-[1.25rem] h-[1.25rem] top-[2.188rem] left-[9.375rem];
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] top-[3.5rem] left-[5rem];
+			}
+			@screen sm {
+				@apply top-[4.5rem] left-[6.375rem];
+			}
+
+			@screen lg {
+				@apply top-[6.5rem] left-[9.438rem];
+			}
+
+			@screen xl {
+				@apply top-[6.75rem] left-[9.813rem] w-[2rem] h-[2rem];
+			}
+		}
+		&_2 {
+			@apply w-[1.25rem] h-[1.25rem] top-[4.875rem] left-[10.313rem] text-[.875rem];
+
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] top-[7.688rem] left-[6.375rem] text-[1.375rem];
+			}
+			@screen sm {
+				@apply top-[10rem] left-[8.313rem];
+			}
+
+			@screen lg {
+				@apply top-[14.313rem] left-[12.188rem];
+			}
+			@screen xl {
+				@apply w-[2.25rem] h-[2.25rem] top-[14.875rem] left-[12.688rem];
+			}
+		}
+		&_3 {
+			@apply w-[1.625rem] h-[1.625rem] top-[4.25rem] left-[16.25rem] text-[.875rem];
+
+			@screen xs {
+				@apply w-[2.25rem] h-[2.25rem] top-[6.875rem] left-[16rem] text-[1.25rem];
+			}
+
+			@screen sm {
+				@apply w-[2.375rem] h-[2.375rem] top-[9.125rem] left-[21.375rem] text-[1.5rem];
+			}
+			@screen lg {
+				@apply w-[3rem] h-[3rem] top-[13.125rem] left-[31.438rem];
+			}
+			@screen xl {
+				@apply w-[3.125rem] h-[3.125rem] top-[13.625rem] left-[32.688rem];
+			}
+		}
+		&_4 {
+			@apply w-[1.25rem] h-[1.25rem] text-[.875rem] top-[3.688rem] left-[17.813rem];
+
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] text-[1.25rem] top-[5.813rem] left-[18.125rem];
+			}
+			@screen sm {
+				@apply text-[1.375rem] top-[7.5rem] left-[23.438rem];
+			}
+			@screen lg {
+				@apply w-[2.125rem] h-[2.125rem] top-[10.688rem] left-[34.438rem];
+			}
+
+			@screen xl {
+				@apply w-[2.25rem] h-[2.25rem] top-[11.125rem] left-[35.813rem];
+			}
+		}
+		&_5 {
+			@apply w-[1.25rem] h-[1.25rem] top-[2.625rem] left-[18.75rem];
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] top-[4.125rem] left-[19.375rem];
+			}
+			@screen sm {
+				@apply top-[5.375rem] left-[24.813rem];
+			}
+			@screen lg {
+				@apply top-[7.688rem] left-[36.5rem];
+			}
+			@screen xl {
+				@apply w-[2rem] h-[2rem] top-[8rem] left-[37.938rem];
+			}
+		}
+		&_6 {
+			@apply w-[1.625rem] h-[1.625rem] text-[.875rem] top-[1.688rem] left-[19.875rem];
+
+			@screen xs {
+				@apply w-[2.25rem] h-[2.25rem] text-[1.25rem] top-[2.625rem] left-[21.125rem];
+			}
+			@screen sm {
+				@apply w-[2.375rem] h-[2.375rem] text-[1.5rem] top-[4.125rem] left-[26.75rem];
+			}
+
+			@screen lg {
+				@apply w-[3rem] h-[3rem] text-[1.5rem] top-[5.875rem] left-[38.75rem];
+			}
+			@screen xl {
+				@apply w-[3.125rem] h-[3.125rem] top-[6.125rem] left-[40.25rem];
+			}
+		}
+		&_7 {
+			@apply w-[1.25rem] h-[1.25rem] top-[1.5rem] left-[21.625rem];
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] top-[2.375rem] left-[23.75rem];
+			}
+
+			@screen sm {
+				@apply top-[3.125rem] left-[30rem];
+			}
+			@screen lg {
+				@apply w-[2.375rem] h-[2.375rem] top-[4.438rem] left-[44.125rem];
+			}
+			@screen xl {
+				@apply w-[2.5rem] h-[2.5rem] top-[4.625rem] left-[45.875rem];
+			}
+		}
+		&_8 {
+			@apply w-[1.875rem] h-[1.875rem] text-[.875rem] top-[3.25rem] left-[20.5rem];
+			@screen xs {
+				@apply w-[2.375rem] h-[2.375rem] text-[1.25rem] top-[5.25rem] left-[21.25rem];
+			}
+			@screen sm {
+				@apply w-[3.25rem] h-[3.25rem] text-[1.5rem] top-[6.255rem] left-[28rem];
+			}
+			@screen lg {
+				@apply w-[4.188rem] h-[4.188rem] top-[8.875rem] left-[41.125rem];
+			}
+			@screen xl {
+				@apply w-[4.375rem] h-[4.375rem] top-[9.25rem] left-[42.75rem];
+			}
+		}
+		&_9 {
+			@apply w-[1.25rem] h-[1.25rem] top-[5.125rem] left-[20.5rem];
+
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] top-[8rem] left-[21.625rem];
+			}
+
+			@screen sm {
+				@apply top-[9.625rem] left-[27.875rem];
+			}
+			@screen lg {
+				@apply w-[2.375rem] h-[2.375rem] top-[13.438rem] left-[41.063rem];
+			}
+			@screen xl {
+				@apply w-[2.5rem] h-[2.5rem] top-[13.938rem] left-[42.688rem];
+			}
+		}
+		&_10 {
+			@apply w-[1.25rem] h-[1.25rem] top-[3.75rem] left-[23rem];
+
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] top-[5.75rem] left-[25.5rem];
+			}
+			@screen sm {
+				@apply top-[7.5rem] left-[33.25rem];
+			}
+			@screen lg {
+				@apply w-[2.375rem] h-[2.375rem] top-[10.75rem] left-[48.75rem];
+			}
+			@screen xl {
+				@apply w-[2.5rem] h-[2.5rem] top-[11.188rem] left-[50.75rem];
+			}
+		}
+		&_11 {
+			@apply w-[1.25rem] h-[1.25rem] top-[3.25rem] left-[26.875rem];
+			@screen xs {
+				@apply w-[1.875rem] h-[1.875rem] top-[5.625rem] left-[31.438rem];
+			}
+			@screen sm {
+				@apply top-[7.5rem] left-[40rem];
+			}
+			@screen lg {
+				@apply w-[2.375rem] h-[2.375rem] top-[10.75rem] left-[60.625rem];
+			}
+			@screen xl {
+				@apply w-[2.5rem] h-[2.5rem] top-[11.875rem] left-[62.188rem];
+			}
+		}
+	}
+}

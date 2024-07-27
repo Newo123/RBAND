@@ -1,0 +1,30 @@
+.tooltip {
+	@apply absolute top-0 w-full left-0 z-[3] pt-[2rem];
+
+	@screen sm {
+		@apply pt-[2.5rem];
+	}
+
+	@screen 2xl {
+		@apply pt-[3.125rem];
+	}
+
+	&__box {
+		@apply min-w-[21.375rem] p-[1.25rem] bg-white rounded-[0.625rem] shadow-sm flex flex-col gap-[.625rem];
+		box-shadow: 0px 0px 1rem 0px rgba(0, 0, 0, 0.2);
+	}
+	&__text {
+		@apply text-[.875rem] font-medium leading-150 text-left;
+	}
+	&__link {
+		@apply text-[.75rem] font-semibold leading-140 text-[#AE2524] text-left w-fit relative;
+
+		&::before {
+			@apply content-[''] absolute bottom-0 left-0 w-full h-[0.063rem] max-w-0 bg-[#AE2524] transition-all duration-300;
+		}
+
+		@media (hover: hover) {
+			@apply hover:before:max-w-full;
+		}
+	}
+}

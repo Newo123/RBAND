@@ -1,0 +1,27 @@
+.image {
+	@apply w-full relative h-auto;
+
+	@screen lg {
+		@apply h-[28.125rem];
+		// 450px
+	}
+
+	@screen xl {
+		@apply h-[31.25rem];
+		// 500
+	}
+	@screen 2xl {
+		@apply h-[37.5rem];
+		// 600
+	}
+
+	img {
+		@apply object-cover  w-full h-full;
+		object-position: 100% 100%;
+		position: static !important;
+
+		@screen lg {
+			position: absolute !important;
+		}
+	}
+}

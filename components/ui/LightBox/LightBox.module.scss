@@ -1,0 +1,32 @@
+.lightbox {
+	@apply fixed top-0 left-0 w-full h-full bg-black bg-opacity-85 z-[11] flex items-center justify-center;
+
+	&__image {
+		@apply max-w-[90%] max-h-[90%] w-full h-full relative flex items-center justify-center;
+		img {
+			@apply max-h-full w-auto;
+		}
+	}
+	&__close {
+		@apply absolute w-[1.875rem] h-[1.875rem] right-[.75rem] top-[.75rem] text-[#989898];
+
+		@screen xs {
+			@apply w-[2.125rem] h-[2.125rem] top-[1.25rem] right-[1.25rem];
+		}
+		@screen sm {
+			@apply top-[1.75rem];
+		}
+
+		@screen xl {
+			@apply right-[1.75rem];
+		}
+
+		@media (hover: hover) {
+			@apply hover:text-white;
+		}
+
+		svg {
+			@apply w-full h-full transition-colors duration-500;
+		}
+	}
+}

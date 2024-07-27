@@ -1,0 +1,151 @@
+.section {
+	@apply relative bg-black py-[3.125rem];
+
+	@screen sm {
+		@apply py-[3.75rem];
+	}
+
+	@screen lg {
+		@apply h-[320vh] py-0;
+	}
+	@screen xl {
+		@apply h-[370vh];
+	}
+	@screen 2xl {
+		@apply h-[400vh];
+	}
+	&__container {
+		@apply h-full;
+
+		@media (max-width: 992px) {
+			@apply px-0 max-w-full;
+		}
+	}
+
+	&__sticky {
+		@apply overflow-hidden;
+
+		@screen lg {
+			@apply h-screen sticky top-0;
+		}
+	}
+
+	&__wrapper {
+		@apply flex items-center flex-col h-full gap-[3.75rem];
+
+		@screen xs {
+			@apply gap-[3.125rem];
+		}
+		@screen sm {
+			@apply gap-[1.875rem];
+		}
+
+		@screen lg {
+			@apply w-screen flex-row gap-0;
+		}
+	}
+
+	&__logo {
+		@apply shrink-0 hidden;
+
+		@screen lg {
+			@apply h-[20rem] block;
+		}
+
+		@screen 2xl {
+			@apply h-[26.75rem];
+		}
+		&_mobile {
+			@apply block;
+
+			@screen lg {
+				@apply hidden;
+			}
+		}
+
+		svg {
+			@apply h-[5.625rem] w-auto;
+
+			@screen xs {
+				@apply h-[7.5rem];
+			}
+			@screen sm {
+				@apply h-[11.25rem];
+			}
+
+			@screen lg {
+				@apply h-[20rem];
+			}
+
+			@screen 2xl {
+				@apply h-[26.688rem];
+			}
+
+			path {
+				@apply stroke-[#989898] stroke-[.125rem];
+				@screen lg {
+					@apply stroke-white;
+				}
+			}
+		}
+	}
+
+	&__cards {
+		// @apply shrink-0 w-screen justify-center h-full flex items-center gap-[137px] absolute top-0 right-[-100vw];
+
+		@apply flex flex-col gap-[1.5rem] static;
+
+		@screen xs {
+			@apply gap-[3.125rem];
+		}
+
+		@screen sm {
+			@apply flex-row gap-[3.75rem];
+		}
+
+		@media (max-width: 992px) {
+			transform: none !important;
+		}
+
+		@screen lg {
+			@apply gap-[8.563rem] justify-center h-full flex items-center absolute top-0 right-[-100vw] shrink-0 w-screen;
+		}
+	}
+
+	&__card {
+		@apply flex flex-col text-white max-w-[16.25rem];
+
+		@screen lg {
+			@apply max-w-[22.563rem];
+		}
+	}
+	&__cardImage {
+		@apply w-[16.25rem] h-[16.25rem];
+
+		@screen lg {
+			@apply w-[22.563rem] h-[22.563rem];
+		}
+
+		img {
+			@apply object-cover object-center w-full h-full;
+		}
+	}
+
+	&__cardName {
+		@apply text-[1.125rem] font-black leading-100 text-center mt-[1.5rem];
+		font-family: var(--font-intro);
+		@screen lg {
+			@apply mt-[2.5rem] text-[1.5rem];
+		}
+	}
+	&__cardJob {
+		@apply text-[.625rem] font-medium leading-120 tracking-[.05em] uppercase text-center mt-[.375rem];
+
+		@screen lg {
+			@apply text-[.75rem];
+		}
+	}
+	&__cardAbout {
+		@apply text-[.875rem] leading-130 font-medium text-center mt-[1rem];
+	}
+}

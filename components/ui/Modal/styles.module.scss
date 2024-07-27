@@ -1,0 +1,34 @@
+.modal {
+	@apply fixed bottom-0 left-0 w-full h-full bg-black z-[99] flex flex-col justify-center items-center transition-all duration-1000;
+
+	max-height: 0;
+
+	&__close {
+		@apply absolute top-[0.875rem] right-[0.875rem] z-[2] w-[3rem] h-[3rem] text-[#989898] cursor-pointer;
+
+		svg {
+			@apply w-full h-full;
+		}
+	}
+
+	&__shadow {
+		@apply w-full h-screen absolute top-0 bg-[#000] bg-opacity-80 left-0 z-[3];
+		// AE2524
+		&_small {
+			@apply bg-opacity-40 z-[-1];
+		}
+	}
+
+	&__wrapper {
+		@apply w-full h-full flex flex-col;
+		@screen lg {
+			@apply items-center;
+		}
+		&::-webkit-scrollbar {
+			@apply w-[0.25rem] bg-[#989898];
+		}
+		&::-webkit-scrollbar-thumb {
+			@apply bg-white;
+		}
+	}
+}

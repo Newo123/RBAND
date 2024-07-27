@@ -1,0 +1,52 @@
+.partners {
+	@apply bg-black border-b border-b-[#989898];
+
+	&__trigger {
+		@apply bg-white overflow-x-auto;
+		&::-webkit-scrollbar {
+			@apply hidden;
+		}
+	}
+
+	&__container {
+		@apply flex items-center justify-between gap-[2.125rem]  py-[1.5rem];
+
+		@screen sm {
+			@apply gap-[2.688rem];
+		}
+	}
+
+	&__item {
+		@apply relative h-[1.5rem] w-auto shrink-0;
+
+		@screen xs {
+			@apply h-[2rem];
+		}
+		@screen lg {
+			@apply h-[2.813rem];
+		}
+		@screen xl {
+			@apply h-[3.313rem];
+		}
+		@screen 2xl {
+			@apply h-[3.25rem];
+		}
+
+		&:last-child {
+			@apply pr-[1rem];
+
+			@screen xs {
+				@apply pr-[1.5rem];
+			}
+			@screen md {
+				@apply pr-0;
+			}
+		}
+
+		img {
+			@apply w-full h-full object-contain object-center;
+			position: static !important;
+			width: auto !important;
+		}
+	}
+}

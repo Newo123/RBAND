@@ -1,0 +1,14 @@
+.section {
+	@apply py-[3.125rem];
+
+	@screen sm {
+		@apply py-[3.75rem];
+	}
+
+	@screen xl {
+		@apply py-[4.375rem];
+	}
+	@screen 2xl {
+		@apply py-[5.25rem];
+	}
+}

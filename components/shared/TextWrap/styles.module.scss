@@ -1,0 +1,44 @@
+.textWrap {
+	@apply flex flex-col justify-center gap-[.5rem] w-full overflow-hidden;
+	@screen xs {
+		@apply flex;
+	}
+
+	@screen sm {
+		@apply gap-[1.75rem];
+	}
+	&__itemText {
+		@apply opacity-0 invisible overflow-hidden absolute select-none max-h-0 pointer-events-none;
+	}
+
+	&__item {
+		@apply w-full flex h-[2.4rem] items-center justify-center relative;
+		//
+		@screen xs {
+			@apply h-[3.125rem];
+		}
+		@screen sm {
+			@apply h-[4.375rem];
+		}
+		@screen md {
+			@apply h-[5.375rem];
+		}
+		@screen lg {
+			@apply h-[6.25rem];
+		}
+		@screen xl {
+			@apply h-[7.5rem];
+		}
+		@screen 2xl {
+			@apply h-[7.875rem];
+		}
+
+		img {
+			@apply w-auto h-full;
+		}
+	}
+
+	&_reverse &__item {
+		@apply w-full flex items-center;
+	}
+}

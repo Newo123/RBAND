@@ -1,0 +1,14 @@
+{
+	"descriptor": {
+		"prices": {
+			"text": "početak od",
+			"price": "€",
+			"days": "rad. dana"
+		}
+	},
+	"about": {
+		"principles": {
+			"textWrap": ["/about/wrapRU.svg", "/about/wrapRU2.svg"]
+		}
+	}
+}

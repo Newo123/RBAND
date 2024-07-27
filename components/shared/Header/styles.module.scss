@@ -1,0 +1,182 @@
+.header {
+	@apply h-[3.938rem] w-full absolute top-0 left-0 z-[10];
+
+	@screen xs {
+		@apply h-[4.25rem];
+	}
+
+	@screen sm {
+		@apply h-[4.75rem];
+	}
+
+	@screen lg {
+		@apply h-[5.125rem];
+	}
+	@screen xl {
+		@apply h-[4.75rem];
+	}
+
+	&_black {
+		@apply bg-black;
+	}
+
+	&_fixed {
+		@apply fixed -top-1/4;
+	}
+
+	&_show {
+		@apply top-0 transition-all duration-300;
+	}
+
+	&_transition {
+		@apply transition-all duration-300;
+	}
+
+	&__container {
+		@apply flex items-center justify-between h-full;
+	}
+	&__right,
+	&__left {
+		@apply flex items-center;
+	}
+	&__left {
+		@apply gap-[2.688rem] text-white;
+
+		@screen xl {
+			@apply gap-[3.125rem];
+		}
+	}
+
+	&__logo {
+		@apply text-[1.5rem] font-black leading-130 tracking-[0.07em] uppercase transition-all duration-300 relative z-[2];
+		@screen xs {
+			@apply text-[1.938rem];
+		}
+		font-family: var(--font-intro);
+	}
+	&__nav {
+		@apply h-full fixed top-0 right-0 translate-x-full;
+
+		@screen xl {
+			@apply static;
+			transform: initial;
+		}
+	}
+	&__list {
+		@apply flex items-center gap-[1.5rem];
+	}
+	&__listItem {
+		@apply flex flex-col;
+	}
+	&__listItem span {
+		@apply cursor-pointer;
+	}
+	&__listItem span,
+	&__listItemLink {
+		@apply text-[0.875rem] font-semibold leading-130 relative flex items-center gap-[0.25rem] transition-all duration-300  z-[2];
+
+		@media (hover: hover) {
+			@apply hover:before:max-w-full;
+		}
+
+		&::before {
+			@apply content-[''] absolute bottom-[-0.125rem] left-0 w-full h-[0.063rem] max-w-0 bg-white transition-all duration-500;
+			mix-blend-mode: difference;
+		}
+	}
+
+	&__burger {
+		@apply block w-[1.875rem] h-[1.875rem] text-white cursor-pointer;
+
+		@screen xs {
+			@apply w-[2.25rem] h-[2.25rem];
+		}
+		@screen xl {
+			@apply hidden;
+		}
+
+		svg {
+			@apply w-full h-full;
+		}
+	}
+
+	&__right {
+		@apply flex items-center gap-[2.25rem] text-white relative z-[2];
+
+		@screen xs {
+			@apply gap-[3.125rem];
+		}
+
+		@screen xl {
+			@apply gap-[2.125rem];
+		}
+		@screen 2xl {
+			@apply gap-[1.75rem];
+		}
+	}
+
+	&__getLangs {
+		@screen 2xl {
+			@apply mr-[1.625rem];
+		}
+	}
+	&__getLangs,
+	&__getCity,
+	&__getProject {
+		@apply font-semibold leading-140 text-[1rem]  tracking-[0.05em] transition-all duration-300;
+
+		@screen lg {
+			@apply text-[0.875rem];
+		}
+	}
+
+	&__getProject {
+		@apply text-[0.625rem] uppercase hidden items-center gap-[0.75rem] border border-white rounded-[1.375rem] relative w-[9.75rem] h-[2.25rem] overflow-hidden transition-all duration-500;
+
+		&_hover {
+			@apply border-[#9F231C];
+		}
+
+		@screen xl {
+			@apply flex;
+		}
+	}
+	&__getProjectHover {
+		@apply w-[1.688rem] h-[1.688rem] rounded-full bg-[#9F231C] flex items-center justify-center text-transparent relative shrink-0 left-[0.25rem] overflow-hidden transition-all duration-300;
+		&::before {
+			@apply content-[''] absolute transition-all duration-500;
+			left: calc(50% - 0.2rem);
+			border: 0.375rem solid transparent;
+			border-left: 0.6rem solid #fff;
+		}
+	}
+
+	&__getProject_hover &__getProjectHover {
+		@apply left-0 w-full h-full before:right-0 before:left-[initial] before:scale-0 text-inherit;
+	}
+	&__getProjectMain {
+		@apply text-nowrap;
+	}
+
+	&__getLangs,
+	&__getCity {
+		@apply relative;
+		&::before {
+			@apply content-[''] absolute bottom-[-0.125rem] left-0 w-full h-[0.063rem] max-w-0 bg-white transition-all duration-500;
+			mix-blend-mode: difference;
+		}
+		@media (hover: hover) {
+			@apply hover:before:max-w-full;
+		}
+	}
+	&__getCity {
+		@apply ml-[0.5rem] hidden;
+		&::after {
+			@apply content-[''] absolute left-[-0.5rem] top-1/2 -translate-y-1/2 w-[0.25rem] h-[0.25rem] rounded-full bg-white transition-all duration-300;
+		}
+
+		@screen xl {
+			@apply block;
+		}
+	}
+}

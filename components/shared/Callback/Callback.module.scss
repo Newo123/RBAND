@@ -1,0 +1,127 @@
+.form {
+	@apply w-full;
+	&__text {
+		@apply text-[0.875rem] leading-150 font-semibold mt-[1rem];
+
+		@screen xs {
+			@apply mt-[1.25rem];
+		}
+		@screen sm {
+			@apply text-[1rem];
+		}
+		@screen 2xl {
+			@apply text-[1.125rem] mt-[1.875rem];
+		}
+	}
+
+	&__inputs {
+		@apply flex flex-col w-full mt-[2.5rem] gap-[1.875rem];
+
+		@screen sm {
+			@apply flex-row;
+		}
+		@screen lg {
+			@apply gap-[3rem];
+		}
+		@screen xl {
+			@apply gap-[4.75rem];
+		}
+		@screen 2xl {
+			@apply mt-[3.125rem];
+		}
+	}
+	&__input {
+		label {
+			@apply text-black;
+		}
+		input {
+			@apply border-b-[#000] border-b-[0.125rem];
+		}
+	}
+
+	&__theme {
+		@apply flex flex-col gap-[1.25rem] mt-[2.5rem];
+
+		@screen lg {
+			@apply mt-[3.375rem];
+		}
+		@screen 2xl {
+			@apply mt-[4rem];
+		}
+	}
+	&__label {
+		@apply text-[0.875rem] font-semibold leading-120 text-[#989898];
+		@screen 2xl {
+			@apply text-[1rem];
+		}
+	}
+	&__themeTypes {
+		@apply flex flex-col gap-[1.25rem];
+
+		@screen sm {
+			@apply flex-row gap-x-[2.5rem] gap-y-[1.875rem] flex-wrap;
+		}
+
+		@screen lg {
+			@apply gap-x-[1.875rem];
+		}
+		@screen xl {
+			@apply gap-x-[3.75rem];
+		}
+		@screen 2xl {
+			@apply gap-x-[2.125rem];
+		}
+	}
+	&__textarea {
+		@apply flex flex-col gap-[1.25rem] mt-[2.375rem];
+
+		textarea {
+			@apply min-h-[5.875rem] resize-none p-[0.75rem] bg-[#EEEEEE];
+
+			&:focus {
+				@apply right-0 border-0 outline-0;
+			}
+
+			@screen 2xl {
+				@apply min-h-[7.625rem];
+			}
+		}
+	}
+
+	&__actions {
+		@apply flex flex-col items-start justify-between mt-[1.875rem] gap-[1.875rem];
+		@screen xs {
+			@apply items-center flex-row;
+		}
+
+		button {
+			@apply shrink-0;
+		}
+	}
+
+	&__privacy {
+		@apply text-[.75rem] font-medium leading-130;
+
+		@screen xs {
+			@apply max-w-[13.25rem];
+		}
+		@screen sm {
+			@apply max-w-[21.625rem] text-[.875rem];
+		}
+		@screen 2xl {
+			@apply max-w-full;
+		}
+
+		span {
+			@apply font-bold relative cursor-pointer;
+
+			&::before {
+				@apply content-[''] absolute bottom-0 left-0 w-full h-[0.063rem] bg-black max-w-0 transition-all duration-500;
+			}
+
+			@media (hover: hover) {
+				@apply hover:before:max-w-full;
+			}
+		}
+	}
+}

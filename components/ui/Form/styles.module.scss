@@ -1,0 +1,73 @@
+.form {
+	@apply flex items-center justify-center h-full;
+	@apply flex-col gap-[1.625rem] py-[2.5rem] px-[1rem];
+
+	@screen xs {
+		@apply flex-row justify-between flex-wrap gap-y-[1.625rem] gap-x-[1rem] py-[1.875rem] px-[1.625rem];
+	}
+
+	@screen sm {
+		@apply py-[2.5rem] px-[3.125rem];
+	}
+
+	@screen lg {
+		@apply flex-nowrap gap-[0.875rem] px-[2.5rem];
+	}
+
+	@screen xl {
+		@apply gap-[1.75rem];
+	}
+	@screen 2xl {
+		@apply gap-[2.125rem];
+	}
+
+	&__privacy {
+		@apply font-medium leading-130;
+		// ml-[0.25rem] mr-[2.125rem]
+		@apply text-[0.625rem] mx-auto;
+
+		@screen xs {
+			@apply mx-0 basis-[57%];
+		}
+
+		@screen lg {
+			@apply max-w-[10rem]  w-full basis-[initial] ml-[0.75rem];
+		}
+
+		@screen xl {
+			@apply ml-[1.125rem] text-[0.75rem] max-w-[12.5rem];
+		}
+		@screen xl {
+			@apply ml-[1rem];
+		}
+
+		span {
+			@apply font-bold cursor-pointer;
+		}
+	}
+	&__submit {
+		@apply shrink-0;
+		// @apply text-[0.75rem] font-bold leading-[2.167em] py-[0.5rem] px-[1.875rem] rounded-[0.75rem] bg-white text-black;
+
+		// @apply mt-[0.25rem];
+	}
+
+	&__input {
+		@apply mt-[0.625rem] first:mt-0;
+
+		@screen xs {
+			@apply mt-0;
+
+			flex-basis: calc(50% - 1rem);
+		}
+		@screen lg {
+			@apply ml-[1rem] first:ml-0 basis-[initial];
+		}
+		@screen xl {
+			@apply ml-[1.125rem] first:ml-0;
+		}
+		@screen 2xl {
+			@apply ml-[0.75rem] first:ml-0;
+		}
+	}
+}

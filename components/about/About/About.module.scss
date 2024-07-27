@@ -1,0 +1,279 @@
+.about {
+	@apply py-[3.125rem];
+
+	@screen sm {
+		@apply py-[3.75rem];
+	}
+	@screen lg {
+		@apply py-[4.375rem];
+	}
+	@screen xl {
+		@apply py-[5.25rem];
+	}
+
+	&__container {
+		@apply flex flex-col gap-[3.125rem] mt-[1.25rem];
+
+		@screen sm {
+			@apply mt-[1.875rem];
+		}
+
+		@screen lg {
+			@apply flex-row gap-[2.5rem] mt-[3.125rem];
+		}
+		@screen 2xl {
+			@apply mt-[3.75rem];
+		}
+	}
+
+	&__textWrap {
+		@apply mb-[1.25rem];
+		@screen sm {
+			@apply mb-[1.875rem];
+		}
+		@screen lg {
+			@apply mb-[3.125rem];
+		}
+		@screen xl {
+			@apply mt-[2.25rem];
+		}
+		@screen 2xl {
+			@apply mb-[3.75rem];
+		}
+	}
+
+	&__info {
+		@apply h-fit flex flex-col gap-[1rem];
+		@screen lg {
+			@apply sticky basis-[31%] gap-[2.5rem] shrink-0;
+			top: calc(50vh - 30%);
+		}
+
+		@screen 2xl {
+			@apply gap-[3.75rem];
+			top: calc(50vh - 35%);
+		}
+	}
+
+	&__block {
+		@apply flex flex-col gap-[1rem];
+	}
+	&__blockText {
+		@apply text-[.875rem] font-medium leading-150 tracking-[.01em];
+
+		@screen xs {
+			@apply text-[1rem];
+		}
+		@screen 2xl {
+			@apply text-[1.125rem];
+		}
+	}
+	&__blockButton {
+		@apply mt-[0.625rem] hidden  text-white;
+		background: #989898 !important;
+
+		@screen lg {
+			@apply block;
+		}
+
+		@screen 2xl {
+			@apply mt-[1.125rem];
+		}
+	}
+	&__content {
+		@apply flex flex-col w-full gap-[2.5rem];
+
+		@screen sm {
+			@apply gap-[3.125rem];
+		}
+		@screen lg {
+			@apply gap-[3.75rem];
+		}
+	}
+	&__contentHead {
+		@apply flex flex-col gap-[1.875rem];
+
+		@screen sm {
+			@apply flex-row gap-[2.5rem];
+		}
+		@screen lg {
+			@apply gap-[3.75rem];
+		}
+		@screen 2xl {
+			@apply gap-[4.625rem];
+		}
+	}
+	&__contentHeadVideo {
+		@apply relative rounded-[0.625rem] overflow-hidden min-w-[35%];
+
+		aspect-ratio: 1 / 1;
+
+		@screen sm {
+			@apply aspect-auto;
+		}
+
+		&::before {
+			@apply content-[''] bg-black bg-opacity-5 absolute top-0 left-0 w-full h-full z-[3];
+		}
+
+		video {
+			@apply relative z-[2];
+		}
+		img {
+			@apply z-[0];
+		}
+		video,
+		img {
+			@apply w-full h-full object-cover object-center rounded-[.625rem];
+		}
+	}
+
+	&__contentHeadReputation {
+		@apply grid grid-cols-2 h-fit self-end gap-x-[1.375rem] gap-y-[1.875rem];
+
+		@screen xs {
+			@apply gap-x-[2.5rem];
+		}
+
+		@screen sm {
+			@apply gap-x-[2rem] gap-y-[1.25rem];
+		}
+
+		@screen md {
+			@apply gap-[2.5rem];
+		}
+		@screen 2xl {
+			@apply gap-x-[2.125rem] gap-y-[3.375rem];
+		}
+	}
+	&__contentHeadReputationItem {
+		@apply flex flex-col gap-[.75rem];
+
+		@screen sm {
+			@apply gap-[.375rem];
+		}
+
+		@screen md {
+			@apply gap-[1rem];
+		}
+
+		@screen 2xl {
+			@apply gap-[1.25rem];
+		}
+
+		p {
+			@apply text-[.625rem] font-bold leading-140 tracking-[.1em] uppercase;
+
+			@screen xs {
+				@apply text-[.75rem];
+			}
+			@screen sm {
+				@apply text-[.625rem];
+			}
+			@screen 2xl {
+				@apply text-[.75rem];
+			}
+			strong {
+				@apply leading-120 text-[2.5rem];
+
+				@screen lg {
+					@apply text-[3.125rem];
+				}
+				@screen 2xl {
+					@apply text-[4.25rem];
+				}
+			}
+		}
+	}
+
+	&__contentProjects {
+		@apply pt-[2.5rem] border-t border-t-[#989898];
+
+		@screen sm {
+			@apply grid grid-cols-3 gap-x-[1.5rem] pt-0;
+		}
+
+		@screen lg {
+			@apply gap-x-[1.688rem];
+		}
+		@screen 2xl {
+			@apply gap-x-[2.938rem];
+		}
+	}
+	&__contentProjectsButton {
+		@apply text-white mt-[1.25rem];
+		background: #989898 !important;
+
+		@screen xs {
+			@apply mt-[1.625rem];
+		}
+	}
+	&__contentProjectsMobile {
+		@apply flex flex-col gap-[.625rem];
+
+		@screen sm {
+			@apply hidden;
+		}
+	}
+
+	&__contentProjectsMobile_centered &__contentProjectsMobileTitle,
+	&__contentProjectsMobile_centered &__contentProjectsMobileText {
+		@apply text-center;
+	}
+	&__contentProjectsMobileTitle {
+		@apply text-[1.5rem] font-black leading-110;
+		font-family: var(--font-intro);
+
+		@screen xs {
+			@apply text-[1.875rem];
+		}
+	}
+	&__contentProjectsMobileText {
+		@apply text-[.875rem] font-medium leading-140;
+	}
+
+	&__contentProjectsMobile_centered &__contentProjectsButton {
+		@apply mx-auto;
+	}
+
+	&__contentProjectsItem {
+		@apply relative cursor-pointer hidden;
+		aspect-ratio: 16 / 8;
+
+		@screen sm {
+			@apply block;
+		}
+	}
+	&__contentProjectsItemLogo {
+		@apply absolute top-0 left-0 w-full h-full;
+
+		img {
+			@apply w-full h-full object-contain object-center;
+		}
+	}
+	@media (hover: hover) {
+		&__contentProjectsItem:hover &__contentProjectsItemContent {
+			@apply opacity-100;
+		}
+	}
+
+	&__contentProjectsItemContent {
+		@apply flex flex-col gap-[.125rem] h-full w-full bg-white z-[2] relative p-[.625rem] transition-opacity duration-300 opacity-0;
+		box-shadow: 0px 0.438rem 1.063rem 0px rgba(0, 0, 0, 0.1);
+		@screen 2xl {
+			@apply gap-[0.563rem] p-[.75rem];
+		}
+	}
+	&__contentProjectsItemTitle {
+		@apply text-[.875rem] leading-140 font-bold;
+	}
+	&__contentProjectsItemText {
+		@apply text-[.75rem] leading-140 font-medium;
+	}
+	&__contentProjectsItemMore {
+		@apply mt-auto text-[.75rem] leading-130 font-semibold text-[#AE2524];
+	}
+	&__contentProjectsItemLink {
+		@apply absolute top-0 left-0 w-full h-full z-[4];
+	}
+}

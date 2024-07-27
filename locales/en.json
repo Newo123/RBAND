@@ -1,0 +1,14 @@
+{
+	"descriptor": {
+		"prices": {
+			"text": "start from",
+			"price": "€",
+			"days": "working days"
+		}
+	},
+	"about": {
+		"principles": {
+			"textWrap": ["/about/wrapRU.svg", "/about/wrapRU2.svg"]
+		}
+	}
+}
