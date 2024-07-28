@@ -13,7 +13,7 @@ export function HeroReviews({ reputation_description, reviews_links_array }) {
 				<div className={classes.hero__reviewsIcons}>
 					<div className={classes.hero__reviewsIconsIcon}>
 						<Image
-							src={`https://rbb.rband.pro${reviews_links_array.Yandex?.icons.short}`}
+							src={`${reviews_links_array.Yandex?.icons.short}`}
 							alt={
 								reviews_links_array.Yandex?.link
 									? reviews_links_array.Yandex?.link
@@ -26,7 +26,7 @@ export function HeroReviews({ reputation_description, reviews_links_array }) {
 					</div>
 					<div className={classes.hero__reviewsIconsIcon}>
 						<Image
-							src={`https://rbb.rband.pro${reviews_links_array.Google?.icons.short}`}
+							src={`${reviews_links_array.Google?.icons.short}`}
 							alt={
 								reviews_links_array.Google?.link
 									? reviews_links_array.Google?.link
