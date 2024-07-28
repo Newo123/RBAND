@@ -10,6 +10,7 @@ const nextConfig = {
 		defaultLocale: 'ru',
 		localeDetection: false
 	},
+
 	trailingSlash: false,
 	experimental: {
 		largePageDataBytes: 128 * 10000000000,
