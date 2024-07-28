@@ -1,20 +1,8 @@
 import { NextResponse } from 'next/server';
 
-import { API_DOMAIN } from './constants/seo.constants';
-
 const PUBLIC_FILE = /\.(.*)$/;
 
 export async function middleware(req, res) {
-	if (
-		req.nextUrl.pathname.startsWith('/image') ||
-		req.nextUrl.pathname.startsWith('/images') ||
-		req.nextUrl.pathname.startsWith('/avatars')
-	) {
-		return NextResponse.rewrite(
-			new URL(API_DOMAIN + req.nextUrl.pathname, req.url)
-		);
-	}
-
 	if (
 		req.nextUrl.pathname.startsWith('/_next') ||
 		req.nextUrl.pathname.includes('/api/') ||
@@ -36,3 +24,13 @@ export async function middleware(req, res) {
 
 	return NextResponse.next();
 }
+
+// if (
+// 	req.nextUrl.pathname.startsWith('/image') ||
+// 	req.nextUrl.pathname.startsWith('/images') ||
+// 	req.nextUrl.pathname.startsWith('/avatars')
+// ) {
+// 	return NextResponse.rewrite(
+// 		new URL(API_DOMAIN + req.nextUrl.pathname, req.url)
+// 	);
+// }

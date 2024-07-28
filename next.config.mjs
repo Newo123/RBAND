@@ -45,6 +45,22 @@ const nextConfig = {
 				hostname: 'plus.unsplash.com'
 			}
 		]
+	},
+	async rewrites() {
+		return [
+			{
+				source: '/image/:path*',
+				destination: `${process.env.API_DOMAIN}/image/:path*`
+			},
+			{
+				source: '/images/:path*',
+				destination: `${process.env.API_DOMAIN}/images/:path*`
+			},
+			{
+				source: '/avatars/:path*',
+				destination: `${process.env.API_DOMAIN}/avatars/:path*`
+			}
+		];
 	}
 };
 
