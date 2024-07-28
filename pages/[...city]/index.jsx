@@ -8,7 +8,7 @@ import { getAll } from '@/services/data.service';
 export const getServerSideProps = async ({ req, res, locale, resolvedUrl }) => {
 	const props = await getAll(req, res, locale, resolvedUrl);
 
-	if (!props.body.main) {
+	if (!props?.body?.main) {
 		return {
 			notFound: true
 		};
