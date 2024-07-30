@@ -74,22 +74,17 @@ export function Header({ header }) {
 		};
 	}, []);
 
-	useEffect(() => {
-		console.log(selectedMenu);
-
-		// if (selectedMenu.id === null) {
-		// 	selectedMenu.isOpen = false;
-		// }
-	}, [selectedMenu]);
-
 	return (
 		<header
+			data-lenis-prevent-wheel
 			className={cn(
 				classes.header,
 				isFixed ? classes.header_fixed : '',
 				isShow ? classes.header_show : '',
 				isTransition ? classes.header_transition : '',
-				headerBlack.includes(pathname) || isFixed ? classes.header_black : ''
+				selectedMenu.isOpen || headerBlack.includes(pathname) || isFixed
+					? classes.header_black
+					: ''
 			)}
 			onTransitionEnd={() => setIsTranslate(false)}
 			style={

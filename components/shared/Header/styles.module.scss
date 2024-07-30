@@ -66,14 +66,23 @@
 		@apply flex items-center gap-[1.5rem];
 	}
 	&__listItem {
-		@apply flex flex-col;
+		@apply flex items-end gap-[0.125rem];
+		svg {
+			@apply transition-transform duration-500;
+		}
+		&_active {
+			svg {
+				@apply rotate-180 delay-1000;
+			}
+		}
+	}
+	&__listItem:has(.header__listItemLink_active) svg {
 	}
 	&__listItem span {
-		@apply cursor-pointer;
+		@apply flex items-center gap-[.125rem] cursor-pointer;
 	}
-	&__listItem span,
 	&__listItemLink {
-		@apply text-[0.875rem] font-semibold leading-130 relative flex items-center gap-[0.25rem] transition-all duration-300  z-[2];
+		@apply text-[0.875rem] font-semibold leading-130 relative flex items-center gap-[0.25rem] transition-all duration-300 z-[2];
 
 		@media (hover: hover) {
 			@apply hover:before:max-w-full;
@@ -82,6 +91,10 @@
 		&::before {
 			@apply content-[''] absolute bottom-[-0.125rem] left-0 w-full h-[0.063rem] max-w-0 bg-white transition-all duration-500;
 			mix-blend-mode: difference;
+		}
+
+		&_active::before {
+			@apply max-w-full;
 		}
 	}
 

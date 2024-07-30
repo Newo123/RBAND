@@ -4,6 +4,7 @@ export default function SmoothScrollProvider({ children }) {
 	return (
 		<ReactLenis
 			root
+
 			// options={{  }}
 		>
 			{children}

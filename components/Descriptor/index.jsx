@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useScroll } from '@/hooks/useScroll';
 
+import { getVideoMedia } from '@/utils/getVideoMedia';
+
 import { Container } from '../shared/Container';
 import { GetImagesFromNext } from '../shared/GetImagesFromNext';
 
@@ -100,17 +102,6 @@ export function Descriptor({ descriptor, start, days, price }) {
 		});
 	});
 
-	const videoMedia = video => {
-		let videoMedia;
-
-		for (const key in video.property) {
-			if (key === 'max_width')
-				videoMedia = `(max-width:${video.property[key]}px)`;
-		}
-
-		return videoMedia || '';
-	};
-
 	return (
 		<section
 			className={cn(classes.descriptor)}
@@ -156,7 +147,7 @@ export function Descriptor({ descriptor, start, days, price }) {
 												src: item.href,
 												type: `video/${item.href.split('.')[item.href.split('.').length - 1]}`,
 												...(item.property['max_width'] && {
-													media: `${videoMedia(item)}`
+													media: `${getVideoMedia(item)}`
 												})
 											};
 											return (

@@ -1,56 +1,67 @@
-import Image from 'next/image';
+import { useInView } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
+import { getVideoMedia } from '@/utils/getVideoMedia';
+
+import { GetImagesFromNext } from '../../GetImagesFromNext';
+
 import classes from './styles.module.scss';
 
-export function HeaderNavSubitemPreview({ child, isOpen }) {
+export function HeaderNavSubitemPreview({ item, isOpen }) {
 	const videoRef = useRef(null);
+	const isInView = useInView(videoRef);
 
 	useEffect(() => {
-		if (videoRef.current) {
-			videoRef?.current[`${isOpen ? 'play' : 'pause'}`]();
-			if (!isOpen) {
-				videoRef.current.currentTime = 0;
-			}
+		if (isInView && videoRef?.current) {
+			videoRef?.current?.play();
+		} else if (videoRef?.current) {
+			videoRef?.current?.pause();
 		}
-	}, [isOpen]);
+	}, [isInView]);
+
 	return (
 		<Link
-			href={child.href}
-			className={classes.submenu__previewsItem}
+			href={item?.href}
+			className={classes.submenu__contentPreviewsItem}
 		>
-			<div className={classes.submenu__previewsItemPictures}>
-				{child.feed_image && (
-					<Image
-						src={child.feed_image}
-						fill={true}
-						alt={child.name}
-					/>
-				)}
-
-				{child.video && (
+			<div className={classes.submenu__contentPreviewsItemPictures}>
+				{item?.anons_videos && item?.anons_videos.length > 0 ? (
 					<video
 						ref={videoRef}
-						loop
-						// autoPlay
 						preload='auto'
-						muted={true}
-						playsInline
 						controls={false}
-						poster={child.feed_image}
+						loop
+						playsInline
+						muted
 					>
-						<source
-							src={child.video}
-							type='video/mp4'
-						/>
+						{item?.anons_videos.map((el, index) => {
+							const props = {
+								src: el.href,
+								type: `video/${el.href.split('.')[el.href.split('.').length - 1]}`,
+								...(el.property['max_width'] && {
+									media: `${getVideoMedia(el)}`
+								})
+							};
+							return (
+								<source
+									key={index}
+									{...props}
+								/>
+							);
+						})}
 					</video>
+				) : (
+					<GetImagesFromNext
+						images={item?.anons_images}
+						sizes='100vw'
+						fill
+					/>
 				)}
 			</div>
-
 			<h6
-				dangerouslySetInnerHTML={{ __html: child.name }}
-				className={classes.submenu__previewsItemTitle}
+				className={classes.submenu__contentPreviewsItemTitle}
+				dangerouslySetInnerHTML={{ __html: item.name }}
 			/>
 		</Link>
 	);

@@ -21,13 +21,8 @@ export function ReviewsItem({
 				<Image
 					src={image}
 					alt={name_project}
-					// width={500}
-					// height={338}
 					fill
-					quality={100}
 					sizes='100vw'
-					// unoptimized
-
 					placeholder='blur'
 					blurDataURL={placeholder}
 				/>

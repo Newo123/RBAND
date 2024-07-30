@@ -1,5 +1,3 @@
-'use client';
-
 import { useGSAP } from '@gsap/react';
 import { Icon } from '@iconify/react';
 import cn from 'clsx';

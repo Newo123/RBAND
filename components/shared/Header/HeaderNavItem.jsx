@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import cn from 'clsx';
 import Link from 'next/link';
 
@@ -18,15 +19,39 @@ export function HeaderNavItem({ item, selectedMenu, setSelectedMenu }) {
 		}
 	};
 	return (
-		<li className={classes.header__listItem}>
+		<li
+			className={cn(
+				classes.header__listItem,
+				selectedMenu.isOpen &&
+					selectedMenu.id === item.menu_id &&
+					classes.header__listItem_active
+			)}
+		>
 			{item.children.length > 0 ? (
-				<span onClick={handleClick}>{item.title}</span>
+				<>
+					<span
+						onClick={handleClick}
+						className={cn(
+							classes.header__listItemLink,
+							item.active && classes.header__listItemLink_active,
+							selectedMenu.isOpen &&
+								selectedMenu.id === item.menu_id &&
+								classes.header__listItemLink_active
+						)}
+					>
+						{item.title}
+					</span>
+					<Icon icon='mingcute:down-line' />
+				</>
 			) : (
 				<Link
 					href={item.href}
 					className={cn(
 						classes.header__listItemLink,
-						item.active && classes.header__listItemLink_active
+						item.active && classes.header__listItemLink_active,
+						selectedMenu.isOpen &&
+							selectedMenu.id === item.menu_id &&
+							classes.header__listItemLink_active
 					)}
 				>
 					{item.title}

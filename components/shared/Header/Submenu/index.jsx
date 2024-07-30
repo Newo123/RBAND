@@ -1,144 +1,128 @@
+import { Icon } from '@iconify/react';
 import cn from 'clsx';
-import { AnimatePresence, motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import { Container } from '../../Container';
 
-import { height } from './anim';
+import { ServicesInner } from './ServicesInner';
+import { SubmenuInner } from './SubmenuInner';
 import classes from './styles.module.scss';
 
+const technologies = [
+	{
+		href: '#',
+		icon: '/tech-icons/docker.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/gitlab.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/react.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/laravel.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/php.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/strapi.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/opencart.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/wordpress.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/nextjs.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/figma.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/adobe.svg',
+		target: '1'
+	},
+	{
+		href: '#',
+		icon: '/tech-icons/mui.svg',
+		target: '1'
+	}
+];
+
 export function Submenu({ row_1, selectedMenu, setSelectedMenu }) {
+	const handleClick = () => {
+		setSelectedMenu(prev => (prev.isOpen = false));
+	};
 	return (
-		<AnimatePresence mode='wait'>
-			<motion.div
-				variants={height}
-				initial='initial'
-				animate={selectedMenu.isOpen ? 'enter' : 'exit'}
-				exit='exit'
-				className={classes.submenu}
-			>
-				<div className={classes.submenu__wrapper}>
-					<Container
-						variant='xl'
-						className={classes.submenu__container}
-					>
-						{row_1?.map(item => {
-							if (!item.children.length > 0) {
-								return;
-							}
+		<div className={classes.submenu}>
+			<div
+				className={classes.submenu__shadow}
+				onClick={handleClick}
+			></div>
+			{row_1 &&
+				row_1?.map(item => {
+					if (!item.children.length > 0) return;
 
-							if (item.services) {
-								return (
-									<div key={item.menu_id}>
-										{item.services.map(service => (
-											<div key={service.category_id}></div>
-										))}
-									</div>
-								);
-							}
-
-							return (
+					return (
+						<div
+							key={item.menu_id}
+							className={cn(
+								classes.submenu__wrapper,
 								selectedMenu.isOpen &&
-								selectedMenu.id === item.menu_id && (
-									<div
-										key={item.menu_id}
-										className={cn(
-											classes.submenu__item
-											// selectedMenu.isOpen &&
-											// 	selectedMenu.id === item.menu_id &&
-											// 	classes.submenu__item_active
-										)}
-									>
-										<div className={classes.submenu__itemMenu}>
-											<ul className={classes.submenu__itemMenuList}>
-												{item.children.length > 0 &&
-													item.children.map(child => (
-														<li
-															key={child.category_id}
-															className={classes.submenu__itemMenuListItem}
-														>
-															<Link
-																href={child.href}
-																className={
-																	classes.submenu__itemMenuListItemLink
-																}
-															>
-																{child.name}
-															</Link>
-														</li>
-													))}
-											</ul>
-											<div className={classes.submenu__itemMenuText}>
-												Наши проекты это: интуитивно понятный дизайн, изучение
-												поведения и предпочтений ЦА, бенчмаркетинг и
-												технологичность.
-											</div>
-										</div>
-										<div className={classes.submenu__itemPreview}>
-											<div className={classes.submenu__itemPreviewLabel}>
-												{item.previews.name}
-											</div>
-											<div className={classes.submenu__itemPreviewGrid}>
-												{item.previews.children.length > 0 &&
-													item.previews.children.map(preview => (
-														<Link
-															href={preview.href}
-															target={preview?.target && '_blank'}
-															key={preview.page_id}
-															className={classes.submenu__itemPreviewGridItem}
-														>
-															<div
-																className={
-																	classes.submenu__itemPreviewGridItemPicture
-																}
-															>
-																{preview.thumb && (
-																	<Image
-																		src={preview.thumb}
-																		alt={preview.name}
-																		fill
-																		sizes='100vw'
-																	/>
-																)}
-																{preview.video && (
-																	<video
-																		// ref={videoRef}
-																		loop
-																		autoPlay
-																		preload='auto'
-																		muted={true}
-																		playsInline
-																		controls={false}
-																		// poster={preview.feed_image}
-																	>
-																		<source
-																			src={preview.video}
-																			type='video/mp4'
-																		/>
-																	</video>
-																)}
-															</div>
-															<h6
-																className={
-																	classes.submenu__itemPreviewGridItemTitle
-																}
-															>
-																{preview.name}
-															</h6>
-														</Link>
-													))}
-											</div>
-										</div>
-									</div>
-								)
-							);
-						})}
-					</Container>
-				</div>
-
-				<div className={classes.submenu__shadow}></div>
-			</motion.div>
-		</AnimatePresence>
+									selectedMenu.id === item.menu_id &&
+									classes.submenu__wrapper_active
+							)}
+						>
+							<Container
+								variant='xl'
+								className={classes.submenu__container}
+							>
+								{item.services ? (
+									<ServicesInner
+										children={item.children}
+										menuId={item.menu_id}
+										selectedMenu={selectedMenu}
+										technologies={technologies}
+									/>
+								) : (
+									<SubmenuInner
+										menuId={item.menu_id}
+										selectedMenu={selectedMenu}
+										children={item.children}
+										previews={item.previews}
+									/>
+								)}
+							</Container>
+							<div
+								className={classes.submenu__close}
+								onClick={handleClick}
+							>
+								<Icon icon='iconamoon:close-thin' />
+							</div>
+						</div>
+					);
+				})}
+		</div>
 	);
 }
