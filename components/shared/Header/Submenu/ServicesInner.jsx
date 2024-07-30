@@ -4,7 +4,7 @@ import Link from 'next/link';
 import classes from './styles.module.scss';
 
 export function ServicesInner({
-	children,
+	items: children,
 	technologies,
 	menuId,
 	selectedMenu

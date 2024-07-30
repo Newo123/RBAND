@@ -79,10 +79,10 @@ export function Submenu({ row_1, selectedMenu, setSelectedMenu }) {
 			<div
 				className={classes.submenu__shadow}
 				onClick={handleClick}
-			></div>
+			/>
 			{row_1 &&
 				row_1?.map(item => {
-					if (!item.children.length > 0) return;
+					if (!item?.children.length > 0) return;
 
 					return (
 						<div
@@ -98,19 +98,19 @@ export function Submenu({ row_1, selectedMenu, setSelectedMenu }) {
 								variant='xl'
 								className={classes.submenu__container}
 							>
-								{item.services ? (
+								{item?.services ? (
 									<ServicesInner
-										children={item.children}
-										menuId={item.menu_id}
+										items={item?.children}
+										menuId={item?.menu_id}
 										selectedMenu={selectedMenu}
 										technologies={technologies}
 									/>
 								) : (
 									<SubmenuInner
-										menuId={item.menu_id}
+										menuId={item?.menu_id}
 										selectedMenu={selectedMenu}
-										children={item.children}
-										previews={item.previews}
+										items={item?.children}
+										previews={item?.previews}
 									/>
 								)}
 							</Container>

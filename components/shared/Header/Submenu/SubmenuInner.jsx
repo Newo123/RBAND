@@ -3,7 +3,12 @@ import Link from 'next/link';
 import { HeaderNavSubitemPreview } from './HeaderNavSubitemPreview';
 import classes from './styles.module.scss';
 
-export function SubmenuInner({ children, previews, menuId, selectedMenu }) {
+export function SubmenuInner({
+	items: children,
+	previews,
+	menuId,
+	selectedMenu
+}) {
 	return (
 		<div className={classes.submenu__content}>
 			<div className={classes.submenu__contentNav}>
