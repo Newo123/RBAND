@@ -9,7 +9,6 @@ export function ServicesInner({
 	menuId,
 	selectedMenu
 }) {
-	console.log(technologies, children);
 	return (
 		<div className={classes.submenu__services}>
 			<div className={classes.submenu__servicesMenu}>

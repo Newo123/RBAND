@@ -45,6 +45,7 @@ export function HeroAbout({ images, text, title, texts, videos }) {
 						fill
 					/>
 				)}
+
 				{videos && (
 					<video
 						loop

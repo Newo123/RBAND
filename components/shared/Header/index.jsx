@@ -2,27 +2,29 @@ import { Icon } from '@iconify/react';
 import cn from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
+
+import Modal from '@/components/ui/Modal';
 
 import { headerBlack } from '@/constants/headerBlack.constants';
 
 import { useScroll } from '@/hooks/useScroll';
 
 import { Container } from '../Container';
+import { Localization } from '../Localization';
 
 import { HeaderNavItem } from './HeaderNavItem';
 import { Submenu } from './Submenu';
 import classes from './styles.module.scss';
 import { ModalContext } from '@/contexts/Modal.context';
 
-const transition = {
-	duration: 1,
-	ease: [0.76, 0, 0.24, 1]
-};
-export function Header({ header }) {
+export function Header({ header, langs, cities }) {
 	const {
 		menu: { row_1 }
 	} = header;
+	const router = useRouter();
+	const [langToggle, setLangToggle] = useState(false);
 	const [isFixed, setIsFixed] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isTranslate, setIsTranslate] = useState(true);
@@ -31,7 +33,7 @@ export function Header({ header }) {
 	const [isHover, setIsHover] = useState(false);
 	const { scroll, setScroll } = useScroll();
 	const pathname = usePathname();
-	// { isOpen: true, id: '12' }
+
 	const [selectedMenu, setSelectedMenu] = useState({ isOpen: false, id: '0' });
 
 	const { open } = useContext(ModalContext);
@@ -75,97 +77,105 @@ export function Header({ header }) {
 	}, []);
 
 	return (
-		<header
-			data-lenis-prevent-wheel
-			className={cn(
-				classes.header,
-				isFixed ? classes.header_fixed : '',
-				isShow ? classes.header_show : '',
-				isTransition ? classes.header_transition : '',
-				selectedMenu.isOpen || headerBlack.includes(pathname) || isFixed
-					? classes.header_black
-					: ''
-			)}
-			onTransitionEnd={() => setIsTranslate(false)}
-			style={
-				!isLoaded
-					? { transform: 'translateY(-100%)', opacity: '0' }
-					: isTranslate && scroll <= 0
-						? { transition: 'all 0.5s 1.9s ease' }
-						: {}
-			}
-		>
-			<Container
-				variant='xl'
-				className={classes.header__container}
+		<>
+			<header
+				data-lenis-prevent-wheel
+				className={cn(
+					classes.header,
+					isFixed ? classes.header_fixed : '',
+					isShow ? classes.header_show : '',
+					isTransition ? classes.header_transition : '',
+					selectedMenu.isOpen || headerBlack.includes(pathname) || isFixed
+						? classes.header_black
+						: ''
+				)}
+				onTransitionEnd={() => setIsTranslate(false)}
+				style={
+					!isLoaded
+						? { transform: 'translateY(-100%)', opacity: '0' }
+						: isTranslate && scroll <= 0
+							? { transition: 'all 0.5s 1.9s ease' }
+							: {}
+				}
 			>
-				<div className={classes.header__left}>
-					<Link
-						href={header.home}
-						className={classes.header__logo}
-					>
-						RBAND
-					</Link>
+				<Container
+					variant='xl'
+					className={classes.header__container}
+				>
+					<div className={classes.header__left}>
+						<Link
+							href={header.home}
+							className={classes.header__logo}
+						>
+							RBAND
+						</Link>
 
-					<nav className={classes.header__nav}>
-						<ul className={classes.header__list}>
-							{row_1.map((item, index) => (
-								<HeaderNavItem
-									selectedMenu={selectedMenu}
-									setSelectedMenu={setSelectedMenu}
-									item={item}
-									key={index}
-								/>
-							))}
-						</ul>
-					</nav>
-				</div>
-				<div className={classes.header__right}>
-					{/* <button
-						className={classes.header__getLangs}
-						onClick={() => open(<Localization country={localesCountry} />)}
-					>
-						RU
-					</button>
+						<nav className={classes.header__nav}>
+							<ul className={classes.header__list}>
+								{row_1.map((item, index) => (
+									<HeaderNavItem
+										selectedMenu={selectedMenu}
+										setSelectedMenu={setSelectedMenu}
+										item={item}
+										key={index}
+									/>
+								))}
+							</ul>
+						</nav>
+					</div>
+					<div className={classes.header__right}>
+						<button
+							className={classes.header__getLangs}
+							onClick={() => setLangToggle(true)}
+						>
+							{router.locale.toUpperCase()}
+						</button>
 
-					<button
+						{/* <button
 						className={classes.header__getCity}
 						onClick={() => open(<Localization regions={localesRegions} />)}
 					>
 						Екатеринбург
 					</button> */}
-					<button
-						className={cn(
-							classes.header__getProject,
-							isHover && classes.header__getProject_hover
-						)}
-						onMouseEnter={() => setIsHover(true)}
-						onMouseLeave={() => setIsHover(false)}
-						// onClick={() =>
-						// 	open(
-						// 		<Contacts
-						// 			theme='dark'
-						// 			contact={{ isAddress: false }}
-						// 			callback={call}
-						// 		/>
-						// 	)
-						// }
-					>
-						<span className={classes.header__getProjectHover}>Поехали!</span>
-						<span className={classes.header__getProjectMain}>
-							Начать проект
-						</span>
-					</button>
-					<div className={classes.header__burger}>
-						<Icon icon='clarity:menu-line' />
+						<button
+							className={cn(
+								classes.header__getProject,
+								isHover && classes.header__getProject_hover
+							)}
+							onMouseEnter={() => setIsHover(true)}
+							onMouseLeave={() => setIsHover(false)}
+							// onClick={() =>
+							// 	open(
+							// 		<Contacts
+							// 			theme='dark'
+							// 			contact={{ isAddress: false }}
+							// 			callback={call}
+							// 		/>
+							// 	)
+							// }
+						>
+							<span className={classes.header__getProjectHover}>Поехали!</span>
+							<span className={classes.header__getProjectMain}>
+								Начать проект
+							</span>
+						</button>
+						<div className={classes.header__burger}>
+							<Icon icon='clarity:menu-line' />
+						</div>
 					</div>
-				</div>
-			</Container>
-			<Submenu
-				row_1={row_1}
-				selectedMenu={selectedMenu}
-				setSelectedMenu={setSelectedMenu}
-			/>
-		</header>
+				</Container>
+				<Submenu
+					row_1={row_1}
+					selectedMenu={selectedMenu}
+					setSelectedMenu={setSelectedMenu}
+				/>
+			</header>
+			<Modal
+				isOpen={langToggle}
+				setIsOpen={setLangToggle}
+			>
+				<Localization country={langs} />
+			</Modal>
+		</>
 	);
 }

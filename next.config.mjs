@@ -4,7 +4,7 @@ import withPlaiceholder from '@plaiceholder/next';
 const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
-	output: 'standalone',
+	// output: 'standalone',
 
 	i18n: {
 		locales: ['ru', 'en', 'sr'],

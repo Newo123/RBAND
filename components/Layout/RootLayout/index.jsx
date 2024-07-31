@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import { Header } from '@/components/shared/Header';
+
 import { SITE_DOMAIN } from '@/constants/seo.constants';
 
 import { Footer } from '../../shared/Footer';
-import { Header } from '../../shared/Header';
 
 export function RootLayout({ children, footer, header, head }) {
 	const router = useRouter();
-
 	return (
 		<>
 			<Head>
@@ -73,7 +73,11 @@ export function RootLayout({ children, footer, header, head }) {
 						}
 					})}
 			</Head>
-			<Header header={header} />
+			<Header
+				header={header}
+				langs={Object.values(footer?.languages)}
+				cities={footer?.cities}
+			/>
 			<main>{children}</main>
 			<Footer footer={footer} />
 		</>

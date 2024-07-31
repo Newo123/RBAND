@@ -1,10 +1,11 @@
 import axios from 'axios';
+import https from 'https';
 
+axios.defaults.httpsAgent = new https.Agent({
+	rejectUnauthorized: false
+});
 export const instance = axios.create({
 	baseURL: process.env.API_URL
-});
-export const instancev2 = axios.create({
-	baseURL: ' http://rband-backend.rbnd'
 });
 
 export const instanceLoginApi = axios.create({

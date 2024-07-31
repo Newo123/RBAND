@@ -1,8 +1,9 @@
 import { useGSAP } from '@gsap/react';
 import { Icon } from '@iconify/react';
 import cn from 'clsx';
-import gsap from 'gsap/all';
-import { useRef } from 'react';
+import gsap from 'gsap/dist/all';
+import { useRouter } from 'next/router';
+import { useEffect, useRef } from 'react';
 
 import classes from './styles.module.scss';
 
@@ -11,6 +12,11 @@ const Modal = ({ className, children, isOpen, setIsOpen, ...rest }) => {
 	const modalContentRef = useRef(null);
 	const shadowRef = useRef(null);
 	const shadowSmallRef = useRef(null);
+	const router = useRouter();
+
+	useEffect(() => {
+		setIsOpen(false);
+	}, [router]);
 
 	useGSAP(
 		() => {
@@ -71,6 +77,7 @@ const Modal = ({ className, children, isOpen, setIsOpen, ...rest }) => {
 			ref={modalRef}
 			{...rest}
 			data-lenis-prevent
+			id='modal'
 		>
 			<div
 				className={classes.modal__shadow}
@@ -81,6 +88,7 @@ const Modal = ({ className, children, isOpen, setIsOpen, ...rest }) => {
 				ref={shadowSmallRef}
 			></div>
 			<button
+				id='button-close'
 				className={classes.modal__close}
 				onClick={() => setIsOpen(false)}
 			>

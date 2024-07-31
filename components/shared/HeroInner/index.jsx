@@ -92,6 +92,7 @@ export function HeroInner({ innerInfo, text, title, images, image, backLink }) {
 						images={images}
 						width={1920}
 						height={1080}
+						quality={60}
 					/>
 				</motion.div>
 			)}
@@ -104,6 +105,7 @@ export function HeroInner({ innerInfo, text, title, images, image, backLink }) {
 						src={image}
 						alt='img'
 						fill
+						priority
 					/>
 				</motion.div>
 			)}
