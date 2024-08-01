@@ -379,6 +379,7 @@
 
 .logotypePortfolio .item-198 .img_box img {
 	max-width: 14.188rem;
+	@apply mx-auto;
 }
 
 .logotypePortfolio .item-198 .img_box::after {
@@ -729,7 +730,7 @@
 
 @media (max-width: 1200px) {
 	.logotypePortfolio .item-204 {
-		background-size: 463px 100%;
+		background-size: 28.938rem 100%;
 	}
 }
 
@@ -1251,7 +1252,7 @@
 }
 
 .item-63 .main_name {
-	color: #fff;
+	color: #fff !important;
 }
 
 .item-63 .img_box {
@@ -1305,11 +1306,11 @@
 	background: url('/images/portfolio_logotype/Banoffi/tarelki.png') no-repeat
 		center;
 	background-size: cover;
-	width: 590px;
-	height: 430px;
+	width: 36.875rem;
+	height: 26.875rem;
 	right: 50%;
 	bottom: 0;
-	margin-right: -975px;
+	margin-right: -60.938rem;
 	z-index: 0;
 	/* Альянс */
 }
@@ -1329,39 +1330,39 @@
 }
 
 .item-65 .number {
-	color: #e7e7e7;
+	color: #e7e7e7 !important;
 }
 
 .item-65 .main_name {
-	color: #fff;
+	color: #fff !important;
 }
 
 .item-65 .description {
-	color: #e7e7e7;
+	color: #e7e7e7 !important;
 }
 
 .item-65 .img_box {
-	max-width: 231px;
+	max-width: 14.438rem;
 	margin-right: 50%;
 	/* 10 */
 }
 
 @media (max-width: 1200px) {
 	.item-65 .img_box {
-		max-width: 196px;
+		max-width: 12.25rem;
 	}
 }
 
 @media (max-width: 576px) {
 	.item-65 .img_box {
-		max-width: 170px;
+		max-width: 10.625rem;
 		margin-right: 0;
 	}
 }
 
 .item-66 {
 	background-image: url('/images/portfolio_logotype/gryadka/bg.png');
-	background-size: 1920px 530px;
+	background-size: 120rem 33.125rem;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -1369,17 +1370,17 @@
 @media (max-width: 576px) {
 	.item-66 {
 		background-image: url('/images/portfolio_logotype/gryadka/bg-mob.png');
-		background-size: 576px 700px;
+		background-size: 36rem 43.75rem;
 	}
 }
 
 .item-66 .img_box {
-	max-width: 400px;
+	max-width: 25rem;
 	/* 11 */
 }
 
 .item-67 .main_name {
-	color: #fff;
+	color: #fff !important;
 }
 
 .item-67 {
@@ -1390,26 +1391,26 @@
 
 @media (max-width: 576px) {
 	.item-67 {
-		background-position: -1550px 0;
-		background-size: 2600px;
+		background-position: -96.875rem 0;
+		background-size: 162.5rem;
 	}
 }
 
 .item-67 .img_box {
-	max-width: 580px;
+	max-width: 36.25rem;
 	display: flex;
 	justify-content: space-between;
-	padding-left: 180px;
+	padding-left: 11.25rem;
 	position: relative;
 	/* 12 */
 }
 
 @media (max-width: 576px) {
 	.item-67 .img_box {
-		max-width: 200px;
+		max-width: 12.5rem;
 		margin: 0 auto;
 		padding-left: 0;
-		padding-top: 140px;
+		padding-top: 8.75rem;
 	}
 }
 
@@ -1417,7 +1418,7 @@
 	position: absolute;
 	content: '';
 	height: 100%;
-	width: 120px;
+	width: 7.5rem;
 	left: 0;
 	top: 0;
 	background: url('/images/portfolio_logotype/perspective/perspective_left.svg')
@@ -1426,9 +1427,9 @@
 
 @media (max-width: 576px) {
 	.item-67 .img_box::after {
-		width: 100px;
-		top: -35px;
-		left: calc(50% - 50px);
+		width: 6.25rem;
+		top: -2.188rem;
+		left: calc(50% - 3.125rem);
 	}
 }
 
@@ -1439,7 +1440,7 @@
 }
 
 .item-68 .container {
-	padding-left: 85px;
+	padding-left: 5.313rem;
 }
 
 .item-68:before {
@@ -1447,15 +1448,15 @@
 	background: url('/images/portfolio_logotype/Velo/human.png');
 	background-size: cover;
 	position: absolute;
-	height: 400px;
-	width: 560px;
+	height: 25rem;
+	width: 35rem;
 	right: 50%;
-	margin-right: -540px;
+	margin-right: -33.75rem;
 	bottom: 0;
 }
 
 .item-68 .img_box {
-	max-width: 200px;
+	max-width: 12.5rem;
 	left: 50%;
 	margin-left: -25%;
 	margin-right: 25%;
@@ -1463,13 +1464,13 @@
 }
 
 .item-69 .img_box {
-	max-width: 303px;
+	max-width: 18.938rem;
 	/* 14 */
 }
 
 @media (max-width: 576px) {
 	.item-69 .img_box {
-		max-width: 226px;
+		max-width: 14.125rem;
 	}
 }
 
@@ -1479,15 +1480,15 @@
 }
 
 .item-70 .container {
-	padding-left: 100px;
+	padding-left: 6.25rem;
 }
 
 .item-70 .main_name {
-	color: #fff;
+	color: #fff !important;
 }
 
 .item-70 .img_box {
-	max-width: 180px;
+	max-width: 11.25rem;
 	left: 50%;
 	margin-left: -30%;
 	margin-right: 20%;
@@ -1499,11 +1500,11 @@
 	background: url('/images/portfolio_logotype/Fishka/vizitki.jpg') no-repeat
 		center;
 	background-size: cover;
-	width: 420px;
-	height: 550px;
+	width: 26.25rem;
+	height: 34.375rem;
 	right: 50%;
-	margin-right: -600px;
-	bottom: 45px;
+	margin-right: -37.5rem;
+	bottom: 2.813rem;
 	/* Эко клининг */
 }
 
@@ -1522,12 +1523,12 @@
 }
 
 .logotypePortfolio .item-71 .img_box {
-	max-width: 325px;
+	max-width: 20.313rem;
 }
 
 @media (max-width: 576px) {
 	.logotypePortfolio .item-71 .img_box {
-		max-width: 233px;
+		max-width: 14.563rem;
 	}
 }
 
@@ -1537,11 +1538,11 @@
 }
 
 .item-72 .container {
-	padding-left: 100px;
+	padding-left: 6.25rem;
 }
 
 .item-72 .img_box {
-	max-width: 330px;
+	max-width: 20.625rem;
 	left: 50%;
 	margin-left: -25%;
 	margin-right: 25%;
@@ -1553,30 +1554,30 @@
 	background: url('/images/portfolio_logotype/VeterPeremmen/girl.png') no-repeat
 		center;
 	background-size: cover;
-	height: 610px;
-	width: 645px;
+	height: 38.125rem;
+	width: 40.313rem;
 	position: absolute;
 	right: 50%;
-	margin-right: -775px;
+	margin-right: -48.438rem;
 	bottom: 0;
 	z-index: 1;
 	/* 17 */
 }
 
 .item-73 .img_box {
-	max-width: 360px;
+	max-width: 22.5rem;
 }
 
 @media (max-width: 576px) {
 	.item-73 .img_box {
-		max-width: 280px;
+		max-width: 17.5rem;
 	}
 }
 
 .item-73 .container:before {
 	content: '';
-	width: 310px;
-	height: 200px;
+	width: 19.375rem;
+	height: 12.5rem;
 	position: absolute;
 	bottom: 0;
 	background: url('/images/portfolio_logotype/kolosya.jpg') no-repeat center;
@@ -1587,7 +1588,7 @@
 
 @media (max-width: 576px) {
 	.item-73 .container:before {
-		bottom: 20px;
+		bottom: 1.25rem;
 	}
 }
 
@@ -1598,7 +1599,7 @@
 }
 
 .item-74 .container {
-	padding-left: 120px;
+	padding-left: 7.5rem;
 }
 
 .item-74:before {
@@ -1608,13 +1609,13 @@
 	background-size: cover;
 	right: 50%;
 	bottom: 0;
-	margin-right: -710px;
-	width: 630px;
+	margin-right: -44.375rem;
+	width: 39.375rem;
 	height: 100%;
 }
 
 .item-74 .img_box {
-	max-width: 420px;
+	max-width: 26.25rem;
 	margin-right: 40%;
 	left: 50%;
 	margin-left: -10%;
@@ -1622,7 +1623,7 @@
 }
 
 .item-75 .img_box {
-	max-width: 280px;
+	max-width: 17.5rem;
 	/* 20 */
 }
 
@@ -1631,7 +1632,7 @@
 }
 
 .item-76 .container {
-	padding-left: 80px;
+	padding-left: 5rem;
 }
 
 .item-76:before {
@@ -1640,15 +1641,15 @@
 	background: url('/images/portfolio_logotype/Josse/box.png') no-repeat center;
 	background-size: cover;
 	right: 50%;
-	margin-right: -770px;
+	margin-right: -48.125rem;
 	top: 0;
-	width: 625px;
-	height: 715px;
+	width: 39.063rem;
+	height: 44.688rem;
 	z-index: 1;
 }
 
 .item-76 .img_box {
-	max-width: 220px;
+	max-width: 13.75rem;
 	left: 50%;
 	margin-left: -10%;
 	margin-right: 40%;
@@ -1663,18 +1664,18 @@
 }
 
 .item-77 .img_box {
-	max-width: 410px;
+	max-width: 25.625rem;
 }
 
 @media (max-width: 576px) {
 	.item-57 .img_box {
-		max-height: 150px;
+		max-height: 9.375rem;
 	}
 
 	.item-57 .container:before {
-		margin-left: -160px;
-		width: 115px;
-		height: 234px;
+		margin-left: -10rem;
+		width: 7.188rem;
+		height: 14.625rem;
 	}
 
 	.item-57 .container:after {
@@ -1682,56 +1683,56 @@
 	}
 
 	.item-58 .img_box {
-		max-width: 255px;
-		margin-left: -35px;
+		max-width: 15.938rem;
+		margin-left: -2.188rem;
 	}
 
 	.item-59 .img_box {
-		max-width: 280px;
-		margin-top: -200px;
+		max-width: 17.5rem;
+		margin-top: -12.5rem;
 	}
 
 	.item-59:before {
-		width: 255px;
-		height: 310px;
+		width: 15.938rem;
+		height: 19.375rem;
 		right: 50%;
-		margin-right: -120px;
-		margin-left: -15px;
+		margin-right: -7.5rem;
+		margin-left: -0.938rem;
 	}
 
 	.item-63 {
-		background-position-x: -975px;
+		background-position-x: -60.938rem;
 	}
 
 	.item-63 .img_box {
-		max-width: 250px;
+		max-width: 15.625rem;
 	}
 
 	.item-63 .img_box:before {
-		bottom: 50px;
+		bottom: 3.125rem;
 	}
 
 	.item-64 .img_box {
-		max-width: 250px;
-		max-height: 200px;
-		margin-top: -150px;
+		max-width: 15.625rem;
+		max-height: 12.5rem;
+		margin-top: -9.375rem;
 	}
 
 	.item-64:before {
-		width: 400px;
-		height: 440px;
-		margin-left: -200px;
+		width: 25rem;
+		height: 27.5rem;
+		margin-left: -12.5rem;
 		transform: rotate(20deg);
-		bottom: -150px;
+		bottom: -9.375rem;
 	}
 
 	.item-66 .img_box {
-		max-width: 250px;
+		max-width: 15.625rem;
 	}
 
 	.item-68 {
-		background-position: -350px 300px;
-		background-size: 1000px;
+		background-position: -21.875rem 18.75rem;
+		background-size: 62.5rem;
 	}
 
 	.item-68 .img_box {
@@ -1739,7 +1740,7 @@
 	}
 
 	.item-68 .container {
-		// padding: 15px;
+		padding: 0.938rem;
 	}
 
 	.item-68:before {
@@ -1751,7 +1752,7 @@
 	}
 
 	.item-70 .container {
-		// padding: 15px;
+		padding: 0.938rem;
 	}
 
 	.item-70 .img_box {
@@ -1767,32 +1768,32 @@
 	}
 
 	.item-72 .container {
-		// padding: 15px;
+		padding: 0.938rem;
 	}
 
 	.item-72 .img_box {
-		max-width: 250px;
-		margin: 0 0 120px 0;
+		max-width: 15.625rem;
+		margin: 0 0 7.5rem 0;
 	}
 
 	.item-72:before {
-		height: 270px;
-		width: 275px;
-		margin-right: -140px;
+		height: 16.875rem;
+		width: 17.188rem;
+		margin-right: -8.75rem;
 	}
 
 	.item-74 {
 		background: url('/images/portfolio_logotype/Cubko/mobile-background.jpg')
 			no-repeat center;
-		background-size: 700px;
+		background-size: 43.75rem;
 	}
 
 	.item-74 .container {
-		// padding-left: 15px;
+		padding-left: 0.938rem;
 	}
 
 	.item-74 .img_box {
-		max-width: 330px;
+		max-width: 20.625rem;
 		margin-right: 0;
 		margin-left: 0;
 	}
@@ -1802,32 +1803,32 @@
 	}
 
 	.item-75 .img_box {
-		max-width: 220px;
+		max-width: 13.75rem;
 	}
 
 	.item-76 .container {
-		// padding: 0;
+		padding: 0;
 	}
 
 	.item-76 .img_box {
-		max-width: 180px;
-		margin: 0 0 150px 0;
+		max-width: 11.25rem;
+		margin: 0 0 9.375rem 0;
 	}
 
 	.item-76:before {
-		margin-right: -310px;
+		margin-right: -19.375rem;
 		top: auto;
-		bottom: -110px;
-		width: 355px;
-		height: 375px;
+		bottom: -6.875rem;
+		width: 22.188rem;
+		height: 23.438rem;
 	}
 
 	.item-77 .img_box {
-		max-width: 300px;
+		max-width: 18.75rem;
 	}
 }
 .logotypePortfolio {
-	margin-bottom: -40px;
+	margin-bottom: -2.5rem;
 }
 
 .logotypePortfolio .items {
@@ -1841,13 +1842,17 @@
 .logotypePortfolio .items .videoBackground {
 	position: absolute;
 	width: 100vw;
-	left: calc((100vw - 1380px) / -2);
+	left: calc((100vw - 82.5rem) / -2);
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
 	top: 0;
 	opacity: 0.998;
 	z-index: -1;
+
+	video {
+		@apply w-full h-full object-cover object-center;
+	}
 }
 
 @media (max-width: 1400px) {
@@ -1874,7 +1879,7 @@
 
 .logotypePortfolio .container {
 	// max-width: 1380px;
-	height: 530px;
+	height: 33.125rem;
 	// margin: 0 auto;
 	// padding: 0 15px;
 	display: flex;
@@ -1940,8 +1945,8 @@
 }
 
 .kenguru .img_box {
-	margin-top: 30px;
-	max-height: 210px;
+	margin-top: 1.875rem;
+	max-height: 13.125rem;
 }
 
 .kenguru .container:before {
@@ -1950,11 +1955,11 @@
 	background: url('/images/portfolio_logotype/kenguru/1.jpg') no-repeat center;
 	background-size: cover;
 	left: 50%;
-	margin-left: -550px;
-	bottom: -110px;
+	margin-left: -34.375rem;
+	bottom: -6.875rem;
 	z-index: -1;
-	width: 135px;
-	height: 234px;
+	width: 8.438rem;
+	height: 14.625rem;
 }
 
 .kenguru .container:after {
@@ -1963,10 +1968,10 @@
 	background: url('/images/portfolio_logotype/kenguru/2.jpg') no-repeat center;
 	background-size: cover;
 	right: 50%;
-	margin-right: -730px;
-	top: -20px;
+	margin-right: -45.625rem;
+	top: -1.25rem;
 	z-index: -1;
-	width: 240px;
-	height: 230px;
+	width: 15rem;
+	height: 14.375rem;
 	/* 2 */
 }

@@ -10,7 +10,7 @@ export function usePagination(props, coefficient) {
 		if (
 			e.target.documentElement.scrollHeight -
 				(e.currentTarget.innerHeight + e.target.documentElement.scrollTop) <
-			100
+			400
 		) {
 			setFetching(true);
 		}
