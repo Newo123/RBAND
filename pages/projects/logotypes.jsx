@@ -1,4 +1,5 @@
 import cn from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -87,28 +88,58 @@ export default function Page({ projects }) {
 				</Container>
 			</section>
 
-			<div>
+			<div className={classes.logotypePortfolio}>
 				{projects?.body?.main?.pages &&
 					projects?.body?.main?.pages.map(page => (
 						<section
 							key={page?.page_id}
-							className={cn(
-								classes.logotype,
-								classes[`logotype__${page?.page_id}`]
-							)}
+							className={cn(classes.items, classes[`item-${page?.page_id}`])}
 							id={`logo-${page?.page_id}`}
 						>
-							<Container variant='xl'>
-								<Link href={page?.href}>
+							<Container
+								variant='xl'
+								className={classes.container}
+							>
+								<Link
+									href={page?.href}
+									className={classes.name}
+								>
 									<span
 										dangerouslySetInnerHTML={{
 											__html: page?.sort > 9 ? page?.sort : '0' + page?.sort
 										}}
+										className={classes.number}
 									/>
-									<h5 dangerouslySetInnerHTML={{ __html: page?.name }} />
+									<h5
+										dangerouslySetInnerHTML={{ __html: page?.name }}
+										className={classes.main_name}
+									/>
 									<p
 										dangerouslySetInnerHTML={{ __html: page?.meta_description }}
+										className={classes.description}
 									/>
+								</Link>
+								<Link
+									href={page?.href}
+									className={classes.img_box}
+								>
+									<Image
+										src={page?.feed_image}
+										alt={page?.name}
+										width={1920}
+										height={920}
+									/>
+									<div className={classes.videoBackground}>
+										<video
+											autoPlay
+											loop
+											preload='auto'
+											muted
+											playsInline
+										>
+											{/* <source src={} type='video/mp4' /> */}
+										</video>
+									</div>
 								</Link>
 								{/* <Link href='/'>
 

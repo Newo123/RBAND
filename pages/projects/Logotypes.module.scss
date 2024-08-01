@@ -57,46 +57,1826 @@
 	}
 }
 
-// .logotype_portfolio {
+// .logotypePortfolio {
 // 	margin-bottom: -40px;
 // }
-.logotype {
-	@apply w-full h-[33.125rem] relative overflow-hidden;
 
-	& .video-background {
-		position: absolute;
-		width: 100vw;
-		left: calc((100vw - 1380px) / -2);
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		top: 0;
-		opacity: 0.998;
-		z-index: -1;
-		@media (max-width: 1400px) {
-			width: 100%;
-			left: 0;
-		}
-	}
-	& .video-background__poster {
-		position: absolute;
-		width: 100%;
-		left: 0;
-		height: 100%;
-		top: 0;
-		opacity: 0.998;
-		z-index: -2;
-		& img {
-			object-fit: cover;
-			object-position: center;
-		}
+.container {
+	@apply relative;
+}
+.logotypePortfolio .items.item-57,
+.logotypePortfolio .items.item-59,
+.logotypePortfolio .items.item-70,
+.logotypePortfolio .items.item-72,
+.logotypePortfolio .items.item-76 {
+	overflow: visible;
+	/* ЯНАО */
+}
+
+.logotypePortfolio .item-193 {
+	overflow: visible;
+	z-index: 1;
+	/* Thinklinkers */
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-193 .container {
+		justify-content: flex-start;
 	}
 }
-.logotype_portfolio .container {
-	max-width: 1380px;
+
+.logotypePortfolio .item-193 .img_box {
+	max-width: 19.438rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-193 .img_box {
+		max-width: 14.313rem;
+		height: auto;
+		margin-top: 9.063rem;
+	}
+}
+
+.logotypePortfolio .item-193::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-image: url('/images/portfolio_logotype/yanao/bg.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 41.938rem;
+	height: 36rem;
+}
+
+@media (max-width: 1700px) {
+	.logotypePortfolio .item-193::before {
+		right: -6.25rem;
+	}
+}
+
+@media (max-width: 1500px) {
+	.logotypePortfolio .item-193::before {
+		right: -13.125rem;
+	}
+}
+
+@media (max-width: 1240px) {
+	.logotypePortfolio .item-193::before {
+		right: -16.875rem;
+	}
+}
+
+@media (max-width: 1104px) {
+	.logotypePortfolio .item-193::before {
+		right: -20.625rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.logotypePortfolio .item-193::before {
+		width: 16.75rem;
+		right: -1.875rem;
+		background-image: url('/images/portfolio_logotype/yanao/bg-tablet.png');
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-193::before {
+		top: auto;
+		bottom: -6.25rem;
+		right: 0;
+		width: 26.375rem;
+		height: 31.688rem;
+		background-image: url('/images/portfolio_logotype/yanao/bg-mob.png');
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-193::before {
+		right: -6.25rem;
+	}
+}
+
+.logotypePortfolio .item-194 {
+	/* Кеми */
+}
+
+.logotypePortfolio .item-194::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(24, 29, 80, 0.7);
+}
+
+.logotypePortfolio .item-194 .img_box {
+	max-width: 18.75rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-194 .img_box {
+		max-width: 15.563rem;
+	}
+}
+
+.logotypePortfolio .item-194 .main_name {
+	color: #fff;
+}
+
+.logotypePortfolio .item-195 {
+	background-image: url('/images/portfolio_logotype/kemy.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* НДК Новая деловая культура */
+}
+
+.logotypePortfolio .item-195 .number {
+	color: #fff;
+}
+
+.logotypePortfolio .item-195 .main_name {
+	color: #fff;
+}
+
+.logotypePortfolio .item-195 .description {
+	color: #e7e7e7;
+}
+
+.logotypePortfolio .item-195::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		rgba(24, 50, 116, 0.7) 0%,
+		rgba(26, 28, 85, 0) 99.14%
+	);
+}
+
+.logotypePortfolio .item-195 .container {
+	justify-content: initial;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-195 .container {
+		justify-content: center;
+	}
+}
+
+.logotypePortfolio .item-195 .img_box {
+	max-width: 16.375rem;
+	margin-right: auto;
+	margin-left: 1.875rem;
+	height: auto;
+	margin-top: 8.75rem;
+}
+
+@media (max-width: 1400px) {
+	.logotypePortfolio .item-195 .img_box {
+		margin-left: 6.875rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-195 .img_box {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-195 .img_box {
+		margin-top: 0;
+		max-width: 14.188rem;
+	}
+}
+
+.logotypePortfolio .item-196 {
+	/* Стародубец */
+}
+
+.logotypePortfolio .item-196 .container {
+	justify-content: initial;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-196 .container {
+		justify-content: center;
+	}
+}
+
+.logotypePortfolio .item-196 .img_box {
+	max-width: 16rem;
+	margin-right: auto;
+	margin-left: 8.125rem;
+	height: auto;
+	margin-top: 10.625rem;
+}
+
+@media (max-width: 1200px) {
+	.logotypePortfolio .item-196 .img_box {
+		margin-left: 4.375rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-196 .img_box {
+		max-width: 12.563rem;
+		margin-right: 0;
+		margin-top: 0;
+	}
+}
+
+.logotypePortfolio .item-197 {
+	/* Bakout */
+}
+
+.logotypePortfolio .item-197::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logotypePortfolio .item-197 .container {
+	justify-content: initial;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-197 .container {
+		justify-content: center;
+	}
+}
+
+.logotypePortfolio .item-197 .img_box {
+	max-width: 18.438rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-197 .img_box {
+		max-width: 12.563rem;
+	}
+}
+
+.logotypePortfolio .item-198 {
+	/* Прованс provence*/
+}
+
+.logotypePortfolio .item-198 .main_name {
+	color: #fff;
+}
+
+.logotypePortfolio .item-198 .container::after {
+	content: '(сигма) – обозначение предела прочности материала.';
+	position: absolute;
+	bottom: 3.625rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.875rem;
+	line-height: 2.1;
+	font-weight: 500;
+	z-index: 2;
+	color: #fff;
+	background-image: url(/images/portfolio_logotype/bakout/sigma.svg);
+	background-size: 1.063;
+	background-repeat: no-repeat;
+	background-position: left 0.188rem;
+	padding-left: 1.188rem;
+}
+
+@media (max-width: 900px) {
+	.logotypePortfolio .item-198 .container::after {
+		padding-left: 0;
+		bottom: 2.375rem;
+		max-width: 17rem;
+		text-align: center;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-198 .container::after {
+		bottom: 3rem;
+		width: 17.188rem;
+	}
+}
+
+.logotypePortfolio .item-198 .img_box {
+	z-index: 2;
+	height: auto;
+	text-align: center;
+	position: relative;
+}
+
+.logotypePortfolio .item-198 .img_box img {
+	max-width: 14.188rem;
+}
+
+.logotypePortfolio .item-198 .img_box::after {
+	content: 'Бакаут – дерево с прочнейшей древесиной.';
+	position: absolute;
+	bottom: -6.188rem;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #fff;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-198 .img_box::after {
+		bottom: -11.375rem;
+		width: 100vw;
+	}
+}
+
+.logotypePortfolio .item-198::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-image: url('/images/portfolio_logotype/bakout/bg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: left;
+	width: 63%;
+	z-index: 1;
+	height: 100%;
+}
+
+@media (max-width: 1920px) {
+	.logotypePortfolio .item-198::before {
+		width: 65%;
+	}
+}
+
+@media (max-width: 1400px) {
+	.logotypePortfolio .item-198::before {
+		width: 69%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-198::before {
+		width: 75%;
+	}
+}
+
+@media (max-width: 900px) {
+	.logotypePortfolio .item-198::before {
+		width: 80%;
+	}
+}
+
+@media (max-width: 768px) {
+	.logotypePortfolio .item-198::before {
+		width: 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-198::before {
+		width: 122%;
+	}
+}
+
+@media (max-width: 414px) {
+	.logotypePortfolio .item-198::before {
+		width: 137%;
+	}
+}
+
+.logotypePortfolio .item-198::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(263.98deg, #473329 39.43%, #030303 82.81%);
+}
+
+.logotypePortfolio .item-199 {
+	background-image: url('/images/portfolio_logotype/provence.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* NON WASTE */
+}
+
+.logotypePortfolio .item-199 .img_box {
+	max-width: 19.375rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-199 .img_box {
+		max-width: 16.25rem;
+	}
+}
+
+.logotypePortfolio .item-200 {
+	background-color: #e6e6e6;
+	/* Сытый Гусь*/
+}
+
+.logotypePortfolio .item-200 .img_box {
+	max-width: 15.375rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-200 .img_box {
+		max-width: 11.375rem;
+		height: auto;
+		margin-top: 10rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-200 .container {
+		justify-content: flex-start;
+	}
+}
+
+.logotypePortfolio .item-200::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 2rem;
+	background-image: url('/images/portfolio_logotype/nonwaste/left.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 30.188rem;
+	height: 27.25rem;
+}
+
+@media (max-width: 1700px) {
+	.logotypePortfolio .item-200::before {
+		height: 23.5rem;
+	}
+}
+
+@media (max-width: 900px) {
+	.logotypePortfolio .item-200::before {
+		width: 14.75rem;
+		height: 13.625rem;
+		bottom: 3.063rem;
+	}
+}
+
+.logotypePortfolio .item-200::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 2rem;
+	background-image: url('/images/portfolio_logotype/nonwaste/right.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 21.75rem;
+	height: 18.563rem;
+}
+
+@media (max-width: 1700px) {
+	.logotypePortfolio .item-200::after {
+		width: 19.875rem;
+		bottom: 0;
+	}
+}
+
+@media (max-width: 900px) {
+	.logotypePortfolio .item-200::after {
+		width: 12rem;
+		height: 10.563rem;
+		bottom: 2.688rem;
+	}
+}
+
+.logotypePortfolio .item-201 {
+	background-image: url('/images/portfolio_logotype/guse.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* Green School */
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-201 {
+		background-image: url('/images/portfolio_logotype/guse-mob.jpg');
+	}
+}
+
+.logotypePortfolio .item-201 .img_box {
+	max-width: 11.125rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-201 .img_box {
+		max-width: 12.563rem;
+	}
+}
+
+.logotypePortfolio .item-201 .number {
+	color: #000;
+}
+
+.logotypePortfolio .item-201 .description {
+	color: #000;
+}
+
+.logotypePortfolio .item-202 {
+	background-image: url('/images/portfolio_logotype/green-school.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 114.688rem;
+	/* Ольга Кругликова */
+}
+
+@media (max-width: 1440px) {
+	.logotypePortfolio .item-202 {
+		background-position: 78%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-202 {
+		background-image: url('/images/portfolio_logotype/green-school-tablet.png');
+		background-position: bottom center;
+		background-size: 27.188rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-202 {
+		background-image: url('/images/portfolio_logotype/green-school-mob.png');
+		background-position: bottom center;
+		background-size: 25rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-202 .container {
+		justify-content: flex-start;
+	}
+}
+
+.logotypePortfolio .item-202 .img_box {
+	max-width: 21.313rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-202 .img_box {
+		max-width: 15.75rem;
+		height: auto;
+		margin-top: 11.625rem;
+	}
+}
+
+.logotypePortfolio .item-203 {
+	background-color: #ddd6d0;
+	z-index: 1;
+	overflow: visible;
+	/* Yellow */
+}
+
+.logotypePortfolio .item-203 .img_box {
+	max-width: 23.375rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-203 .img_box {
+		max-width: 14.625rem;
+		height: auto;
+		margin-top: 8.25rem;
+	}
+}
+
+.logotypePortfolio .item-203 .container::before {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	background-image: url('/images/portfolio_logotype/kruglikova/bg.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 26.25rem;
+	height: 37.313rem;
+}
+
+@media (max-width: 1200px) {
+	.logotypePortfolio .item-203 .container::before {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-203 .container {
+		justify-content: flex-start;
+	}
+}
+
+.logotypePortfolio .item-203::before {
+	content: '';
+	position: absolute;
+	right: -3.75rem;
+	bottom: 0;
+	background-image: url('/images/portfolio_logotype/kruglikova/bg.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 26.25rem;
+	height: 37.313rem;
+	display: none;
+}
+
+@media (max-width: 1200px) {
+	.logotypePortfolio .item-203::before {
+		display: block;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-203::before {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-203::before {
+		display: block;
+		width: 15.313rem;
+		height: 22rem;
+		bottom: -0.25rem;
+		right: auto;
+		left: 50%;
+		transform: translateX(-41%);
+	}
+}
+
+.logotypePortfolio .item-204 {
+	background-image: url('/images/portfolio_logotype/yellow/bg.png');
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: auto;
+	/* Стройэнергогрупп */
+}
+
+@media (max-width: 1200px) {
+	.logotypePortfolio .item-204 {
+		background-size: 463px 100%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-204 {
+		background: none;
+	}
+}
+
+.logotypePortfolio .item-204::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 27.875rem;
+	width: 18.063rem;
+	height: 28.5rem;
+	background-image: url('/images/portfolio_logotype/yellow/left.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+@media (max-width: 1200px) {
+	.logotypePortfolio .item-204::before {
+		right: 15.5rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-204::before {
+		right: -6.25rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-204::before {
+		transform: rotate(37deg);
+		bottom: 0;
+		top: auto;
+		right: -1.813rem;
+		left: auto;
+	}
+}
+
+.logotypePortfolio .item-204::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 21.25rem;
+	width: 5rem;
+	height: 20.625rem;
+	background-image: url('/images/portfolio_logotype/yellow/right.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+@media (max-width: 1200px) {
+	.logotypePortfolio .item-204::after {
+		right: 8.875rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-204::after {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-204::after {
+		display: block;
+		transform: rotate(36deg);
+		bottom: 0;
+		top: auto;
+		right: 3rem;
+		left: auto;
+	}
+}
+
+.logotypePortfolio .item-204 .container {
+	justify-content: initial;
+}
+
+.logotypePortfolio .item-204 .img_box {
+	max-width: 17.813rem;
+	margin-right: auto;
+	margin-left: 10rem;
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-204 .img_box {
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-204 .img_box {
+		max-width: 11.438rem;
+		height: auto;
+		margin-top: 11.438rem;
+	}
+}
+
+.logotypePortfolio .item-205 {
+	/* olikon */
+}
+
+.logotypePortfolio .item-205::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(43, 63, 105, 0.73);
+}
+
+.logotypePortfolio .item-205 .img_box {
+	max-width: 20.5rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-205 .img_box {
+		max-width: 17.5rem;
+	}
+}
+
+.logotypePortfolio .item-205 .main_name {
+	color: #fff;
+}
+
+.logotypePortfolio .item-206 {
+	/* Кенгуру */
+}
+
+.logotypePortfolio .item-206::before {
+	content: '';
+	position: absolute;
+	width: 32.125rem;
+	height: 32.25rem;
+	top: 0;
+	right: 2.938rem;
+	background-image: url('/images/portfolio_logotype/olikon.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 1400px) {
+	.logotypePortfolio .item-206::before {
+		right: -3.125rem;
+	}
+}
+
+@media (max-width: 1200px) {
+	.logotypePortfolio .item-206::before {
+		right: -6.25rem;
+	}
+}
+
+@media (max-width: 1024px) {
+	.logotypePortfolio .item-206::before {
+		width: 21.938rem;
+		height: 22rem;
+		right: -8.75rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-206::before {
+		display: none;
+	}
+}
+
+.logotypePortfolio .item-206 .img_box {
+	max-width: 13.125rem;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-206 .img_box {
+		max-width: 10.313rem;
+		height: auto;
+		margin-top: 10rem;
+	}
+}
+
+.item-57 .img_box {
+	margin-top: 1.875rem;
+	max-height: 13.125rem;
+}
+
+.item-57 .container:before {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/kenguru/1.jpg') no-repeat center;
+	background-size: cover;
+	left: 50%;
+	margin-left: -34.375rem;
+	bottom: -6.875rem;
+	z-index: -1;
+	width: 8.438rem;
+	height: 14.625rem;
+}
+
+.item-57 .container:after {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/kenguru/2.jpg') no-repeat center;
+	background-size: cover;
+	right: 50%;
+	margin-right: -45.625rem;
+	top: -1.25rem;
+	z-index: -1;
+	width: 15rem;
+	height: 14.375rem;
+	/* 2 */
+}
+
+.item-58 {
+	background: #e3e3e3;
+}
+
+.item-58 .img_box {
+	max-width: 21.875rem;
+	/* 3 */
+}
+
+.item-59 {
+	background: #fff;
+	background: -moz-linear-gradient(187deg, #fff 20%, #b2d3d4 80%);
+	background: -webkit-linear-gradient(187deg, #fff 20%, #b2d3d4 80%);
+	background: linear-gradient(187deg, #fff 20%, #b2d3d4 80%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#b2d3d4",GradientType=1);
+}
+
+.item-59 .img_box {
+	max-width: 25.625rem;
+	z-index: 2;
+}
+
+.item-59:before {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/Babula/boy.png') no-repeat center;
+	background-size: cover;
+	width: 33.438rem;
+	height: 38.75rem;
+	right: 50%;
+	margin-right: -50.625rem;
+	bottom: 0;
+	z-index: 1;
+	/* 4 */
+}
+
+.item-60 {
+	background-image: linear-gradient(to right, #ededed 50%, #f17c20 50%);
+}
+
+@media (max-width: 576px) {
+	.item-60 {
+		background-image: linear-gradient(to bottom, #ededed 50%, #f17c20 50%);
+	}
+}
+
+.item-60 .container::before,
+.item-60 .container::after {
+	content: '';
+	position: absolute;
+	width: 37.5rem;
+	height: 100%;
+	top: 0;
+	background-position: center;
+	background-size: 21.25rem;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 1380px) {
+	.item-60 .container::before,
+	.item-60 .container::after {
+		width: 50%;
+	}
+}
+
+@media (max-width: 900px) {
+	.item-60 .container::before,
+	.item-60 .container::after {
+		background-size: 17.5rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.item-60 .container::before,
+	.item-60 .container::after {
+		width: 100%;
+		height: 50%;
+		background-size: 21.25rem;
+	}
+}
+
+@media (max-width: 370px) {
+	.item-60 .container::before,
+	.item-60 .container::after {
+		background-size: 17.5rem;
+	}
+}
+
+.item-60 .container::before {
+	background-image: url('/images/portfolio_logotype/decado/dekado1.svg');
+	left: 5.625rem;
+}
+
+@media (max-width: 1380px) {
+	.item-60 .container::before {
+		left: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.item-60 .container::before {
+		left: 0.5rem;
+	}
+}
+
+.item-60 .container::after {
+	background-image: url('/images/portfolio_logotype/decado/dekado2.svg');
+	left: auto;
+	right: 5.625rem;
+}
+
+@media (max-width: 1380px) {
+	.item-60 .container::after {
+		right: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.item-60 .container::after {
+		right: auto;
+		left: 0.5rem;
+		top: auto;
+		bottom: 0;
+	}
+}
+
+.item-60 .img_box img {
+	position: relative;
+	z-index: -1;
+	opacity: 0;
+	/* VOMNE */
+}
+
+.logotypePortfolio .item-61 {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* 6 */
+}
+
+.logotypePortfolio .item-61::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-61 .container {
+		// padding-left: 0;
+		// padding-right: 0;
+	}
+}
+
+.logotypePortfolio .item-61 .img_box {
+	max-width: 57.875rem;
+}
+
+.logotypePortfolio .item-61 .img_box img {
+	position: relative;
+}
+
+@media (max-width: 900px) {
+	.logotypePortfolio .item-61 .img_box {
+		max-width: 33rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-61 .img_box {
+		display: flex;
+		max-width: 43.75rem;
+		width: 43.75rem;
+		margin-right: 0;
+	}
+
+	.logotypePortfolio .item-61 .img_box img {
+		transform: rotate(-90deg);
+		padding-top: 62vw;
+	}
+}
+
+.logotypePortfolio .item-61 .main_name {
+	color: #fff;
+}
+
+.item-62 {
+	/* 7 */
+}
+
+.item-62 .img_box {
+	padding-left: 6.875rem;
+	padding-right: 1.25rem;
+	align-self: flex-start;
+	width: 50%;
+}
+
+.item-62 .img_box img {
+	max-width: 23.75rem;
+}
+
+@media (max-width: 576px) {
+	.item-62 .img_box img {
+		max-width: 15.625rem;
+	}
+}
+
+@media (max-width: 900px) {
+	.item-62 .img_box {
+		width: 60%;
+		padding-left: 3.75rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.item-62 .img_box {
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.item-62 .img_box {
+		height: 50%;
+		width: 100%;
+		padding-top: 4.375rem;
+		text-align: center;
+		padding-right: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.item-62 .container {
+		justify-content: flex-start;
+	}
+}
+
+.item-62 .container::after {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/PetStore/petstore_right.svg')
+		no-repeat center;
+	background-size: 15rem;
+	width: calc(40% - 0.938rem);
+	height: 100%;
+	left: 50%;
+}
+
+@media (max-width: 900px) {
+	.item-62 .container::after {
+		left: 60%;
+	}
+}
+
+@media (max-width: 768px) {
+	.item-62 .container::after {
+		background-size: 11.875rem;
+	}
+}
+
+@media (max-width: 576px) {
+	.item-62 .container::after {
+		left: 0;
+		width: 100%;
+		height: 57%;
+		bottom: 0;
+		background-position: center top;
+	}
+}
+
+.item-62::before {
+	content: '';
+	background: url('/images/portfolio_logotype/PetStore/ar.jpg') no-repeat center;
+	background-size: cover;
+	width: 28.125rem;
+	height: 25rem;
+	position: absolute;
+	right: 50%;
+	margin-right: -55rem;
+	bottom: -7.5rem;
+	z-index: -1;
+}
+
+@media (max-width: 576px) {
+	.item-62::before {
+		width: 100%;
+		margin-right: 0;
+		right: 0;
+		height: 13.75rem;
+		background-position: center;
+		background-size: 16.875rem;
+	}
+}
+
+.item-63 {
+	background: url('/images/portfolio_logotype/Subbot/background.jpg') no-repeat
+		center;
+	background-size: cover;
+}
+
+.item-63 .main_name {
+	color: #fff;
+}
+
+.item-63 .img_box {
+	max-width: 21.875rem;
+	margin-bottom: 3.125rem;
+}
+
+.item-63 .img_box:before {
+	content: '';
+	position: absolute;
+	bottom: 1.563rem;
+	background: url('/images/portfolio_logotype/Subbot/podpis.png');
+	background-size: cover;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 21.25rem;
+	height: 6.25rem;
+	/* 8 */
+}
+
+.item-64 {
+	background: url('/images/portfolio_logotype/Banoffi/background.jpg') no-repeat
+		center;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.item-64 .img_box {
+	max-width: 23.75rem;
+	margin-top: -3.75rem;
+	z-index: 2;
+}
+
+.item-64:before {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/Banoffi/menu.png') no-repeat
+		center;
+	background-size: cover;
+	width: 33.125rem;
+	height: 33.125rem;
+	z-index: 0;
+	left: 50%;
+	margin-left: -51.25rem;
+	bottom: -12.5rem;
+}
+
+.item-64:after {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/Banoffi/tarelki.png') no-repeat
+		center;
+	background-size: cover;
+	width: 590px;
+	height: 430px;
+	right: 50%;
+	bottom: 0;
+	margin-right: -975px;
+	z-index: 0;
+	/* Альянс */
+}
+
+.item-65::before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0.61) 0.86%,
+		rgba(26, 28, 85, 0) 99.14%
+	);
+}
+
+.item-65 .number {
+	color: #e7e7e7;
+}
+
+.item-65 .main_name {
+	color: #fff;
+}
+
+.item-65 .description {
+	color: #e7e7e7;
+}
+
+.item-65 .img_box {
+	max-width: 231px;
+	margin-right: 50%;
+	/* 10 */
+}
+
+@media (max-width: 1200px) {
+	.item-65 .img_box {
+		max-width: 196px;
+	}
+}
+
+@media (max-width: 576px) {
+	.item-65 .img_box {
+		max-width: 170px;
+		margin-right: 0;
+	}
+}
+
+.item-66 {
+	background-image: url('/images/portfolio_logotype/gryadka/bg.png');
+	background-size: 1920px 530px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 576px) {
+	.item-66 {
+		background-image: url('/images/portfolio_logotype/gryadka/bg-mob.png');
+		background-size: 576px 700px;
+	}
+}
+
+.item-66 .img_box {
+	max-width: 400px;
+	/* 11 */
+}
+
+.item-67 .main_name {
+	color: #fff;
+}
+
+.item-67 {
+	background: url('/images/portfolio_logotype/perspective/bg.jpg') no-repeat
+		center;
+	background-size: cover;
+}
+
+@media (max-width: 576px) {
+	.item-67 {
+		background-position: -1550px 0;
+		background-size: 2600px;
+	}
+}
+
+.item-67 .img_box {
+	max-width: 580px;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 180px;
+	position: relative;
+	/* 12 */
+}
+
+@media (max-width: 576px) {
+	.item-67 .img_box {
+		max-width: 200px;
+		margin: 0 auto;
+		padding-left: 0;
+		padding-top: 140px;
+	}
+}
+
+.item-67 .img_box::after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 120px;
+	left: 0;
+	top: 0;
+	background: url('/images/portfolio_logotype/perspective/perspective_left.svg')
+		no-repeat center;
+}
+
+@media (max-width: 576px) {
+	.item-67 .img_box::after {
+		width: 100px;
+		top: -35px;
+		left: calc(50% - 50px);
+	}
+}
+
+.item-68 {
+	background: url('/images/portfolio_logotype/Velo/background.jpg') no-repeat
+		bottom;
+	background-size: cover;
+}
+
+.item-68 .container {
+	padding-left: 85px;
+}
+
+.item-68:before {
+	content: '';
+	background: url('/images/portfolio_logotype/Velo/human.png');
+	background-size: cover;
+	position: absolute;
+	height: 400px;
+	width: 560px;
+	right: 50%;
+	margin-right: -540px;
+	bottom: 0;
+}
+
+.item-68 .img_box {
+	max-width: 200px;
+	left: 50%;
+	margin-left: -25%;
+	margin-right: 25%;
+	/* infiniti */
+}
+
+.item-69 .img_box {
+	max-width: 303px;
+	/* 14 */
+}
+
+@media (max-width: 576px) {
+	.item-69 .img_box {
+		max-width: 226px;
+	}
+}
+
+.item-70 {
+	background: #6d1313;
+	position: relative;
+}
+
+.item-70 .container {
+	padding-left: 100px;
+}
+
+.item-70 .main_name {
+	color: #fff;
+}
+
+.item-70 .img_box {
+	max-width: 180px;
+	left: 50%;
+	margin-left: -30%;
+	margin-right: 20%;
+}
+
+.item-70:before {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/Fishka/vizitki.jpg') no-repeat
+		center;
+	background-size: cover;
+	width: 420px;
+	height: 550px;
+	right: 50%;
+	margin-right: -600px;
+	bottom: 45px;
+	/* Эко клининг */
+}
+
+.logotypePortfolio .item-71 {
+	/* 16 */
+}
+
+.logotypePortfolio .item-71::before {
+	content: '';
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.85);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.logotypePortfolio .item-71 .img_box {
+	max-width: 325px;
+}
+
+@media (max-width: 576px) {
+	.logotypePortfolio .item-71 .img_box {
+		max-width: 233px;
+	}
+}
+
+.item-72 {
+	background: #e8f1f8;
+	position: relative;
+}
+
+.item-72 .container {
+	padding-left: 100px;
+}
+
+.item-72 .img_box {
+	max-width: 330px;
+	left: 50%;
+	margin-left: -25%;
+	margin-right: 25%;
+	z-index: 2;
+}
+
+.item-72:before {
+	content: '';
+	background: url('/images/portfolio_logotype/VeterPeremmen/girl.png') no-repeat
+		center;
+	background-size: cover;
+	height: 610px;
+	width: 645px;
+	position: absolute;
+	right: 50%;
+	margin-right: -775px;
+	bottom: 0;
+	z-index: 1;
+	/* 17 */
+}
+
+.item-73 .img_box {
+	max-width: 360px;
+}
+
+@media (max-width: 576px) {
+	.item-73 .img_box {
+		max-width: 280px;
+	}
+}
+
+.item-73 .container:before {
+	content: '';
+	width: 310px;
+	height: 200px;
+	position: absolute;
+	bottom: 0;
+	background: url('/images/portfolio_logotype/kolosya.jpg') no-repeat center;
+	background-size: cover;
+	z-index: -1;
+	/* 18 */
+}
+
+@media (max-width: 576px) {
+	.item-73 .container:before {
+		bottom: 20px;
+	}
+}
+
+.item-74 {
+	background: url('/images/portfolio_logotype/Cubko/background.jpg') no-repeat
+		center;
+	background-size: cover;
+}
+
+.item-74 .container {
+	padding-left: 120px;
+}
+
+.item-74:before {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/Cubko/girl.png');
+	background-size: cover;
+	right: 50%;
+	bottom: 0;
+	margin-right: -710px;
+	width: 630px;
+	height: 100%;
+}
+
+.item-74 .img_box {
+	max-width: 420px;
+	margin-right: 40%;
+	left: 50%;
+	margin-left: -10%;
+	/* 19 */
+}
+
+.item-75 .img_box {
+	max-width: 280px;
+	/* 20 */
+}
+
+.item-76 {
+	background: #eceaeb;
+}
+
+.item-76 .container {
+	padding-left: 80px;
+}
+
+.item-76:before {
+	content: '';
+	position: absolute;
+	background: url('/images/portfolio_logotype/Josse/box.png') no-repeat center;
+	background-size: cover;
+	right: 50%;
+	margin-right: -770px;
+	top: 0;
+	width: 625px;
+	height: 715px;
+	z-index: 1;
+}
+
+.item-76 .img_box {
+	max-width: 220px;
+	left: 50%;
+	margin-left: -10%;
+	margin-right: 40%;
+	z-index: 2;
+	/* 21 */
+}
+
+.item-77 {
+	background: url('/images/portfolio_logotype/TarelkaShyastia/background.jpg')
+		no-repeat center;
+	background-size: cover;
+}
+
+.item-77 .img_box {
+	max-width: 410px;
+}
+
+@media (max-width: 576px) {
+	.item-57 .img_box {
+		max-height: 150px;
+	}
+
+	.item-57 .container:before {
+		margin-left: -160px;
+		width: 115px;
+		height: 234px;
+	}
+
+	.item-57 .container:after {
+		display: none;
+	}
+
+	.item-58 .img_box {
+		max-width: 255px;
+		margin-left: -35px;
+	}
+
+	.item-59 .img_box {
+		max-width: 280px;
+		margin-top: -200px;
+	}
+
+	.item-59:before {
+		width: 255px;
+		height: 310px;
+		right: 50%;
+		margin-right: -120px;
+		margin-left: -15px;
+	}
+
+	.item-63 {
+		background-position-x: -975px;
+	}
+
+	.item-63 .img_box {
+		max-width: 250px;
+	}
+
+	.item-63 .img_box:before {
+		bottom: 50px;
+	}
+
+	.item-64 .img_box {
+		max-width: 250px;
+		max-height: 200px;
+		margin-top: -150px;
+	}
+
+	.item-64:before {
+		width: 400px;
+		height: 440px;
+		margin-left: -200px;
+		transform: rotate(20deg);
+		bottom: -150px;
+	}
+
+	.item-66 .img_box {
+		max-width: 250px;
+	}
+
+	.item-68 {
+		background-position: -350px 300px;
+		background-size: 1000px;
+	}
+
+	.item-68 .img_box {
+		margin: 0;
+	}
+
+	.item-68 .container {
+		// padding: 15px;
+	}
+
+	.item-68:before {
+		display: none;
+	}
+
+	.item-70 .name * {
+		color: #e7e7e7;
+	}
+
+	.item-70 .container {
+		// padding: 15px;
+	}
+
+	.item-70 .img_box {
+		margin: 0;
+	}
+
+	.item-70:before {
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.item-72 .container {
+		// padding: 15px;
+	}
+
+	.item-72 .img_box {
+		max-width: 250px;
+		margin: 0 0 120px 0;
+	}
+
+	.item-72:before {
+		height: 270px;
+		width: 275px;
+		margin-right: -140px;
+	}
+
+	.item-74 {
+		background: url('/images/portfolio_logotype/Cubko/mobile-background.jpg')
+			no-repeat center;
+		background-size: 700px;
+	}
+
+	.item-74 .container {
+		// padding-left: 15px;
+	}
+
+	.item-74 .img_box {
+		max-width: 330px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.item-74:before {
+		display: none;
+	}
+
+	.item-75 .img_box {
+		max-width: 220px;
+	}
+
+	.item-76 .container {
+		// padding: 0;
+	}
+
+	.item-76 .img_box {
+		max-width: 180px;
+		margin: 0 0 150px 0;
+	}
+
+	.item-76:before {
+		margin-right: -310px;
+		top: auto;
+		bottom: -110px;
+		width: 355px;
+		height: 375px;
+	}
+
+	.item-77 .img_box {
+		max-width: 300px;
+	}
+}
+.logotypePortfolio {
+	margin-bottom: -40px;
+}
+
+.logotypePortfolio .items {
+	width: 100%;
+	height: 33.125rem;
+	position: relative;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.logotypePortfolio .items .videoBackground {
+	position: absolute;
+	width: 100vw;
+	left: calc((100vw - 1380px) / -2);
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	top: 0;
+	opacity: 0.998;
+	z-index: -1;
+}
+
+@media (max-width: 1400px) {
+	.logotypePortfolio .items .videoBackground {
+		width: 100%;
+		left: 0;
+	}
+}
+
+.logotypePortfolio .items .videoBackground__poster {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	height: 100%;
+	top: 0;
+	opacity: 0.998;
+	z-index: -2;
+}
+
+.logotypePortfolio .items .videoBackground__poster img {
+	object-fit: cover;
+	object-position: center;
+}
+
+.logotypePortfolio .container {
+	// max-width: 1380px;
 	height: 530px;
-	margin: 0 auto;
-	padding: 0 15px;
+	// margin: 0 auto;
+	// padding: 0 15px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -104,60 +1884,66 @@
 	position: relative;
 	box-sizing: border-box;
 }
-.logotype_portfolio .name {
+
+.logotypePortfolio .name {
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
 	justify-self: flex-start;
-	top: 30px;
-	left: 15px;
+	top: 1.875rem;
+	left: 0.938rem;
 	position: absolute;
 	z-index: 5;
 }
-.logotype_portfolio span,
-.logotype_portfolio h5,
-.logotype_portfolio p {
+
+.logotypePortfolio span,
+.logotypePortfolio h5,
+.logotypePortfolio p {
 	margin: 0;
-	// font-family: $montserat;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	line-height: 1.3;
 }
-.logotype_portfolio .number {
-	font-size: 13px;
+
+.logotypePortfolio .number {
+	font-size: 0.813rem;
 	color: #a3a3a3;
-	margin-bottom: 10px;
+	margin-bottom: 0.625rem;
 }
-.logotype_portfolio .main_name {
-	font-size: 14px;
-	color: #000000;
-	margin-bottom: 5px;
+
+.logotypePortfolio .main_name {
+	font-size: 0.875rem;
+	color: #000;
+	margin-bottom: 0.313rem;
 	text-transform: none;
 }
-.logotype_portfolio .description {
-	font-size: 12px;
+
+.logotypePortfolio .description {
+	font-size: 0.75rem;
 	color: #8a8a8a;
 }
-.logotype_portfolio .img_box,
-.logotype_portfolio img {
+
+.logotypePortfolio .img_box,
+.logotypePortfolio img {
 	box-sizing: border-box;
 	width: 100%;
 	height: 100%;
 }
 
-.logotype_portfolio .items.kenguru,
-.logotype_portfolio .items.Babula,
-.logotype_portfolio .items.fishka,
-.logotype_portfolio .items.VeterPeremen,
-.logotype_portfolio .items.Josse {
+.logotypePortfolio .items.kenguru,
+.logotypePortfolio .items.Babula,
+.logotypePortfolio .items.fishka,
+.logotypePortfolio .items.VeterPeremen,
+.logotypePortfolio .items.Josse {
 	overflow: visible;
+	/* 1 */
 }
-
-/* 1 */
 
 .kenguru .img_box {
 	margin-top: 30px;
 	max-height: 210px;
 }
+
 .kenguru .container:before {
 	content: '';
 	position: absolute;
@@ -170,6 +1956,7 @@
 	width: 135px;
 	height: 234px;
 }
+
 .kenguru .container:after {
 	content: '';
 	position: absolute;
@@ -181,768 +1968,5 @@
 	z-index: -1;
 	width: 240px;
 	height: 230px;
-}
-
-/* 2 */
-
-.HCS {
-	background: #e3e3e3;
-}
-.HCS .img_box {
-	max-width: 350px;
-}
-
-/* 3 */
-
-.Babula {
-	background: rgb(255, 255, 255);
-	background: -moz-linear-gradient(
-		187deg,
-		rgba(255, 255, 255, 1) 20%,
-		rgba(178, 211, 212, 1) 80%
-	);
-	background: -webkit-linear-gradient(
-		187deg,
-		rgba(255, 255, 255, 1) 20%,
-		rgba(178, 211, 212, 1) 80%
-	);
-	background: linear-gradient(
-		187deg,
-		rgba(255, 255, 255, 1) 20%,
-		rgba(178, 211, 212, 1) 80%
-	);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#b2d3d4",GradientType=1);
-}
-.Babula .img_box {
-	max-width: 410px;
-	z-index: 2;
-}
-.Babula:before {
-	content: '';
-	position: absolute;
-	background: url('/images/portfolio_logotype/Babula/boy.png') no-repeat center;
-	background-size: cover;
-	width: 535px;
-	height: 620px;
-	right: 50%;
-	margin-right: -810px;
-	bottom: 0;
-	z-index: 1;
-}
-
-/* 4 */
-
-.dekado {
-	display: flex;
-}
-.dekado .container {
-	flex-direction: row;
-	width: 100%;
-	max-width: none;
-	padding: 0;
-}
-.dekado .contents {
-	width: 100%;
-	max-width: 600px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
-}
-.grey_bg {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	background: #ededed;
-}
-.orange_bg {
-	background: #f17c20;
-	width: 100%;
-	height: 100%;
-}
-.dekado .content-1 {
-	background: #ededed;
-	right: 0;
-	position: absolute;
-}
-.dekado .content-2 {
-	background: #f17c20;
-}
-.dekado .img_box {
-	max-width: 340px;
-}
-
-/* 5 */
-.vomne {
-	background: #000000;
-}
-.vomne .container {
-	padding-left: 0;
-	padding-right: 0;
-}
-.vomne .name {
-	left: 30px;
-}
-.vomne .main_name {
-	color: #ffffff;
-}
-.vomne .img_box {
-	max-width: 940px;
-}
-
-/* 6 */
-
-.petstore .img_box_left {
-	max-width: 380px;
-	z-index: 2;
-}
-.petstore .img_box_right {
-	max-width: 240px;
-	z-index: 2;
-	margin-right: 10%;
-	margin-left: 4%;
-}
-.petstore .img_box_left,
-.petstore .img_box_right {
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-}
-.petstore .container {
-	flex-direction: row;
-	justify-content: space-around;
-}
-.petstore:before {
-	content: '';
-	background: url('/images/portfolio_logotype/PetStore/ar.jpg') no-repeat center;
-	background-size: cover;
-	width: 450px;
-	height: 400px;
-	position: absolute;
-	right: 50%;
-	margin-right: -880px;
-	bottom: -120px;
-	z-index: -1;
-}
-
-/* 7 */
-
-.subbot {
-	background: url('/images/portfolio_logotype/Subbot/background.jpg') no-repeat
-		center;
-	background-size: cover;
-}
-.subbot .main_name {
-	color: #ffffff;
-}
-.subbot .img_box {
-	max-width: 350px;
-	margin-bottom: 50px;
-}
-.subbot .img_box:before {
-	content: '';
-	position: absolute;
-	bottom: 25px;
-	background: url('/images/portfolio_logotype/Subbot/podpis.png');
-	background-size: cover;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 340px;
-	height: 100px;
-}
-
-/* 8 */
-
-.banoffi {
-	background: url('/images/portfolio_logotype/Banoffi/background.jpg') no-repeat
-		center;
-	background-size: cover;
-	overflow: hidden;
-}
-.banoffi .img_box {
-	max-width: 380px;
-	margin-top: -60px;
-	z-index: 2;
-}
-.banoffi:before {
-	content: '';
-	position: absolute;
-	background: url('/images/portfolio_logotype/Banoffi/menu.png') no-repeat
-		center;
-	background-size: cover;
-	width: 530px;
-	height: 530px;
-	z-index: 0;
-	left: 50%;
-	margin-left: -820px;
-	bottom: -200px;
-}
-.banoffi:after {
-	content: '';
-	position: absolute;
-	background: url('/images/portfolio_logotype/Banoffi/tarelki.png') no-repeat
-		center;
-	background-size: cover;
-	width: 590px;
-	height: 430px;
-	right: 50%;
-	bottom: 0;
-	margin-right: -975px;
-	z-index: 0;
-}
-
-/* 9 */
-
-.alyans {
-	background: url('/images/portfolio_logotype/alyans/background.jpg') no-repeat
-		center;
-	background-size: cover;
-}
-.alyans .number {
-	color: #e7e7e7;
-}
-.alyans .main_name {
-	color: #ffffff;
-}
-.alyans .description {
-	color: #e7e7e7;
-}
-.alyans .img_box {
-	max-width: 210px;
-	margin-right: 50%;
-}
-
-/* 10 */
-
-.gryadka .img_box {
-	max-width: 400px;
-}
-.gryadka .icons {
-	position: absolute;
-	background-size: cover;
-}
-.logotype_portfolio .icon-1 {
-	background: url('/images/portfolio_logotype/gryadka/1.svg') no-repeat center;
-	width: 71px;
-	height: 68px;
-	bottom: 60px;
-	right: 50%;
-	margin-right: -750px;
-}
-.logotype_portfolio .icon-2 {
-	background: url('/images/portfolio_logotype/gryadka/2.svg') no-repeat center;
-	width: 85px;
-	height: 81px;
-	top: 115px;
-	right: 50%;
-	margin-right: -915px;
-}
-.logotype_portfolio .icon-3 {
-	background: url('/images/portfolio_logotype/gryadka/3.svg') no-repeat center;
-	width: 120px;
-	height: 80px;
-	bottom: 50px;
-	left: 50%;
-	margin-left: -500px;
-}
-.logotype_portfolio .icon-4 {
-	background: url('/images/portfolio_logotype/gryadka/4.svg') no-repeat center;
-	width: 55px;
-	height: 100px;
-	top: 60px;
-	left: 50%;
-	margin-left: -325px;
-}
-.logotype_portfolio .icon-5 {
-	background: url('/images/portfolio_logotype/gryadka/5.svg') no-repeat center;
-	width: 83px;
-	height: 76px;
-	bottom: 50px;
-	right: 50%;
-	margin-right: -360px;
-}
-.logotype_portfolio .icon-6 {
-	background: url('/images/portfolio_logotype/gryadka/6.svg') no-repeat center;
-	width: 72px;
-	height: 104px;
-	top: 50px;
-	left: 50%;
-	margin-left: -750px;
-}
-.logotype_portfolio .icon-7 {
-	background: url('/images/portfolio_logotype/gryadka/7.svg') no-repeat center;
-	width: 100px;
-	height: 90px;
-	bottom: 99px;
-	left: 50%;
-	margin-left: -915px;
-}
-.logotype_portfolio .icon-8 {
-	background: url('/images/portfolio_logotype/gryadka/8.svg') no-repeat center;
-	width: 122px;
-	height: 90px;
-	top: 50px;
-	right: 50%;
-	margin-right: -550px;
-}
-
-/* 11 */
-
-.perspective .main_name {
-	color: #ffffff;
-}
-.perspective {
-	background: url('/images/portfolio_logotype/perspective/bg.jpg') no-repeat
-		center;
-	background-size: cover;
-}
-.perspective .img_box {
-	max-width: 580px;
-	display: flex;
-	justify-content: space-between;
-}
-.perspective .img_box_left {
-	width: 120px;
-}
-.perspective .img_box_right {
-	width: 400px;
-}
-
-/* 12 */
-
-.velo {
-	background: url('/images/portfolio_logotype/Velo/background.jpg') no-repeat
-		bottom;
-	background-size: cover;
-}
-.velo .container {
-	padding-left: 85px;
-}
-.velo:before {
-	content: '';
-	background: url('/images/portfolio_logotype/Velo/human.png');
-	background-size: cover;
-	position: absolute;
-	height: 400px;
-	width: 560px;
-	right: 50%;
-	margin-right: -540px;
-	bottom: 0;
-}
-.velo .img_box {
-	max-width: 200px;
-	left: 50%;
-	margin-left: -25%;
-	margin-right: 25%;
-}
-
-/* 13 */
-
-.infinity .img_box {
-	max-width: 300px;
-}
-
-/* 14 */
-
-.fishka {
-	background: #6d1313;
-	position: relative;
-}
-.fishka .container {
-	padding-left: 100px;
-}
-.fishka .main_name {
-	color: #ffffff;
-}
-.fishka .img_box {
-	max-width: 180px;
-	left: 50%;
-	margin-left: -30%;
-	margin-right: 20%;
-}
-.fishka:before {
-	content: '';
-	position: absolute;
-	background: url('/images/portfolio_logotype/Fishka/vizitki.jpg') no-repeat
-		center;
-	background-size: cover;
-	width: 420px;
-	height: 550px;
-	right: 50%;
-	margin-right: -600px;
-	bottom: 45px;
-}
-
-/* 15 */
-
-.Ecoklining .img_box {
-	max-width: 325px;
-}
-
-/* 16 */
-
-.VeterPeremen {
-	background: #e8f1f8;
-	position: relative;
-}
-.VeterPeremen .container {
-	padding-left: 100px;
-}
-.VeterPeremen .img_box {
-	max-width: 330px;
-	left: 50%;
-	margin-left: -25%;
-	margin-right: 25%;
-	z-index: 2;
-}
-.VeterPeremen:before {
-	content: '';
-	background: url('/images/portfolio_logotype/VeterPeremmen/girl.png') no-repeat
-		center;
-	background-size: cover;
-	height: 610px;
-	width: 645px;
-	position: absolute;
-	right: 50%;
-	margin-right: -775px;
-	bottom: 0;
-	z-index: 1;
-}
-
-/* 17 */
-
-.BryanskSelmash .img_box {
-	max-width: 360px;
-}
-
-/* 18 */
-
-.Cubko {
-	background: url('/images/portfolio_logotype/Cubko/background.jpg') no-repeat
-		center;
-	background-size: cover;
-}
-.Cubko .container {
-	padding-left: 120px;
-}
-.Cubko:before {
-	content: '';
-	position: absolute;
-	background: url('/images/portfolio_logotype/Cubko/girl.png');
-	background-size: cover;
-	right: 50%;
-	bottom: 0;
-	margin-right: -710px;
-	width: 630px;
-	height: 100%;
-}
-.Cubko .img_box {
-	max-width: 420px;
-	margin-right: 40%;
-	left: 50%;
-	margin-left: -10%;
-}
-
-/* 19 */
-
-.LesIpoyma .img_box {
-	max-width: 280px;
-}
-
-/* 20 */
-
-.Josse {
-	background: #eceaeb;
-}
-.Josse .container {
-	padding-left: 80px;
-}
-.Josse:before {
-	content: '';
-	position: absolute;
-	background: url('/images/portfolio_logotype/Josse/box.png') no-repeat center;
-	background-size: cover;
-	right: 50%;
-	margin-right: -770px;
-	top: 0;
-	width: 625px;
-	height: 715px;
-	z-index: 1;
-}
-.Josse .img_box {
-	max-width: 220px;
-	left: 50%;
-	margin-left: -10%;
-	margin-right: 40%;
-	z-index: 2;
-}
-
-/* 21 */
-
-.tarelka {
-	background: url('/images/portfolio_logotype/TarelkaShyastia/background.jpg')
-		no-repeat center;
-	background-size: cover;
-}
-.tarelka .img_box {
-	max-width: 410px;
-}
-
-@media (max-width: 576px) {
-	.logotype_portfolio .container,
-	.logotype_portfolio .items {
-		height: 700px;
-	}
-
-	.kenguru .img_box {
-		max-height: 150px;
-	}
-	.kenguru .container:before {
-		margin-left: -160px;
-		width: 115px;
-		height: 234px;
-	}
-	.kenguru .container:after {
-		display: none;
-	}
-
-	.HCS .img_box {
-		max-width: 255px;
-		margin-left: -35px;
-	}
-
-	.Babula .img_box {
-		max-width: 280px;
-		margin-top: -200px;
-	}
-	.Babula:before {
-		width: 255px;
-		height: 310px;
-		right: 50%;
-		margin-right: -120px;
-		margin-left: -15px;
-	}
-
-	.dekado .container {
-		flex-direction: column;
-	}
-	.dekado .container .contents {
-		padding: 60px;
-	}
-	.dekado .container .contents br {
-		display: none;
-	}
-	.dekado .img_box {
-		margin-right: -15px;
-	}
-
-	.vomne .img_box {
-		transform: rotate(-90deg);
-		display: flex;
-		width: 700px;
-		margin-right: -50%;
-	}
-
-	.petstore .container {
-		flex-direction: column;
-		justify-content: center;
-	}
-	.petstore .img_box_left {
-		max-width: 250px;
-		max-height: 120px;
-		margin-bottom: 30px;
-		margin-left: 0;
-	}
-	.petstore .img_box_right {
-		padding: 0;
-		max-width: 190px;
-		max-height: 190px;
-		margin: 0;
-	}
-	.petstore:before {
-		width: 270px;
-		height: 220px;
-		margin-right: -120px;
-	}
-
-	.subbot {
-		background-position-x: -975px;
-	}
-	.subbot .img_box {
-		max-width: 250px;
-	}
-	.subbot .img_box:before {
-		bottom: 50px;
-	}
-
-	.banoffi .img_box {
-		max-width: 250px;
-		max-height: 200px;
-		margin-top: -150px;
-	}
-	.banoffi:before {
-		width: 400px;
-		height: 440px;
-		margin-left: -200px;
-		transform: rotate(20deg);
-		bottom: -150px;
-	}
-
-	.alyans {
-		background: url('/images/portfolio_logotype/alyans/mobile-background.jpg')
-			no-repeat center;
-	}
-	.alyans .img_box {
-		max-width: 200px;
-		margin-right: 0;
-	}
-
-	.gryadka .img_box {
-		max-width: 250px;
-	}
-	.gryadka .icon-3 {
-		margin-left: -140px;
-		bottom: 150px;
-		width: 100px;
-		height: 65px;
-		transform: rotate(15deg);
-	}
-	.gryadka .icon-4 {
-		margin-left: -130px;
-		top: 150px;
-	}
-	.gryadka .icon-2 {
-		margin-right: -140px;
-		top: 560px;
-	}
-	.gryadka .icon-8 {
-		margin-right: -150px;
-		top: 120px;
-		width: 80px;
-		height: 60px;
-	}
-
-	.perspective {
-		background-position: -1550px 0;
-		background-size: 2600px;
-	}
-	.perspective .img_box {
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	.perspective .img_box_left {
-		margin-bottom: 50px;
-		max-width: 100px;
-	}
-	.perspective .img_box_right {
-		max-width: 200px;
-	}
-
-	.velo {
-		background-position: -350px 300px;
-		background-size: 1000px;
-	}
-	.velo .img_box {
-		margin: 0;
-	}
-	.velo .container {
-		padding: 15px;
-	}
-	.velo:before {
-		display: none;
-	}
-
-	.infinity .img_box {
-		max-width: 250px;
-	}
-
-	.fishka .name * {
-		color: #e7e7e7;
-	}
-	.fishka .container {
-		padding: 15px;
-	}
-	.fishka .img_box {
-		margin: 0;
-	}
-	.fishka:before {
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		z-index: 1;
-	}
-
-	.Ecoklining .img_box {
-		max-width: 270px;
-	}
-
-	.VeterPeremen .container {
-		padding: 15px;
-	}
-	.VeterPeremen .img_box {
-		max-width: 250px;
-		margin: 0 0 120px 0;
-	}
-	.VeterPeremen:before {
-		height: 270px;
-		width: 275px;
-		margin-right: -140px;
-	}
-
-	.BryanskSelmash .container:before {
-		content: '';
-		width: 310px;
-		height: 200px;
-		position: absolute;
-		bottom: 20px;
-		background: url('/images/portfolio_logotype/kolosya.jpg') no-repeat center;
-		background-size: cover;
-	}
-	.BryanskSelmash .img_box {
-		max-width: 280px;
-	}
-
-	.Cubko {
-		background: url('/images/portfolio_logotype/Cubko/mobile-background.jpg')
-			no-repeat center;
-		background-size: 700px;
-	}
-	.Cubko .container {
-		padding-left: 15px;
-	}
-	.Cubko .img_box {
-		max-width: 330px;
-		margin-right: 0;
-		margin-left: 0;
-	}
-	.Cubko:before {
-		display: none;
-	}
-
-	.LesIpoyma .img_box {
-		max-width: 220px;
-	}
-
-	.Josse .container {
-		padding: 0;
-	}
-	.Josse .img_box {
-		max-width: 180px;
-		margin: 0 0 150px 0;
-	}
-	.Josse:before {
-		margin-right: -310px;
-		top: auto;
-		bottom: -110px;
-		width: 355px;
-		height: 375px;
-	}
-
-	.tarelka .img_box {
-		max-width: 300px;
-	}
+	/* 2 */
 }
