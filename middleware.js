@@ -10,6 +10,9 @@ export async function middleware(req, res) {
 	) {
 		return;
 	}
+
+	// console.log(req.cookies.get('city_name').value);
+
 	if (
 		req.cookies.get('NEXT_LOCALE')?.value &&
 		req.cookies.get('NEXT_LOCALE')?.value !== req.nextUrl.locale

@@ -130,13 +130,15 @@ export function Header({ header, langs, cities }) {
 						>
 							{router.locale.toUpperCase()}
 						</button>
+						{header?.city && (
+							<button
+								className={classes.header__getCity}
+								onClick={() => open(<Localization regions={localesRegions} />)}
+							>
+								{header.city?.city_name}
+							</button>
+						)}
 
-						{/* <button
-						className={classes.header__getCity}
-						onClick={() => open(<Localization regions={localesRegions} />)}
-					>
-						Екатеринбург
-					</button> */}
 						<button
 							className={cn(
 								classes.header__getProject,

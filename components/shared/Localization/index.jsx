@@ -1,11 +1,15 @@
 import cn from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 import classes from './styles.module.scss';
 
 export function Localization({ regions, country }) {
 	const pathname = usePathname();
+	const router = useRouter();
+
+	// setCookie('city_name', 'default');
 
 	return (
 		<div className={classes.localization}>
@@ -66,7 +70,14 @@ export function Localization({ regions, country }) {
 							>
 								<Link
 									href={pathname}
-									className={classes.localization__localesItemState}
+									className={cn(
+										classes.localization__localesItemState,
+										router.locale ===
+											(count?.href === '/'
+												? 'ru'
+												: count?.href.split('/')[1]) &&
+											classes.localization__localesItemState_active
+									)}
 									locale={
 										count?.href === '/' ? 'ru' : count?.href.split('/')[1]
 									}
