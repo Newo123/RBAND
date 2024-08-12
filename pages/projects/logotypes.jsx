@@ -13,16 +13,17 @@ import { usePagination } from '@/hooks/usePagination';
 import { getVideoMedia } from '@/utils/getVideoMedia';
 
 import classes from './Logotypes.module.scss';
-import { getAll } from '@/services/data.service';
+import { dataService } from '@/services/data.service';
 
 export const getServerSideProps = async ({ req, res, locale, resolvedUrl }) => {
-	const props = await getAll(req, res, locale, resolvedUrl);
+	const props = await dataService.getAllData(req, res, locale, resolvedUrl);
 
 	if (!props.body.main) {
 		return {
 			notFound: true
 		};
 	}
+	const domain = `${req?.headers['x-forwarded-proto']}://${req?.headers['x-forwarded-host']}`;
 
 	// const projectItems = await props.body.main.pages.map(async (item, index) => {
 	// 	if (!item.title_image) {
@@ -46,7 +47,7 @@ export const getServerSideProps = async ({ req, res, locale, resolvedUrl }) => {
 	// 	return responses;
 	// });
 
-	return { props: { projects: props } };
+	return { props: { projects: props, domain } };
 };
 
 const PageElement = ({ page }) => {
@@ -127,16 +128,16 @@ const PageElement = ({ page }) => {
 	);
 };
 
-export default function Page({ projects }) {
+export default function Page({ projects, domain }) {
 	const router = useRouter();
 	const { items } = usePagination(projects?.body?.main?.pages, 10);
-	console.log(projects);
 
 	return (
 		<RootLayout
 			footer={projects.body.footer}
 			header={projects.body.header}
 			head={projects.head}
+			domain={domain}
 		>
 			<section className={classes.descriptor}>
 				<Container

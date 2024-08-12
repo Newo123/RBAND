@@ -36,7 +36,14 @@ export function AboutSticky({ info }) {
 									)}
 									type={about.button.type}
 									href={about.button.href}
-									target={about.button.type ? '_blank' : ''}
+									target={
+										about.button.type && !about.button.target ? '_blank' : null
+									}
+									// {target: about.button.type && !about.button.target ? '_blank' : ''}
+									// {about.button.type && !about.button.target ? (target: '_blank' : ''}
+									//  {...target{{
+									//   about.button.type && !about.button.target ? '_blank' : ''
+									// }}}
 								>
 									{about.button.text}
 								</Button>

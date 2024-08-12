@@ -8,14 +8,15 @@ import { Useful } from '../Useful';
 import { About } from '../about/About';
 import { Motivations } from '../about/Motivations';
 
-export default function Home({ home, localization }) {
+export default function Home({ home, domain, pageTitle, localization }) {
 	const aboutInfo = [
 		{
 			texts: [...home?.body?.main?.reputation?.first_description],
 			button: {
 				text: localization?.home?.reputation?.aboutButtonText,
 				href: home.body.main.reputation.about_link,
-				type: 'link'
+				type: 'link',
+				target: '_blank'
 			}
 		},
 		{
@@ -32,6 +33,8 @@ export default function Home({ home, localization }) {
 			footer={home.body.footer}
 			header={home.body.header}
 			head={home.head}
+			domain={domain}
+			pageTitle={pageTitle}
 		>
 			<Descriptor
 				descriptor={home.body.main.descriptor}

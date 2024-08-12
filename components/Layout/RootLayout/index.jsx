@@ -1,85 +1,51 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { Footer } from '../Footer';
+import { Header } from '../Header';
+import { PageTransition } from '../PageTransition';
 
-import { Header } from '@/components/shared/Header';
+import { Metadata } from './Metadata';
 
-import { SITE_DOMAIN } from '@/constants/seo.constants';
+export function RootLayout({
+	children,
+	domain,
+	footer,
+	pageTitle = '',
+	header,
+	head
+}) {
+	const callback = {
+		address: footer?.address,
+		email: footer?.email[0],
+		open: footer?.open[0],
+		socials_array: footer?.socials_array,
+		telephone: footer?.telephone,
+		telephoneLink: footer?.telephoneLink,
+		title: header?.form?.text_contact_title,
+		form: {
+			form_description: header?.form?.form_description,
+			form_items: header?.form?.form_items,
+			form_title: header?.form?.form_title,
+			id_prefix: header?.form?.id_prefix,
+			privacy: header?.form?.privacy,
+			submit_button: header?.form?.submit_button
+		}
+	};
 
-import { Footer } from '../../shared/Footer';
-
-export function RootLayout({ children, footer, header, head }) {
-	const router = useRouter();
 	return (
 		<>
-			<Head>
-				<title>{head.title}</title>
-
-				<meta
-					name='description'
-					content={head.description}
-				/>
-				{head.keywords && (
-					<meta
-						name='keywords'
-						content={head.keywords}
-					/>
-				)}
-
-				<meta
-					httpEquiv='X-UA-Compatible'
-					content='IE=edge'
-				/>
-				{head.icons.length > 0 &&
-					head.icons.map(icon => (
-						<link
-							href={icon.image}
-							rel='icon'
-							type={`image/${icon.type}`}
-							sizes={icon.size}
-							key={icon.image}
-						/>
-					))}
-				<link
-					href={`${SITE_DOMAIN}${router.pathname}`}
-					rel='canonical'
-				/>
-				{head.og &&
-					Object.entries(head.og).map(([key, value]) => {
-						if (!key && !value) return;
-						if (key === 'og:url') {
-							return (
-								<meta
-									key={key}
-									property={key}
-									content={`${SITE_DOMAIN}${router.pathname}`}
-								/>
-							);
-						} else if (Array.isArray(value)) {
-							return value.map(v => (
-								<meta
-									key={key}
-									property={key}
-									content={v}
-								/>
-							));
-						} else if (value) {
-							return (
-								<meta
-									key={key}
-									property={key}
-									content={value.toString()}
-								/>
-							);
-						}
-					})}
-			</Head>
-			<Header
-				header={header}
-				langs={Object.values(footer?.languages)}
-				cities={footer?.cities}
+			<Metadata
+				head={head}
+				domain={domain}
 			/>
-			<main>{children}</main>
-			<Footer footer={footer} />
+			<PageTransition pageTitle={pageTitle}>
+				<Header
+					header={header}
+					langs={Object.values(footer?.languages)}
+					cities={footer?.cities}
+					callback={callback}
+				/>
+				<main>{children}</main>
+				<Footer footer={footer} />
+			</PageTransition>
 		</>
 	);
 }

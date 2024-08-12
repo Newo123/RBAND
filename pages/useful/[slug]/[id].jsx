@@ -5,25 +5,28 @@ import { HeroInner } from '@/components/shared/HeroInner';
 import { Typography } from '@/components/shared/Typography';
 
 import classes from './inner.module.scss';
-import { getAll } from '@/services/data.service';
+import { dataService } from '@/services/data.service';
 
 export async function getServerSideProps({ req, res, locale, resolvedUrl }) {
-	const props = await getAll(req, res, locale, resolvedUrl);
+	const props = await dataService.getAllData(req, res, locale, resolvedUrl);
 
 	if (!props.body.main) {
 		return {
 			notFound: true
 		};
 	}
-	return { props: { blog: props } };
+	const domain = `${req?.headers['x-forwarded-proto']}://${req?.headers['x-forwarded-host']}`;
+
+	return { props: { blog: props, domain } };
 }
 
-export default function Page({ blog }) {
+export default function Page({ blog, domain }) {
 	return (
 		<RootLayout
 			footer={blog.body.footer}
 			head={blog.head}
 			header={blog.body.header}
+			domain={domain}
 		>
 			<HeroInner
 				title={blog.body.main.descriptor?.title_page}

@@ -1,12 +1,12 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion'
+import Image from 'next/image'
+import { useEffect, useRef, useState } from 'react'
 
-import { Container } from '../Container';
-import { GetImagesFromNext } from '../GetImagesFromNext';
+import { Container } from '../Container'
+import { GetImagesFromNext } from '../GetImagesFromNext'
 
-import classes from './HeroInner.module.scss';
-import { HeroInnerBackButton } from './HeroInnerBackButton';
+import classes from './HeroInner.module.scss'
+import { HeroInnerBackButton } from './HeroInnerBackButton'
 
 export function HeroInner({ innerInfo, text, title, images, image, backLink }) {
 	const containerRef = useRef(null);

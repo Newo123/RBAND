@@ -16,13 +16,20 @@ export function ContactsInfo({
 }) {
 	return (
 		<div className={classes.ContactsInfo}>
-			<h1 className={cn('site-title-3', classes.ContactsInfo__title)}>
-				{title}
-			</h1>
-			<p className={classes.ContactsInfo__time}>
-				<IconComponent icon='tabler:clock' />
-				{open}
-			</p>
+			{title && (
+				<h1
+					className={cn('site-title-3', classes.ContactsInfo__title)}
+					dangerouslySetInnerHTML={{ __html: title }}
+				/>
+			)}
+
+			{open && (
+				<p className={classes.ContactsInfo__time}>
+					<IconComponent icon='tabler:clock' />
+					{open}
+				</p>
+			)}
+
 			<div className={classes.ContactsInfo__contentInfo}>
 				<div className={classes.ContactsInfo__contentInfoBox}>
 					{telephone && (

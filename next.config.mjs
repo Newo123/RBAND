@@ -39,7 +39,7 @@ const nextConfig = {
 				hostname: 'rband-backend.rbnd'
 			},
 			{
-				protocol: 'https',
+				protocol: 'http',
 				hostname: 'rbb.rband.pro'
 			},
 			{

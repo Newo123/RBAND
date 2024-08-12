@@ -10,6 +10,7 @@ $font-family: 'Montserrat', sans-serif !default;
 $title-font-family: 'Open Sans', sans-serif !default;
 $fzMain: 16px !default;
 $fzFor4K: calc-between-width(1920, 16, 3840, 33) !default;
+$lineHeight: 1.625em !default;
 
 // =====================================================================
 
@@ -70,6 +71,7 @@ $text-tags: (
 	&__container {
 		//font-size: 2rem;
 		@apply text-[1rem] 2xl:text-[1.125rem];
+		line-height: $lineHeight;
 
 		&_padding {
 			@apply lg:py-[5rem] md:py-[3.125rem] py-20;
@@ -113,7 +115,7 @@ $text-tags: (
 		tbody td {
 			font-size: 1em;
 			margin-top: 0.875em;
-			line-height: 1.625em;
+			// line-height: 1.625em;
 			color: $color-text-base;
 		}
 
@@ -122,7 +124,7 @@ $text-tags: (
 			padding-left: 1.875rem;
 			li {
 				margin-top: 0.5em;
-				line-height: 1.4em;
+				// line-height: 1.625em;
 				&:first-child {
 					margin-top: 0;
 				}
@@ -213,7 +215,7 @@ $text-tags: (
 		margin-top: 1em;
 		font-size: 1em;
 		font-style: italic;
-		line-height: 1.625em;
+		// line-height: 1.625em;
 
 		cite {
 			//font-size: 0.875em;

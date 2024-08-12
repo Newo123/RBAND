@@ -7,7 +7,7 @@ import { Container } from '../Container';
 import { ServicesItem } from './ServicesItem';
 import classes from './styles.module.scss';
 
-export default function Services({ offer, localization }) {
+export default function Services({ offer, localization, callback }) {
 	return (
 		<section className={classes.services}>
 			<Container
@@ -37,6 +37,7 @@ export default function Services({ offer, localization }) {
 								key={index}
 								{...service}
 								{...localization.services?.services}
+								callback={callback}
 							/>
 						))}
 					</div>

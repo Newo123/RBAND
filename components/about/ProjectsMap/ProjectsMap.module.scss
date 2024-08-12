@@ -1,5 +1,5 @@
 .projectsMap {
-	@apply mt-[3.125rem];
+	@apply mt-[3.125rem] overflow-hidden;
 
 	@screen sm {
 		@apply mt-[3.75rem];

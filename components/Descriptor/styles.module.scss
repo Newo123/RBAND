@@ -126,20 +126,33 @@
 	}
 
 	&__right {
-		@apply flex flex-col justify-end z-[2] p-[1rem] bg-black mx-[-1rem];
+		@apply flex flex-col justify-end z-[2]  bg-black;
 
+		@screen sm {
+			@apply bg-transparent max-w-[11.25rem] w-full relative;
+		}
+
+		@screen lg {
+			@apply max-w-[13rem];
+		}
+		@screen xl {
+			@apply max-w-[14.75rem];
+		}
+	}
+
+	&__right:has(.descriptor__rightPrice) {
+		@apply p-[1rem] mx-[-1rem];
 		@screen xs {
 			@apply px-[1.5rem] mx-[-1.5rem];
 		}
 		@screen sm {
-			@apply pb-[2rem] px-0 mx-0 pt-0 bg-transparent max-w-[11.25rem] w-full relative;
+			@apply pb-[2rem] px-0  pt-0 mx-0;
 		}
-
 		@screen lg {
-			@apply max-w-[13rem] pb-[2.5rem];
+			@apply pb-[2.5rem];
 		}
 		@screen xl {
-			@apply max-w-[14.75rem] pb-[3rem];
+			@apply pb-[3rem];
 		}
 		@screen 2xl {
 			@apply pb-[4rem];

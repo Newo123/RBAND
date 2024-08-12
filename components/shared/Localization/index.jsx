@@ -5,54 +5,76 @@ import { useRouter } from 'next/router';
 
 import classes from './styles.module.scss';
 
+const Region = ({ region, isTitle = false }) => {
+	const pathname = usePathname();
+	return isTitle ? (
+		<Link
+			className={classes.localization__localesItemCountry}
+			href={pathname}
+		>
+			{region?.city_name}
+		</Link>
+	) : (
+		<Link
+			href={pathname}
+			className={classes.localization__localesItemCity}
+		>
+			{region?.city_name}
+		</Link>
+	);
+};
+
 export function Localization({ regions, country }) {
 	const pathname = usePathname();
 	const router = useRouter();
 
-	// setCookie('city_name', 'default');
-
 	return (
 		<div className={classes.localization}>
 			<div className={classes.localization__container}>
-				{regions && regions.length > 0 && (
+				{regions && (
 					<>
-						<div className={classes.localization__label}>Выберите город</div>
+						<div className={classes.localization__label}>
+							{regions?.change_city_title}
+						</div>
 						<div className={classes.localization__locales}>
-							{regions.length &&
-								regions.map((locale, index) => {
-									return (
-										<div
-											className={classes.localization__localesItem}
-											key={index}
-										>
-											{locale && (
-												<Link
-													className={classes.localization__localesItemCountry}
-													href={locale.href}
-												>
-													{locale.country}
-												</Link>
-											)}
-											{locale.cities.length > 0 &&
-												locale.cities.map(city => (
-													<Link
-														key={city.title}
-														href={city.href}
-														className={classes.localization__localesItemCity}
-													>
-														{city.title}
-													</Link>
-												))}
-										</div>
-									);
+							{regions?.cities_array?.length &&
+								regions?.cities_array.map((locale, index) => {
+									if (regions?.cities_array?.length > 1) {
+										return (
+											<div
+												className={classes.localization__localesItem}
+												key={index}
+											>
+												{locale?.length > 0 &&
+													locale?.map((item, i) => (
+														<Region
+															region={item}
+															key={i}
+															{...(i < 1 ? { isTitle: true } : null)}
+														/>
+													))}
+											</div>
+										);
+									} else {
+										return (
+											locale?.length > 0 &&
+											locale?.map((item, i) => (
+												<Region
+													region={item}
+													key={i}
+												/>
+											))
+										);
+									}
 								})}
 						</div>
 						<Link
-							href='#'
-							className={classes.localization__anotherСity}
-						>
-							Drugi grad
-						</Link>
+							href={pathname}
+							className={classes.localization__anotherCity}
+							dangerouslySetInnerHTML={{
+								__html: regions?.other_city_item?.city_name
+							}}
+						/>
 					</>
 				)}
 

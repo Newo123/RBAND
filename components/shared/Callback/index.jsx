@@ -10,36 +10,29 @@ import classes from './Callback.module.scss';
 
 export function Callback({
 	form_description,
-	form_items,
+	form_items: { name, phone, message, type_project, upload_file },
 	form_title,
 	id_prefix,
 	privacy,
 	submit_button
 }) {
-	let inputs = [];
-	let switchers = {};
-	let textarea = {};
-
-	if (form_items.length > 0) {
-		inputs = form_items.filter(
-			item => item.name === 'name' || item.name === 'phone'
-		);
-		switchers = form_items.find(item => item.items && item.items?.length > 0);
-		textarea = form_items.find(item => item.type === 'textarea');
-	}
-
-	const { register, handleSubmit } = useForm({
-		mode: 'onChange'
+	const { register, handleSubmit, reset, formState } = useForm({
+		mode: 'onChange',
+		defaultValues: {}
 	});
 
-	const onSubmit = handleSubmit(data => {
+	const onSubmit = data => {
 		console.log(data);
-	});
+
+		// reset();
+	};
+
+	console.log(name);
 
 	return (
 		<form
 			className={cn(classes.form)}
-			onSubmit={onSubmit}
+			onSubmit={handleSubmit(onSubmit)}
 		>
 			<h3
 				className={cn('site-title-3', classes.form__title)}
@@ -49,58 +42,62 @@ export function Callback({
 				className={classes.form__text}
 				dangerouslySetInnerHTML={{ __html: form_description }}
 			/>
-			{inputs.length > 0 && (
-				<div className={classes.form__inputs}>
-					{inputs.map(input => (
-						<Input
-							{...register(input.name, {
-								required: {
-									value: input.require || false,
-									message: 'Please enter'
-								}
-							})}
-							key={input.name}
-							type={input.type}
-							name={input.name}
-							label={input.label}
-							id={input.id}
-							className={classes.form__input}
-						/>
-					))}
-				</div>
-			)}
+			<div className={classes.form__inputs}>
+				<Input
+					{...register(name?.name, {
+						...name?.validation
+					})}
+					type={name?.type}
+					label={name?.label}
+					id={id_prefix + name?.name}
+					className={classes.form__input}
+					errors={formState.errors['name']?.message}
+				/>
+				<Input
+					{...register(phone?.name, {
+						...phone?.validation
+					})}
+					type={phone?.type}
+					label={phone?.label}
+					id={id_prefix + phone?.name}
+					className={classes.form__input}
+					errors={formState.errors['phone']?.message}
+				/>
+			</div>
 
-			{switchers && (
+			{type_project && (
 				<div className={classes.form__theme}>
-					<span className={classes.form__label}>{switchers.label}</span>
+					<span className={classes.form__label}>{type_project.label}</span>
 					<div className={classes.form__themeTypes}>
-						{switchers.items.map(switcher => (
+						{type_project?.items?.map((switcher, index) => (
 							<Switcher
-								key={switcher.label}
-								id={switcher.label}
-								name={switcher.label}
-								value={switcher.value}
-								isChecked={switcher.checked}
-								label={switcher.label}
-								type={switchers.type}
-								required={switchers.require}
+								key={switcher?.label}
+								id={id_prefix + 'type_project_' + (index + 1)}
+								value={switcher?.value}
+								isChecked={switcher?.checked}
+								label={switcher?.label}
+								type={type_project?.type}
+								required={switcher?.require}
+								register={register}
+								id_prefix={id_prefix}
 							/>
 						))}
 					</div>
 				</div>
 			)}
 
-			{textarea && (
+			{message && (
 				<div className={classes.form__textarea}>
-					<span className={classes.form__label}>{textarea.label}</span>
-					<textarea
-						name={textarea.name}
-						id={textarea.type}
-					></textarea>
+					<span className={classes.form__label}>{message.label}</span>
+					<textarea {...register('message')}></textarea>
 				</div>
 			)}
 
-			<UploadFile />
+			<UploadFile
+				id_prefix={id_prefix}
+				upload_file={upload_file}
+				register={register}
+			/>
 			<div className={classes.form__actions}>
 				<p
 					className={classes.form__privacy}

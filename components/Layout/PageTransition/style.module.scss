@@ -1,0 +1,12 @@
+.pageTransition {
+	&__slide {
+		@apply fixed h-screen w-full pointer-events-none left-0 top-0 z-[20] bg-[#1a1717];
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		// pointer-events: none;
+		left: 0;
+		top: 0;
+		z-index: 20;
+	}
+}

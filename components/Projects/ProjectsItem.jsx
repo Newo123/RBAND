@@ -1,8 +1,11 @@
 import cn from 'clsx';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
+
+import { getVideoMedia } from '@/utils/getVideoMedia';
+
+import { GetImagesFromNext } from '../shared/GetImagesFromNext';
 
 import classes from './styles.module.scss';
 
@@ -19,11 +22,11 @@ const animation = {
 
 export function ProjectsItem({
 	href,
-	image,
+	images,
 	text,
 	title,
 	textColor,
-	video,
+	videos,
 	placeholder,
 	target
 }) {
@@ -61,26 +64,18 @@ export function ProjectsItem({
 				<div
 					className={cn(
 						classes.ourProjects__itemImg,
-						video ? classes.ourProjects__itemImgShadow : ''
+						videos ? classes.ourProjects__itemImgShadow : ''
 					)}
 				>
-					{image && placeholder !== '' ? (
-						<Image
-							src={image}
-							fill={true}
-							alt={title}
-							placeholder='blur'
-							blurDataURL={placeholder}
-						/>
-					) : (
-						<Image
-							src={image}
-							fill={true}
-							alt={title}
+					{images && (
+						<GetImagesFromNext
+							images={images}
+							sizes='100vw'
+							fill
 						/>
 					)}
 
-					{video && (
+					{videos && (
 						<motion.video
 							loop
 							autoPlay
@@ -88,15 +83,25 @@ export function ProjectsItem({
 							muted={true}
 							playsInline
 							controls={false}
-							poster={image}
 							ref={videoRef}
 							onViewportEnter={handleEnter}
 							onViewportLeave={handleLeave}
 						>
-							<source
-								src={video}
-								type='video/mp4'
-							/>
+							{videos.map((item, index) => {
+								const props = {
+									src: item.href,
+									type: `video/${item.href.split('.')[item.href.split('.').length - 1]}`,
+									...(item.property['max_width'] && {
+										media: `${getVideoMedia(item)}`
+									})
+								};
+								return (
+									<source
+										key={index}
+										{...props}
+									/>
+								);
+							})}
 						</motion.video>
 					)}
 				</div>

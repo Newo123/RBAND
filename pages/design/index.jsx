@@ -1,28 +1,31 @@
 import { Services } from '@/components/Services';
 
-import { getAll } from '@/services/data.service';
+import { dataService } from '@/services/data.service';
 
 export const getServerSideProps = async ({ req, res, locale, resolvedUrl }) => {
-	const props = await getAll(req, res, locale, resolvedUrl);
+	const props = await dataService.getAllData(req, res, locale, resolvedUrl);
 
 	if (!props.body.main) {
 		return {
 			notFound: true
 		};
 	}
+	const domain = `${req?.headers['x-forwarded-proto']}://${req?.headers['x-forwarded-host']}`;
 
 	return {
 		props: {
 			design: props,
+			domain,
 			localization: (await import(`../../locales/${locale}.json`)).default
 		}
 	};
 };
 
-export default function ServicesPage({ design, localization }) {
+export default function ServicesPage({ design, domain, localization }) {
 	return (
 		<Services
 			services={design}
+			domain={domain}
 			localization={localization}
 		/>
 	);

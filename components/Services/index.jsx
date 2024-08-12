@@ -10,12 +10,22 @@ import { Reputation } from '../shared/Reputation';
 import ServicesBlock from '../shared/Services';
 import { Stages } from '../shared/Stages';
 
-export function Services({ services, localization }) {
+export function Services({ services, domain, localization }) {
+	const callback = {
+		email: services?.body?.footer?.email[0],
+		open: services?.body?.header?.open[0],
+		socials_array: services?.body?.header?.socials_array,
+		telephone: services?.body?.header?.telephone[0],
+		telephoneLink: services?.body?.header?.telephoneLink[0],
+		title: services?.body?.main?.offers?.form?.text_contact_title,
+		form: services?.body?.main?.offers?.form
+	};
 	return (
 		<RootLayout
 			footer={services.body.footer}
 			header={services.body.header}
 			head={services.head}
+			domain={domain}
 		>
 			{services.body.main.descriptor && (
 				<Descriptor
@@ -35,6 +45,7 @@ export function Services({ services, localization }) {
 					<ServicesBlock
 						offer={services.body.main.offers}
 						localization={localization}
+						callback={callback}
 					/>
 				)}
 				{services.body.main.motivations_service && (

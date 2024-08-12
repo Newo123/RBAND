@@ -14,13 +14,13 @@ export function Contacts({ theme = 'light', callback }) {
 				className={classes.contacts__container}
 			>
 				<ContactsInfo
-					address={callback.address}
-					email={callback.email}
-					open={callback.open}
-					socials_array={callback.socials_array}
-					telephone={callback.telephone}
-					telephoneLink={callback.telephoneLink}
-					title={callback.title}
+					address={callback?.address}
+					email={callback?.email}
+					open={callback?.open}
+					socials_array={callback?.socials_array}
+					telephone={callback?.telephone}
+					telephoneLink={callback?.telephoneLink}
+					title={callback?.title}
 				/>
 				<Callback
 					form_description={callback.form.form_description}

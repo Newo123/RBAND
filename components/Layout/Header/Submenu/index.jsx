@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
 import cn from 'clsx';
 
-import { Container } from '../../Container';
+import { Container } from '@/components/shared/Container';
 
 import { ServicesInner } from './ServicesInner';
 import { SubmenuInner } from './SubmenuInner';

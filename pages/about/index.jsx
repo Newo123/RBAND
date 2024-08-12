@@ -5,10 +5,10 @@ import { HorizontalSection } from '@/components/about/HorizontalSection';
 import { Motivations } from '@/components/about/Motivations';
 import { ProjectsMap } from '@/components/about/ProjectsMap';
 
-import { getAll } from '@/services/data.service';
+import { dataService } from '@/services/data.service';
 
 export const getServerSideProps = async ({ req, res, locale, resolvedUrl }) => {
-	const props = await getAll(req, res, locale, resolvedUrl);
+	const props = await dataService.getAllData(req, res, locale, resolvedUrl);
 
 	if (!props?.body?.main) {
 		return {
@@ -16,18 +16,22 @@ export const getServerSideProps = async ({ req, res, locale, resolvedUrl }) => {
 		};
 	}
 
+	const domain = `${req?.headers['x-forwarded-proto']}://${req?.headers['x-forwarded-host']}`;
+
 	return {
 		props: {
 			about: props,
+			domain,
+			pageTitle: 'About',
 			localization: (await import(`../../locales/${locale}.json`)).default
 		}
 	};
 };
 
-export default function Page({ about, localization }) {
+export default function Page({ about, domain, pageTitle, localization }) {
 	const aboutInfo = [
 		{
-			texts: [about.body.main.reputation.first_description],
+			texts: [...about.body.main.reputation.first_description],
 			button: {
 				text: localization.about.reputation.aboutButtonText,
 				href: about.body.main.reputation.presentation,
@@ -37,9 +41,12 @@ export default function Page({ about, localization }) {
 	];
 	return (
 		<RootLayout
+			pageContent={about}
 			footer={about.body.footer}
 			header={about.body.header}
 			head={about.head}
+			domain={domain}
+			pageTitle={pageTitle}
 		>
 			<HeroAbout
 				images={about.body.main.descriptor.description_images}
@@ -63,9 +70,6 @@ export default function Page({ about, localization }) {
 				mobileDescription={
 					localization.home.reputation.partners.mobileBottomDescription
 				}
-				// 	textImages={home.body.main.reputation.text_principles}
-
-				// 	buttonCard={localization.home.reputation.partners.textCard}
 			/>
 			<HorizontalSection specialists={about.body.main.specialists} />
 			<ProjectsMap

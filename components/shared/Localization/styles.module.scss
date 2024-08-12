@@ -46,21 +46,17 @@ $maxWidth: 1920;
 	}
 
 	&__locales {
-		@apply flex text-white flex-col  gap-[1.625rem];
+		@apply grid grid-cols-1 text-white gap-[1.625rem];
 
 		@screen sm {
 			@apply gap-[1.875rem];
 		}
 		@screen lg {
-			@apply justify-between flex-row gap-[1.5rem];
+			@apply justify-between grid-cols-3 flex-row gap-[1.5rem];
 		}
 
 		&_centered {
-			@apply items-center justify-center gap-[5rem] h-full;
-
-			// @screen lg {
-			// 	@apply gap-0;
-			// }
+			@apply items-center justify-center justify-items-center content-center gap-[5rem] h-full;
 		}
 	}
 
@@ -161,7 +157,7 @@ $maxWidth: 1920;
 			@apply text-[#AE2524];
 		}
 	}
-	&__anotherСity {
+	&__anotherCity {
 		@apply text-white font-semibold leading-120 tracking-[0.04em] mt-[3.125rem] text-[1rem] w-fit min-w-[10.625rem] pt-[0.625rem] border-t border-t-[#989898] transition-colors duration-300;
 		@screen sm {
 			@include adaptive-hero(font-size, 44, 16);
@@ -178,7 +174,7 @@ $maxWidth: 1920;
 		}
 	}
 
-	&__anotherСity,
+	&__anotherCity,
 	&__localesItemCity {
 		@media (hover: hover) {
 			@apply hover:text-[#B83F3F];

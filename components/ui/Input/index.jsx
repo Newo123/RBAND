@@ -1,12 +1,14 @@
-'use client';
-
 import cn from 'clsx';
 import { forwardRef, useState } from 'react';
 
 import classes from './input.module.scss';
 
-export const Input = forwardRef(function ({ label, className, ...rest }, ref) {
+export const Input = forwardRef(function (
+	{ label, className, errors, ...rest },
+	ref
+) {
 	const [isFocused, setIsFocused] = useState(false);
+
 	return (
 		<div
 			className={cn(
@@ -28,6 +30,7 @@ export const Input = forwardRef(function ({ label, className, ...rest }, ref) {
 				onBlur={e => !e.target.value && setIsFocused(!isFocused)}
 				className={classes.input__input}
 			/>
+			{errors && <span>{errors}</span>}
 		</div>
 	);
 });

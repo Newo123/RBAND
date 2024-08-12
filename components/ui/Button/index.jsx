@@ -67,7 +67,8 @@ export function Button({ className, children, type = 'button', href, target }) {
 			className={cn(classes.button, className)}
 			ref={buttonRef}
 			href={href || ''}
-			target={target || ''}
+			{...(target && { target: '_blank' })}
+			// target={target || ''}
 			locale={router.locale}
 		>
 			<div

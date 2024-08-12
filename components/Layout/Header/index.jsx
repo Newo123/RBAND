@@ -1,30 +1,31 @@
 import { Icon } from '@iconify/react';
 import cn from 'clsx';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
-import { useContext, useEffect, useState } from 'react';
+import { memo, useContext, useEffect, useState } from 'react';
 
+import { Contacts } from '@/components/Contacts';
+import { Container } from '@/components/shared/Container';
+import { Localization } from '@/components/shared/Localization';
+import { TransitionLink } from '@/components/shared/TransitionLink';
 import Modal from '@/components/ui/Modal';
 
 import { headerBlack } from '@/constants/headerBlack.constants';
 
 import { useScroll } from '@/hooks/useScroll';
 
-import { Container } from '../Container';
-import { Localization } from '../Localization';
-
 import { HeaderNavItem } from './HeaderNavItem';
 import { Submenu } from './Submenu';
 import classes from './styles.module.scss';
 import { ModalContext } from '@/contexts/Modal.context';
 
-export function Header({ header, langs, cities }) {
+const HeaderComponent = ({ header, langs, cities, callback }) => {
 	const {
 		menu: { row_1 }
 	} = header;
 	const router = useRouter();
 	const [langToggle, setLangToggle] = useState(false);
+	const [regionToggle, setRegionToggle] = useState(false);
 	const [isFixed, setIsFixed] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [isTranslate, setIsTranslate] = useState(true);
@@ -34,10 +35,10 @@ export function Header({ header, langs, cities }) {
 	const { scroll, setScroll } = useScroll();
 	const pathname = usePathname();
 
+	// const [activeCity, setActiveCity] = useState(cities?.other_city_item?.city_name)
+
 	const [selectedMenu, setSelectedMenu] = useState({ isOpen: false, id: '0' });
-
 	const { open } = useContext(ModalContext);
-
 	let currentScroll = 0;
 	const handleScroll = e => {
 		const window = e.currentTarget;
@@ -103,12 +104,13 @@ export function Header({ header, langs, cities }) {
 					className={classes.header__container}
 				>
 					<div className={classes.header__left}>
-						<Link
-							href={header.home}
+						<TransitionLink
+							href={header.home.href}
+							dataChildren='Главная'
 							className={classes.header__logo}
 						>
 							RBAND
-						</Link>
+						</TransitionLink>
 
 						<nav className={classes.header__nav}>
 							<ul className={classes.header__list}>
@@ -133,9 +135,9 @@ export function Header({ header, langs, cities }) {
 						{header?.city && (
 							<button
 								className={classes.header__getCity}
-								onClick={() => open(<Localization regions={localesRegions} />)}
+								onClick={() => setRegionToggle(true)}
 							>
-								{header.city?.city_name}
+								{header?.city?.city_name}
 							</button>
 						)}
 
@@ -146,15 +148,15 @@ export function Header({ header, langs, cities }) {
 							)}
 							onMouseEnter={() => setIsHover(true)}
 							onMouseLeave={() => setIsHover(false)}
-							// onClick={() =>
-							// 	open(
-							// 		<Contacts
-							// 			theme='dark'
-							// 			contact={{ isAddress: false }}
-							// 			callback={call}
-							// 		/>
-							// 	)
-							// }
+							onClick={() =>
+								open(
+									<Contacts
+										theme='dark'
+										contact={{ isAddress: false }}
+										callback={callback}
+									/>
+								)
+							}
 						>
 							<span className={classes.header__getProjectHover}>Поехали!</span>
 							<span className={classes.header__getProjectMain}>
@@ -178,6 +180,15 @@ export function Header({ header, langs, cities }) {
 			>
 				<Localization country={langs} />
 			</Modal>
+			<Modal
+				isOpen={regionToggle}
+				setIsOpen={setRegionToggle}
+			>
+				<Localization regions={cities} />
+			</Modal>
 		</>
 	);
-}
+};
+HeaderComponent.displayName = 'Header';
+
+export const Header = memo(HeaderComponent);

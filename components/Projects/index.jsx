@@ -12,6 +12,7 @@ import { ProjectsItem } from './ProjectsItem';
 import classes from './styles.module.scss';
 
 const ProjectsArray = ({ projects_array, paginationRef }) => {
+	console.log(projects_array);
 	return (
 		<Swiper
 			modules={[Pagination]}
@@ -48,14 +49,14 @@ const ProjectsArray = ({ projects_array, paginationRef }) => {
 							projects.children.map((item, index) => {
 								const project = {
 									href: item.href,
-									image: item.feed_image,
+									images: item.anons_images,
 									text: item.meta_description,
 									title: item.name,
 									textColor:
 										item.classes === 'portfolio__item_text-white'
 											? 'white'
 											: '',
-									video: item.video,
+									videos: item.anons_videos,
 									target: item.target,
 									placeholder: item.placeholder || ''
 								};
@@ -75,6 +76,7 @@ const ProjectsArray = ({ projects_array, paginationRef }) => {
 const ProjectsItems = ({ projects }) => {
 	const { items } = usePagination(projects, 10);
 
+	console.log(items);
 	return (
 		<div className={classes.ourProjects__grid}>
 			{projects.length > 0 &&
@@ -82,12 +84,12 @@ const ProjectsItems = ({ projects }) => {
 					const project = {
 						href: item.href,
 						target: item.target || false,
-						image: item.feed_image,
+						images: item.anons_images,
 						text: item.meta_description,
 						title: item.name,
 						textColor:
 							item.classes === 'portfolio__item_text-white' ? 'white' : '',
-						video: item.video,
+						videos: item.anons_videos,
 						target: item.target,
 						placeholder: item.placeholder || ''
 					};

@@ -8,6 +8,19 @@ export const instance = axios.create({
 	baseURL: process.env.API_URL
 });
 
+export const instanceUpload = axios.create({
+	baseURL: process.env.API_URL + '/route/getSitemap',
+	headers: {
+		'Content-Type': 'multipart/form-data'
+	}
+});
+export const instanceSitemap = axios.create({
+	baseURL: process.env.API_URL + '/route/getSitemap',
+	headers: {
+		'Content-Type': 'application/xml'
+	}
+});
+
 export const instanceLoginApi = axios.create({
 	baseURL: process.env.API_URL + '/route/login',
 	headers: {

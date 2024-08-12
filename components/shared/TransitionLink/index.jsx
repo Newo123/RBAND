@@ -1,27 +1,23 @@
-'use client';
-
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { useContext, useRef } from 'react';
 
-import { animationPageOut } from '@/utils/animation';
+import { PageTransitionContext } from '@/contexts/PageTransition.context';
 
-export function TransitionLink({ href, children, className }) {
-	const router = useRouter();
-	const pathname = usePathname();
-
-	const handleClick = e => {
-		e.preventDefault();
-		if (pathname !== href) {
-			animationPageOut(href, router);
-		}
-	};
-
+export const TransitionLink = ({ href, dataChildren, children, ...rest }) => {
+	const { pageOut } = useContext(PageTransitionContext);
+	const linkRef = useRef(null);
 	return (
 		<Link
 			href={href}
-			onClick={handleClick}
-			className={className}
-			dangerouslySetInnerHTML={{ __html: children }}
-		/>
+			ref={linkRef}
+			{...rest}
+			onClick={e => {
+				e.preventDefault();
+				pageOut(linkRef?.current);
+			}}
+			data-children={dataChildren}
+		>
+			{children}
+		</Link>
 	);
-}
+};

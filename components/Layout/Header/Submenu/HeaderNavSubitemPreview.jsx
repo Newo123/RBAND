@@ -2,9 +2,9 @@ import { useInView } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 
-import { getVideoMedia } from '@/utils/getVideoMedia';
+import { GetImagesFromNext } from '@/components/shared/GetImagesFromNext';
 
-import { GetImagesFromNext } from '../../GetImagesFromNext';
+import { getVideoMedia } from '@/utils/getVideoMedia';
 
 import classes from './styles.module.scss';
 

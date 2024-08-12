@@ -60,17 +60,17 @@ export function Review({
 						/>
 						<p
 							className={classes.review__contentProject}
-							dangerouslySetInnerHTML={{ __html: description.name_project }}
+							dangerouslySetInnerHTML={{ __html: description?.name_project }}
 						/>
 						<p
 							className={classes.review__contentText}
 							dangerouslySetInnerHTML={{
-								__html: description.description.join(' ')
+								__html: description?.description.join(' ')
 							}}
 						/>
 						<p
 							className={classes.review__contentAuthor}
-							dangerouslySetInnerHTML={{ __html: description.user }}
+							dangerouslySetInnerHTML={{ __html: description?.user }}
 						/>
 					</div>
 					{review_letter && (

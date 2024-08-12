@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import classes from './switcher.module.scss';
 
 export const SwitcherComponent = forwardRef(
-	({ id, label, name, type = 'radio', isChecked }, ref) => {
+	({ id, label, id_prefix, type = 'radio', isChecked, register }, ref) => {
 		return (
 			<label
 				htmlFor={id}
@@ -17,10 +17,10 @@ export const SwitcherComponent = forwardRef(
 					<input
 						id={id}
 						type={type}
-						name={name}
 						defaultChecked={isChecked}
 						value={label}
 						hidden
+						{...register('type_project')}
 					/>
 				</div>
 

@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react';
 import cn from 'clsx';
-import Link from 'next/link';
+
+import { TransitionLink } from '@/components/shared/TransitionLink';
 
 import classes from './styles.module.scss';
 
@@ -44,7 +45,7 @@ export function HeaderNavItem({ item, selectedMenu, setSelectedMenu }) {
 					<Icon icon='mingcute:down-line' />
 				</>
 			) : (
-				<Link
+				<TransitionLink
 					href={item.href}
 					className={cn(
 						classes.header__listItemLink,
@@ -53,9 +54,10 @@ export function HeaderNavItem({ item, selectedMenu, setSelectedMenu }) {
 							selectedMenu.id === item.menu_id &&
 							classes.header__listItemLink_active
 					)}
+					dataChildren={item.title}
 				>
 					{item.title}
-				</Link>
+				</TransitionLink>
 			)}
 			{/* {item.services ? (
 				<HeaderNavSubItemServices

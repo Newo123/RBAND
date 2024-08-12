@@ -120,7 +120,9 @@ export function Descriptor({ descriptor, start, days, price }) {
 						className={classes.descriptor__actions}
 						ref={actionsRef}
 					>
-						{descriptor.description_images &&
+						{!descriptor.description_videos &&
+							!descriptor.description_videos.length > 0 &&
+							descriptor.description_images &&
 							descriptor.description_images.length > 0 && (
 								<div className={classes.descriptor__actionsImage}>
 									<GetImagesFromNext
@@ -179,7 +181,11 @@ export function Descriptor({ descriptor, start, days, price }) {
 						<h1
 							className={cn('site-title-1', classes.descriptor__contentTitle)}
 							dangerouslySetInnerHTML={{
-								__html: descriptor?.title_page
+								__html:
+									descriptor?.title_page?.title +
+									(descriptor?.title_page?.city !== ''
+										? `<span>${descriptor?.title_page?.city}</span>`
+										: '')
 							}}
 						/>
 						{descriptor.second_description && (

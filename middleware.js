@@ -1,5 +1,3 @@
-import { NextResponse } from 'next/server';
-
 const PUBLIC_FILE = /\.(.*)$/;
 
 export async function middleware(req, res) {
@@ -13,18 +11,18 @@ export async function middleware(req, res) {
 
 	// console.log(req.cookies.get('city_name').value);
 
-	if (
-		req.cookies.get('NEXT_LOCALE')?.value &&
-		req.cookies.get('NEXT_LOCALE')?.value !== req.nextUrl.locale
-	) {
-		const locale = req.cookies.get('NEXT_LOCALE')?.value;
+	// if (
+	// 	req.cookies.get('NEXT_LOCALE')?.value &&
+	// 	req.cookies.get('NEXT_LOCALE')?.value !== req.nextUrl.locale
+	// ) {
+	// 	const locale = req.cookies.get('NEXT_LOCALE')?.value;
 
-		return NextResponse.redirect(
-			new URL(`/${locale}${req.nextUrl.pathname}${req.nextUrl.search}`, req.url)
-		);
-	}
+	// 	return NextResponse.redirect(
+	// 		new URL(`/${locale}${req.nextUrl.pathname}${req.nextUrl.search}`, req.url)
+	// 	);
+	// }
 
-	return NextResponse.next();
+	// return NextResponse.next();
 }
 
 // if (

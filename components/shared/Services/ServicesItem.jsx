@@ -60,7 +60,8 @@ export function ServicesItem({
 	options,
 	prices,
 	buttonText,
-	linkText
+	linkText,
+	callback
 }) {
 	const [price, setPrice] = useState([]);
 	const { open } = useContext(ModalContext);
@@ -111,8 +112,7 @@ export function ServicesItem({
 						open(
 							<Contacts
 								theme='dark'
-								callback={call}
-								contact={{ isAddress: false }}
+								callback={callback}
 							/>
 						)
 					}

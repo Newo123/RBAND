@@ -62,9 +62,15 @@
 	}
 	&__companyText {
 		@apply text-[0.875rem] font-semibold leading-150 text-center;
+		br {
+			@apply hidden;
+		}
 
 		@screen sm {
 			@apply text-left text-[0.625rem];
+			br {
+				@apply block;
+			}
 		}
 		@screen ssm {
 			@apply text-[0.75rem];

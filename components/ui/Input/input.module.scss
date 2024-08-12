@@ -1,5 +1,5 @@
 .input {
-	@apply flex flex-col relative h-[1.875rem] w-full;
+	@apply flex flex-col relative w-full;
 
 	&__label {
 		@apply absolute top-0 left-0 z-[0] transition-all text-[0.75rem] duration-200 font-medium leading-110 text-[#E5E5E5];
@@ -9,7 +9,7 @@
 	}
 
 	&__input {
-		@apply bg-transparent outline-none relative border-b border-b-white w-full h-full;
+		@apply bg-transparent outline-none relative border-b border-b-white w-full h-[1.875rem];
 	}
 
 	&_focused &__label {
